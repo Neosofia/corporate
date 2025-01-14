@@ -1,5 +1,25 @@
+echo "Starting PVE networking setup"
 
-echo "vnets"
+# Setup for basic DHCP services
+apt-get -y install dnsmasq
+systemctl disable --now dnsmasq
+
+# Setup "basic" SDN
+echo "setting up networking"
+cat <<EOF >/etc/pve/sdn/zones.cfg
+simple: default
+        dhcp dnsmasq
+        ipam pve
+EOF
+
+pvesh set /cluster/sdn
+
+
+
+# TBD: The section below was an attempt at programmatically declaring the networking layout
+# for our PVE hosts. This was done as the original setup routine did not use REAR as a full
+# system backup, rather it was a full nuke of the host then recreate manually. As PVE 
+echo "setup vnets"
 cat <<EOF >/etc/pve/sdn/vnets.cfg
 vnet: pvehosts
         zone default
