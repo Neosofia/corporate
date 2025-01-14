@@ -24,15 +24,16 @@ In order to bootstrap our daily rebuild operating environment, an existing Proxm
 | LAN_DEVICE        | `ip -br -c addr show` | enp2s0 | Optional if you won't have physical devices hooked to the LAN |
 | WAN_IP            | `hostname -I`         | 192.168.1.217/24 | You need to manually add the subnet to the end of the line. `/24` in our case |
 | WAN_GW            | `ip route`            | 192.168.1.1 |
-| INSTALL_DEVICE_ID | `lsblk -fs` | nvme0n1 |
-| BACKUP_DEVICE_ID| `lsblk -fs `          | sda | This is where backups will be stored to support the rebuild process. In our case, this is the 1TB 2.5" SATA drive in our box. We use the device UUID as this will ensure device load ordering does not lead to a catastrophic overwrite of the wrong drive |
-| USB_STICK_ID | `lsblk -fs` | sdb | Where REAR will be installed to backup and restore to/from for our proxmox host.
+| PVE_INSTALL_TO_DEVICE | `lsblk -fs` | nvme0n1 |
+| PBS_BACKUP_DEVICE| `lsblk -fs `          | sda | This is where backups and ISOs will be stored to support the rebuild process. In our case, this is the 1TB 2.5" SATA drive in our box. We use the device UUID as this will ensure device load ordering does not lead to a catastrophic overwrite of the wrong drive |
+| REAR_BACKUP_DEVICE | `lsblk -fs` | sdb | Where REAR will be installed to backup and restore to/from for our proxmox host.
+| PVE_INSTALL_FROM_DEVICE | `lsblk -fs` | sdc | Where REAR will be installed to backup and restore to/from for our proxmox host.
 
 Once your environment is set, run the [prepareMedia.sh](prepareMedia.sh) command to generate the answers file and burn the ISO catered to your system. As the machine will not boot into the USB device you can use the command below to force a reboot into the USB stick.
 
-> *WARNING*: Based on how you configured your environment variables, the unattended install process will *wipe out the entire INSTALL_DEVICE_ID* without any prompting!
+> *WARNING*: Based on how you configured your environment variables, the unattended install process will *wipe out the entire  PVE_INSTALL_TO_DEVICE* without any prompting!
 
-To find your USB stick with the Proxmox installer use the command `efibootmgr` and once identified run this command to reboot into the USB stick (0009 in our case) `efibootmgr --bootnext 0009 && systemctl reboot`
+To find your USB stick with the Proxmox installer use the command `efibootmgr` and once identified run this command to reboot into the USB stick (000B in our case) `efibootmgr -n 000B && systemctl reboot`
 
 After about five minutes the machine will boot into Proxmox for the first time and a second reboot will occur once packages are updated. If any errors occurred you can navigate to the pve0001 > System > System Log or if you only have terminal access use the `journalctl` command.
 
