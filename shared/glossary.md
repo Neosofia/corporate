@@ -8,7 +8,7 @@ TBD
 
 ### Enterprise Application Software (EAS)
 
-Computer software used to satisfy the needs of an organization rather than its individual users. [^eas]
+> Computer software used to satisfy the needs of an organization rather than its individual users. [^eas]
 
 #### EAS Examples
  * Business intelligence (BI)
