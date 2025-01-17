@@ -4,7 +4,7 @@
 
 What would the world be like if there were no regulations or polices? Or put another way, what if there was nothing to comply with? Would we live in a world packed with snake oil vendors pedaling whatever wares possible to consumers despite their safety and efficacy? A world where technology companies use every scrap of information without our consent to push whatever products the highest marketing bidder can pay for? A world where the risk of being harmed while driving or taking public transit is a function of how much safety you can afford to pay for?
 
-![Created using "DALL•E 3 XL v2" with the prompt "sketchy car with no body being driven by A frantic looking person while standing up"](../../shared/images/flintstones-car.png)[^credit]
+![Flintstone car](../../shared/images/flintstones-car.png)[^credit]
 
 Compliance is done to conform with regulations, polices, and standards, but the desired end result is a world where every human, regardless of their ability to pay, is 1) safe from harm 2) has a right to their privacy and 3) has the right to choose how they live their lives without infringing on 1 or 2 for anybody else.
 
@@ -47,7 +47,7 @@ Neosofia will define and maintain system backup and recovery SOPs to protect cli
 
 #### SOP
 
-TBD: [IT-245-System Backup and Recovery.md](tbd)
+[IT-245-System Backup and Recovery.md](/website/procedures/IT-245-System%20Backup%20and%20Recovery.md)
 
 #### Evidence
 
