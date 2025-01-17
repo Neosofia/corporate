@@ -1,6 +1,6 @@
 # System Backup and Recovery
 
-Weather you host services in the cloud or self-host, the vast majority (if not all) regulations mandate that you must have defined system backup and recovery procedures that are tested periodically and can quickly restore user access to their data. When most startups begin their technology journey, no thought is given to all the failure modes that can result in the loss of data access. And even if you start in the cloud, you don't magically get system backup and recovery for free! 
+Whether you host services in the cloud or self-host, the vast majority (if not all) regulations mandate that you must have defined system backup and recovery procedures that are tested periodically and can quickly restore user access to their data. When most startups begin their technology journey, no thought is given to all the failure modes that can result in the loss of data access. And even if you start in the cloud, you don't magically get system backup and recovery for free! 
 
 This post will go into some of the failure modes that can interrupt business operations and explore how our [IT-245-System Backup and Recovery](/website/procedures/IT-245-System%20Backup%20and%20Recovery.md) SOP addresses those failure modes.
 
