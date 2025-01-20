@@ -97,6 +97,50 @@ This section of the glossary is for terms used in the context of providing clien
 * If the service provider does not meet their customer support ticket handling time for one calendar month, the client will be refunded 5% of their monthly professional service support fee.
 
 
+## Information Technology Terms 
+
+
+### System Backup and Recovery
+
+
+#### Retention Period
+
+The minimum amount of time backup data must be saved for.
+
+#### Recovery Point Objective (RPO)
+
+> The point in time that the restarted infrastructure will reflect, expressed as "the maximum targeted period in which data (transactions) might be lost from an IT service due to a major incident". [^backup]
+
+#### Recovery Time Objective (RTO)
+
+> The amount of time elapsed between disaster and restoration of business functions. [^backup]
+
+#### Online Copy
+
+A copy of live data that is available to the device that manages the data in question. 
+
+#### Offline Copy
+
+An immutable copy of live data typically used for data restoration when the live and online copies of the data have become corrupted.
+
+#### Full Copy
+
+A complete snapshot of the data including metadata needed to restore it.
+
+#### Incremental Copy
+
+An incremental backup stores data changed since a reference point in time. The reference point is relative to the most recent full copy of the data 
+
+#### Live Copy
+
+A real time copy of live data. This most common example is two hard drives in a mirrored RAID 1 array.
+
+#### Continuous Data Protection (CDP)
+
+> A backup that instantly saves a copy of every change made to the data. This allows restoration of data to any point in time and is the most comprehensive and advanced data protection. Near-CDP backup applications—often marketed as "CDP"—automatically take incremental backups at a specific interval, for example every 15 minutes, one hour, or 24 hours. They can therefore only allow restores to an interval boundary. [^backup]
+
+
+
 [^eas]: https://en.wikipedia.org/wiki/Enterprise_software "EAS"
 
 [^sli]:https://en.wikipedia.org/wiki/Service_level_indicator "SLI"
@@ -106,3 +150,5 @@ This section of the glossary is for terms used in the context of providing clien
 [^sla]:https://en.wikipedia.org/wiki/Service-level_agreement "SLA"
 
 [^pol]:https://en.wikipedia.org/wiki/Policy "POL"
+
+[^backup]: https://en.wikipedia.org/wiki/Backup "Backup"
