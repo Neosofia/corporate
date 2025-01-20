@@ -7,6 +7,8 @@
 
 > An IT administrator, system administrator, sysadmin, or admin is a person who is responsible for the upkeep, configuration, and reliable operation of computer systems, especially multi-user computers, such as servers. The system administrator seeks to ensure that the uptime, performance, resources, and security of the computers they manage meet the needs of the users, without exceeding a set budget when doing so. [^sa]
 
+#### SA Levels
+
 | Level | Typical Experience | Commonly Accepted Industry Title          |
 |-------|--------------------|-------------------------------------------|
 | 1     | 0-2 years          | Associate/Junior System Administrator     |
@@ -33,9 +35,11 @@ The Neosofia [SA](#system-administrator-sa) role has the following specializatio
 * Prometheus
 
 
-### IT Manager
+### IT Manager (ITM)
 
-> 
+
+
+#### ITM Levels
 
 | Level | Typical Experience | Commonly Accepted Industry Title |
 |-------|--------------------|----------------------------------|
