@@ -1,12 +1,12 @@
-# System Backup and Recovery
+# System Backup and Recovery SOP
 
 ## Purpose
 
-Establish a systematic approach to data backup and recovery to prevent loss, enable rapid restoration and maintain data integrity
+Establish a systematic approach to data backup and recovery to prevent loss, enable rapid restoration and maintain data integrity for all Neosofia IT systems.
 
 ## Scope
 
-This SOP applies to any information system that manages Neosofia client or corporate data.
+This SOP applies to any IT system that manages Neosofia client or corporate data.
 
 ### Assets in Scope
 
@@ -18,39 +18,37 @@ Each of the assets below will have an entry in this SOP that outlines the backup
 * [Online Copies (OC)](/shared/glossary.md#online-copy)
 * [Full Copy (full)](/shared/glossary.md#full-copy)
 * [Incremental Copy (incr.)](/shared/glossary.md#incremental-copy)
-* [Live Copy (live)](/shared/glossary.md#live-copy)
-
 
 Data/Support Asset         | RPO    | RP       | RTO     | OC
 ---------------------------|--------|----------|---------|------------------
 [Hardware](#hw)            | N/A    | N/A      | 2 hours | N/A
 [Operating Systems](#os)   | 1 day  | 7 days   | 1 hour  | 1 full + 6 incr.
 [Virtual Machines](#vm)    | 1 day  | 28 days  | 1 hour  | 1 full + 27 incr.
-[Public DNS Records](#dns) | N/A    | N/A      | 1 hour  | N/A
+[Public DNS Records](#net) | N/A    | N/A      | 1 hour  | N/A
 [Source Code](#sc)         | 1 week | 25 years | 1 week  | 1 full
 
+Neosofia will store one offline copy of each asset above
 
 ## Responsibilities
 
 The [IT System Administrators](/shared/roles.md#system-administrator-sa) will be responsible for
-* [L4](#job-level-tbd) Architecture, design, implementation, and execution of the procedures outlined in this document.
-* [L3](#job-level-tbd) System monitoring to determine if restoration procedures need to be executed on
-* [L2](#job-level-tbd) Documentation of the backup and restoration procedure execution as evidence for auditors
-* [L1](#job-level-tbd) Provide feedback on this document
+* [L4](/shared/roles.md#sa-levels) Architecture, design, implementation, and execution of the procedures outlined in this document.
+* [L3](/shared/roles.md#sa-levels) System monitoring to determine if restoration procedures need to be executed on
+* [L2](/shared/roles.md#sa-levels) Documentation of the backup and restoration procedure execution as evidence for auditors
+* [L1](/shared/roles.md#sa-levels) Provide feedback on this document
 
 The [IT Managers](/shared/roles.md#it-manager) will be responsible for 
-* [L4](#job-level-tbd) Review of this document no less than once per year
-* [L4](#job-level-tbd) Respond to and integrate feedback for this document
-* [L3](#job-level-tbd) Review of this document when new IT systems are [procured](#tbd) or [retired](#tbd) to determine the system backup and restoration procedures that may require an update
-* [L4](#job-level-tbd) Advise and mentor [IT System Administrators](/shared/roles.md#system-administrator-sa) in their responsibilities.
+* [L4](/shared/roles.md#itm-levels) Review of this document no less than once per year
+* [L4](/shared/roles.md#itm-levels) Respond to and integrate feedback for this document
+* [L3](/shared/roles.md#itm-levels) Review of this document when new IT systems are [procured](#tbd) or [retired](#tbd) to determine the system backup and restoration procedures that may require an update
+* [L4](/shared/roles.md#itm-levels) Advise and mentor [IT System Administrators](/shared/roles.md#system-administrator-sa) in their responsibilities.
 
 ## Procedures 
 
 
-### Hardware Backup Procedures <a id="hw"></a>
+### Hardware Procedures <a id="hw"></a>
 
 Neosofia will maintain a 2% hardware inventory reserve to recover from hardware losses or will define procedures below to enable cloud resources to be used as a temporary replacement for system restoration. 
-
 
 ### Operating System Procedures <a id="os"></a>
 
@@ -65,7 +63,7 @@ Rolling OS level backup procedures begin automatically starting at 2AM UTC
 ##### Backup Procedure and Automated Restoration Test
 
 > [!NOTE]
-> These procedures are executed programmatically on a daily basis
+> These procedures are executed programmatically on a daily basis and should not be manually executed
 
 1. Create a full OS level snapshot and on-device (USB stick) rescue media needed to restore the system in the event of a hardware failure
 1. Reboot the device into the rescue media's automated restoration program
@@ -73,19 +71,64 @@ Rolling OS level backup procedures begin automatically starting at 2AM UTC
 
 ##### Exit Criteria
 
-If the daily OS backup procedure completes without errors, a status report is automatically sent to the evidence portal. If any errors occur, an email is sent to all [IT System Administrators](/shared/roles.md#system-administrator-sa) with details of the error to be corrected
+If the daily OS backup procedure completes without errors, a status report is automatically sent to the evidence portal. If any errors occur, an email is sent to all [IT System Administrators](/shared/roles.md#system-administrator-sa) with details of the error to be remediated.
 
 ##### SLOs
 * automated backup and system restoration should take no more than 15 minutes 99% of the time
 
 
-#### OS Restoration Procedure
+#### OS Recovery Procedure
 
 ##### Entry Criteria
 
-Upon notification of a system failure or data loss
+Upon notification of a system failure or data loss.
 
 ##### Procedure
-1. replace defective hardware
-1. start machine into system restoration device
-1. ???
+1. Identify and replace defective hardware
+1. Start machine into system restoration device (F7 or F11 key for most systems)
+1. The restoration procedure should begin automatically. If the restoration procedures requests input due to hardware changes, contact a [L3](/shared/roles.md#sa-levels) IT system Administrator or higher for guidance on appropriate inputs.
+1. Upon restoration, confirm the restoration evidence was uploaded to the portal.
+
+##### Exit Criteria
+
+if the automated restoration process fails an error email will be sent to all [IT System Administrators](/shared/roles.md#system-administrator-sa)
+
+### VM Procedures <a id="vm"></a>
+
+#### VM Backup Procedure
+
+TBD
+
+#### VM Restoration Procedure
+
+TBD
+
+### Networking Procedures <a id="net"></a>
+
+#### Networking Backup Procedure
+
+TBD
+
+#### Networking Restoration Procedure
+
+TBD
+
+### Source Code Procedures <a id="sc"></a>
+
+
+#### SC Backup Procedure
+
+TBD
+
+#### SC Restoration Procedure
+
+TBD
+
+## Policies Supported
+
+* [Neosofia System Backup and Recovery](/shared/policies.md#system-backup-and-recovery)
+
+## Regulations Supported 
+ * GDPR Article 32
+ * NIST SP 800-53 Section 3.6 Contingency Planning
+ * Many more TBD

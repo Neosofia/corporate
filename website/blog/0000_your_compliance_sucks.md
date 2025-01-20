@@ -6,9 +6,9 @@ Welcome to our zeroth post! This series will explore the world of international 
 
 Companies of every size from startups to large enterprises struggle with their compliance and collectively spend *250+ billion* on proving they are compliant or getting fined for not complying. For each regulation you need a group of individuals to write, maintain, and enforce it; each company needs a group of individuals to interpret, document, implement, prove, and maintain their compliance; lastly, you need an independent party to review (audit) and certify that you're compliant. And despite decades of technology advancements, this process is still grossly inefficient and error-prone.
 
-The first issue is that regulations are typically vague and leave out practical real world guidance to organizations that then lead to hidden implication and false assumption. Fore example -- even after 30+ years of maturation regarding something as "simple" as password length ([reg ref](regulationxyz)), you can ask 10 auditors how long a password should be and still get 20 answers... Not only do auditors disagree, but each of the tens of thousands of companies that must comply are left to spend resources interpreting each regulation, implementing what they think is the correct interpretation only to be told by auditors that their interpretation is incorrect. Password length is just one example out of thousands that compounds into wasted effort across multiple organizations.
+The first challenge that companies face is that regulations are typically vague and leave out practical real world guidance that leads to hidden implication and false assumption. Fore example -- even after 30+ years of maturation regarding something as "simple" as password length ([length > complexity](https://auth0.com/blog/dont-pass-on-the-new-nist-password-guidelines/)), you can ask 10 auditors how long a password should be and still get 20 answers... Not only do auditors disagree, but each of the tens of thousands of companies that must comply are left to spend resources interpreting each regulation, implementing what they think is the correct interpretation only to be told by auditors that their interpretation is incorrect. Password length is just one example out of thousands that compounds into wasted effort across multiple organizations.
 
-Even if your organization correctly interprets every regulation, the second issue that leads to inefficiency lies within policy alignment within the organization. In the real world, the actual implementation of a policy/procedure vs what is written in a text document rarely matches. Employees aren't trained, don't care, or are not interested in "slowing" themselves down to comply as their productivity, not compliance with regulations, is measured and used to determine their yearly bonus/promotion/raise. Companies also fall into the trap of writing a bunch of standard operating procedures to appease auditors but fall short in terms of training and enforcing those procedures as they too like employees just want to "go faster". And in our capitalistic society, many organizations take a risk based approach to compliance and will eat fines or lose clients as the expense needed to comply would have been more than the probability of being caught and fined.
+Even if your organization correctly interprets every regulation, the second challenge lies within policy alignment within the organization. In the real world, the actual implementation of a policy/procedure vs what is written in a text document rarely matches. Employees aren't trained, don't care, or are not interested in "slowing" themselves down to comply as their productivity, not compliance with regulations, is measured and used to determine their yearly bonus/promotion/raise. Companies also fall into the trap of writing a bunch of standard operating procedures to appease auditors but fall short in terms of training and enforcing those procedures as they too like employees just want to "go faster". And in our capitalistic society, many organizations take a risk based approach to compliance and will eat fines or lose clients as the expense needed to comply would have been more than the probability of being caught and fined.
 
 Interpreting the myriad of regulations and proving your compliance is still a shockingly inefficient process despite all of our advancements in technology. There are many niche companies/products that specialize in vertical or horizontal market segments like MasterControl for GxP in life sciences, HashiCorp Sentinel for applying policies to infrastructure as code (IAC) systems provisioned via Terraform, or OPA for a more generic infrastructure policy machine. Despite a myriad of products that function well in their respective vertical or horizontal market, nothing truly ties everything together.
 
@@ -16,14 +16,16 @@ Given a magic wand, I would wish for an environment in which every employee has 
 
 ## How will we get there?
 
-This zeroth post is the first of hundreds that will incrementally build on building a company (Neosofia) as a model for others to draw from and services that:
+Neosofia will be building out two compliance tools (policy and evidence services) to help organizations of any size validate their regulatory compliance. For smaller organizations and startups, Neosofia will be making all of their polices, procedures, corporate system management scripts open source. By open sourcing our own business operations we hope to allow this to a) be template that other (smaller) organizations could use as a starting point to achieve compliant business operations early on in their life and b) act as a baseline test for the compliance tools.
+
+With the two tools and a template small company we hope to:
 
  * Reveal the hidden implications within regulations
  * Enable organizations to programmatically verify their compliance with regulations
  * Enable organizations to retrospectively integrate their existing systems into *compliance by design* (CBD) way of thinking
  * Provide startups and other smaller organizations with a "getting started" template for quickly spinning up cost-effective corporate systems that are compliant out of the box.
 
-Before we begin to architect, design, and implement our solutions to the above, we must establish some initial principles for corporate systems we select that will be a part of our software/service supply chain:
+Before we begin to architect, design, and implement our solutions to the above, we must establish some initial principles/policies for the corporate systems Neosofia selects for their enterprise application systems.
 
  * All services must be manageable and observable via an API
  * 3rd party services must have a "free" tier
@@ -42,7 +44,6 @@ Primary Endpoints:
 Secondary/Interim Endpoints:
  * ISO-27001, GDPR+, and/or SOC2 Type 2 certifications
  * A model for other organizations to follow for achieving compliance by design (CBD)
-
 
 ## What is next?
 
