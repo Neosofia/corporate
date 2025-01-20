@@ -22,7 +22,7 @@ Our [first SOP](/website/procedures/IT-245-System%20Backup%20and%20Recovery.md) 
 
 We're covering the first two points under our [hardware](/website/procedures/IT-245-System%20Backup%20and%20Recovery.md#hardware-procedures), [OS](/website/procedures/IT-245-System%20Backup%20and%20Recovery.md#hardware-procedures) and [virtual machine](/website/procedures/IT-245-System%20Backup%20and%20Recovery.md#virtual-machine-procedures) procedures as we've architected our system to be a distributed business mesh which is also designed to have employee workstations being on the same virtualization platform running our self-hosted [EASs](/shared/glossary.md#enterprise-application-software-eas). As we back up our OS (virtualization platform) the employee workstations (VMs) and EASs (VMs/LXCs) we've covered all of our current and future data loss backup and recovery procedures for all of our self-hosted compute and storage.
 
-Based on our system architecture, we've elected to use REAR for our host level backup of the Proxmox OS to a USB stick, independent drives within our Beelink EQ12 to back up virtual machines and LXC containers onto, and OneDrive as our remote offsite storage facility. The SOP [IT-245-System Backup and Recovery](/website/procedures/IT-245-System%20Backup%20and%20Recovery.md) procedures support a 3-2-1-1-0 strategy as we have three copies of all systems and data, on two mediums with one being offsite, one being "offline" (airgap to compute), and an integrity checking process that runs after every backup to ensure the media we're storing can be restored.
+Based on our system architecture, we've elected to use REAR for our host level backup of the Proxmox OS to a USB stick, independent drives within our Beelink EQ12 to back up virtual machines and LXC containers onto, and OneDrive as our remote offsite storage facility. The SOP [IT-245-System Backup and Recovery](/website/procedures/IT-245-System%20Backup%20and%20Recovery.md) procedures support a 3-2-1-1-0 strategy as we have three copies of all systems and data, on two mediums with one being offsite, one being "offline" (air gap to compute), and an integrity checking process that runs after every backup to ensure the media we're storing can be restored.
 
 ### Networking
 
@@ -32,13 +32,13 @@ The first iteration in this project is a single node in our business mesh networ
 
 Our procedures need to cover backup and restoration of the following data used to:
 * translate our host name to an IP address (Cloudflare)
-* protect our internal web services with firewall rules and routing (ISP router today and Unifi in the future)
+* protect our internal web services with firewall rules and routing (ISP router today and UniFi in the future)
 
 By walking through the process diagrams used to provide web services, it helps identify the data we need to protect and better define the procedures that will minimize business downtime and/or data loss. We highlight these procedures in the [networking procedures](/website/procedures/IT-245-System%20Backup%20and%20Recovery.md#networking-procedures) section in the backup and recovery SOP.
 
 ### Email, Chat, and Document Storage
 
-Neosofia has elected to use [Proton](https://proton.me/) and [Zoom](https://www.zoom.com/) for business communication services. Each of these organizations have been validated (via a vendor qualification process that is TBD) to ensure email, chat, phone, and document storage systems are protected against loss. Nesofia also has a 30-day retention policy for these systems so that these mediums are not treated as a long term storage solution. This policy is a forcing function to ensure approved long term storage mediums that fall under the backup and recovery SOPs are used.
+Neosofia has elected to use [Proton](https://proton.me/) and [Zoom](https://www.zoom.com/) for business communication services. Each of these organizations have been validated (via a vendor qualification process that is TBD) to ensure email, chat, phone, and document storage systems are protected against loss. Neosofia also has a 30-day retention policy for these systems so that these mediums are not treated as a long term storage solution. This policy is a forcing function to ensure approved long term storage mediums that fall under the backup and recovery SOPs are used.
 
 Given the 30-day retention policy and as these vendors have been qualified, Neosofia will not develop system backup and recovery procedures for these services.
 
