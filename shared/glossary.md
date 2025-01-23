@@ -103,6 +103,9 @@ This section of the glossary is for terms used in the context of providing clien
 ### Source Code Control (SCC)
 
 
+### Continuous Integration and Continuous Delivery (CI/CD)
+
+
 ### System Backup and Recovery
 
 
