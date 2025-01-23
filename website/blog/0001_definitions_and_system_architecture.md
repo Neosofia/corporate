@@ -30,11 +30,11 @@ Second, show me the money!
 
 ## Compliance From 30,000ft
 
-If you're new to the world of compliance, please check out the [compliance terms](/shared/glossary.md#compliance-terms) section of our glossary. As stated in our first post, some of the challenges associated with compliance lie within the interpretation of a regulation, procedures needed to comply, what evidence to gather, how to validate that the evidence is sufficient for an external auditor etc. Our mission is to streamline and automate these processes so you can focus on your companies core business. To demonstrate this concept, we'll work through the most common real world examples that apply to almost any industry that operates technology systems. We will tackle these examples in the order needed to create a company from the ground up. The first example will focus on system backup and recovery procedures (given its technical nature) then move into some more human procedures and polices concerning a quality management system.
+If you're new to the world of compliance, please check out the [compliance terms](/shared/glossary.md#compliance-terms) section of our glossary. As stated in our first post, some of the challenges associated with compliance lie within the interpretation of a regulation, procedures needed to comply, what evidence to gather, how to validate that the evidence is sufficient for an external auditor etc. Our mission is to streamline and automate these processes so you can focus on your companies core business. To demonstrate this concept, we'll work through the most common real world examples that apply to almost any industry that operates technology systems. We will tackle these examples in the order needed to create a company from the ground up. The first example will focus on system backup and recovery procedures then move into some more human procedures and polices concerning a quality management system.
 
-The [system backup and recovery SOP](/website/procedures/IT-245-System%20Backup%20and%20Recovery.md) is an example of compliance in action as it ties together how we operate (procedures), with the policies and regulations the procedures support, and the evidence that our procedures are being supported. All the information is presented in a fully traceable format that an auditor and use to validate that we're operating a compliant organization. Neosofia has also gone above and beyound what most organizations today do and elected to make this information public and has fully automated the backup and restoration test procedures so that evidence is continually generated whenever the implementation changes. This means that we have continually generated and publicly available set of evidence with full traceability between our policies, procedures, architecture, design and implementation as it relates to system backup and recovery.
+The [system backup and recovery SOP](/website/procedures/IT-245-System%20Backup%20and%20Recovery.md) is an example of compliance in action as it ties together how we operate (procedures), with the policies and regulations the procedures support, and the evidence that our procedures are being executed. All the information is presented in a fully traceable format that an auditor can use to validate that we're operating a compliant organization. Neosofia has elected to make this information public and has fully automated the backup and restoration test procedures so that evidence is continually generated whenever the implementation changes. This means that we have continually generated and publicly available set of evidence with full traceability between our policies, procedures, architecture, design and implementation.
 
-Before we finalize our first working example, let's quickly cover two more compliance cornerstones -- a centralized glossary and high level system architecture.
+In support of our first SOP, we also produced two cornerstones of compliant company, our glossary and high level system architecture.
 
 ## Glossary
 
@@ -46,18 +46,18 @@ To minimize the chance of mistakes, our [glossary](/shared/glossary.md) will inc
 
 At the foundation of any compliant [EAS](/shared/glossary.md#EAS) lies a set of system architecture diagrams that defines how technology systems and system users interact with each other. To express these relationships, Neosofia has elected to adopt the [C4 model](https://c4model.com/) and more specifically [Structurizr](https://structurizr.com/) to generate all architecture diagrams. 
 
-The initial set of [EASs](/shared/glossary.md#EAS) documented will include all the hardware and software needed to operate a minimally compliant technology organization including:
- * A Beelink EQ12 with N100 processor
- * Proxmox for the host operating system
- * Cloudflare for public DNS
- * Let's Encrypt for SSL certificates
- * GitHub for [SCCS](/shared/glossary.md#source-code-control)
- * DNS to provide basic malware protection
+The initial set of [EASs](/shared/glossary.md#EAS) documented will include all the hardware and third party services needed to operate a minimally compliant technology organization including:
+ * A [Beelink](bee-link.com) EQ12 with N100 processor for self-hosted services [^whynocloud]
+ * [Proxmox](proxmox.com) (Debian 12) for the operating system to virtualize all employee workstations plus self-hosted [EASs](/shared/glossary.md#EAS).
+ * [Cloudflare](https://www.cloudflare.com/) for public DNS resolution and https tunneling to self-hosted services
+ * [Let's Encrypt](https://letsencrypt.org/) for SSL certificates
+ * [GitHub](github.com) for [SCC](/shared/glossary.md#source-code-control) and [CI/CD](/shared/glossary.md#continuous-integration-and-continuous-delivery-cicd)
+ * [Cloudflare](https://www.cloudflare.com/) for internal DNS resolution to provide malware protection (1.1.1.3 and 1.0.0.3)
+ * [Digi]() provided router for 10G network connectivity
 
-And the initial set of compliance checks provided by our compliance service will include
- * Encryption in flight
- * Basic malware (sinkhole) protection via DNS
- * System Backup and recovery procedures per the example above
+
+> [!NOTE]
+> The policy validation and evidence aggregation compliance tools are designed to work with any service regardless of the vendor. The choices above are ones Neosofia has elected to make for reasons that will be covered in future posts.
 
 To better understand the relationship between the systems above, we created two C4 diagrams. The first architecture diagram is a system landscape diagram that shows the role of each software system and how it relates to others systems and users. 
 
@@ -69,14 +69,16 @@ Our second diagram shows how systems are deployed from a physical and logical po
 
 ## Deeper Dive
 
-For interactive architecture diagrams that allow you to change the layout, zoom in/out of the various components, filter based on tags, and/or reveal regulatory perspectives for each system clone this repo and follow the instructions in the [architecture README](../../architecture/README.md)
+For interactive architecture diagrams that allow you to change the layout, zoom in/out of the various components, filter based on tags, and/or reveal regulatory perspectives for each system clone this repo and follow the instructions in the [architecture README](../../architecture/README.md).
 
 ## What's Next?
 
-The [next post](1000_system_backup_and_recovery.md) in our series will go into more detail on our system backup and recover procedures that will become part of our broader business continuity plan. 
+The [next post](1000_system_backup_and_recovery.md) in our series will go into more detail on our system backup and recover SOP that will become part of our broader business continuity plan. 
 
 ## One More Thing
 
-As an organization we're on a mission to help any company of any size improve their compliance and this is why we've elected to make all of our polices, procedures, roles, glossary, evidence, design, and implementation open source. Most organizations today store this information in a private corporate data store and make evidence available for "on-site" review to protect their IP (which makes a lot of sense). As this repository is open source, you're free to use any content as you like. Our only (legally non-binding) request is that you cite [Neosofia](https://github.com/neosofia/corporate) in any public facing "thanks" or "powered by" section of your website should you use any of the content here. 
+As an organization we're on a mission to help any company of any size improve their compliance and this is why we've elected to make all of our polices, procedures, roles, glossary, evidence, design, and implementation open source. Most organizations today store this information in a private corporate data store and make evidence available for "on-site" review to protect their IP (which makes a lot of sense). As this repository is open source, you're free to use any content as you like under the terms of the [MIT license](https://en.wikipedia.org/wiki/MIT_License). Our only (legally non-binding) request is that you cite [Neosofia](https://github.com/neosofia/corporate) in any public facing "thanks" or "powered by" section of your website should you use any of the content here. For other ways of supporting us, please check out our [contributing](/CONTRIBUTING.md) page.
 
-[^credit]: created using "DALL•E 3 XL v2" on Huggingface with the prompt "flintstones car driven by a frantic looking person" seed: 1059621461 no negative prompts
+[^credit]: created using "DALL•E 3 XL v2" on Huggingface with the p  rompt "flintstones car driven by a frantic looking person" seed: 1059621461 no negative prompts
+
+[^whynocloud]: Future blog posts will detail why we've elected to not use cloud providers for the majority of our EASs.

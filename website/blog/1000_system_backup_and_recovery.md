@@ -6,21 +6,21 @@ This post will go into some of the failure modes that can interrupt business ope
 
 ## Background Reading
 
-If you haven't already, please read our prior two posts regarding our overall system [architecture](./0001_definitions_and_system_architecture.md#architecture) and a [broad](./0001_definitions_and_system_architecture.md#compliance-from-30000ft) overview of what compliance means. 
+If you haven't already, please read our prior posts regarding our overall system [architecture](./0001_definitions_and_system_architecture.md#architecture) and a [broad](./0001_definitions_and_system_architecture.md#compliance-from-30000ft) overview of what compliance means. 
 
 ## System Backup and recovery SOP
 
 Our [first SOP](/website/procedures/IT-245-System%20Backup%20and%20Recovery.md) follows a traditional SOP format by defining a purpose, scope, roles, responsibilities, and procedures. However, the operational failure modes are what help us decide the assets we need to have defined procedures for. In the infancy stage of our development, these failure modes include:
 
 * a single employee workstation having a meltdown
-* a server hosting an [EAS](../../shared/glossary.md#EAS) having a meltdown
+* a server hosting an [EAS](/shared/glossary.md#EAS) having a meltdown
 * our public DNS system being compromised
 * our source code control system being compromised
 * our email, chat, document control systems being compromised
 
 ### Compute and Storage -- Hardware, OS, and VMs
 
-We're covering the first two points under our [hardware](/website/procedures/IT-245-System%20Backup%20and%20Recovery.md#hardware-procedures), [OS](/website/procedures/IT-245-System%20Backup%20and%20Recovery.md#hardware-procedures) and [virtual machine](/website/procedures/IT-245-System%20Backup%20and%20Recovery.md#virtual-machine-procedures) procedures as we've architected our system to be a distributed business mesh which is also designed to have employee workstations being on the same virtualization platform running our self-hosted [EASs](/shared/glossary.md#enterprise-application-software-eas). As we back up our OS (virtualization platform) the employee workstations (VMs) and EASs (VMs/LXCs) we've covered all of our current and future data loss backup and recovery procedures for all of our self-hosted compute and storage.
+We're covering the first two points under our [hardware](/website/procedures/IT-245-System%20Backup%20and%20Recovery.md#hardware-procedures), [OS](/website/procedures/IT-245-System%20Backup%20and%20Recovery.md#operating-system-procedures) and [virtual machine](/website/procedures/IT-245-System%20Backup%20and%20Recovery.md#vm-procedures) procedures as we've architected our system to be an all-in-one system with employee workstations being on the same virtualization platform running our self-hosted [EASs](/shared/glossary.md#enterprise-application-software-eas). 
 
 Based on our system architecture, we've elected to use REAR for our host level backup of the Proxmox OS to a USB stick, independent drives within our Beelink EQ12 to back up virtual machines and LXC containers onto, and OneDrive as our remote offsite storage facility. The SOP [IT-245-System Backup and Recovery](/website/procedures/IT-245-System%20Backup%20and%20Recovery.md) procedures support a 3-2-1-1-0 strategy as we have three copies of all systems and data, on two mediums with one being offsite, one being "offline" (air gap to compute), and an integrity checking process that runs after every backup to ensure the media we're storing can be restored.
 
@@ -32,7 +32,7 @@ The first iteration in this project is a single node in our business mesh networ
 
 Our procedures need to cover backup and restoration of the following data used to:
 * translate our host name to an IP address (Cloudflare)
-* protect our internal web services with firewall rules and routing (ISP router today and UniFi in the future)
+* protect our internal web services with firewall rules and routing
 
 By walking through the process diagrams used to provide web services, it helps identify the data we need to protect and better define the procedures that will minimize business downtime and/or data loss. We highlight these procedures in the [networking procedures](/website/procedures/IT-245-System%20Backup%20and%20Recovery.md#networking-procedures) section in the backup and recovery SOP.
 
@@ -46,9 +46,13 @@ Given the 30-day retention policy and as these vendors have been qualified, Neos
 
 By identifying the data assets we need to protect and by reviewing a common service access pattern, we developed a comprehensive SOP to ensure that all of our corporate and client data assets are backed up and that we can quickly restore services in the event of an unanticipated event.
 
+## What's Next?
+
+The [next post](0002_putting_it_all_together.md) in our series will go into the architecture and design of the policy validation and evidence aggregation services and how they will work with the system backup and recovery procedures we've put in place to prove we're compliant.
+
 ## Deeper Dive
 
-To reproduce this setup, follow the instructions in the [Proxmox README](../../os/proxmox/README.md) setup guide. Upon finishing the guide, you should have fully functioning virtualization environment with backup and recovery procedures in place.
+To reproduce this setup, follow the instructions in the [Proxmox README](/os/proxmox/README.md) setup guide. Upon finishing the guide, you should have fully functioning virtualization environment with backup and recovery procedures in place.
 
 Those of you that have worked with more traditional SOPs may have found them lacking as they typically don't point you to the actual architecture/design/implementation (if automated), evidence that the SOP is being followed, regulations that the SOP/evidence supports etc. Our SOP enhances the traditional Word Doc SOP by:
 * Directly linking to terms in a central glossary
@@ -60,4 +64,4 @@ Those of you that have worked with more traditional SOPs may have found them lac
 * SLOs to measure quality 
 * Tying a version locked document generation tool (md to pdf) to produce exact (paper A4? Letter? Legal?) copies of SOPs as they existed at the point in time they were authored, reviewed, and approved including section numbering and change history authors etc.
 
-All the points above will be covered in future posts as we dive deeper into our quality management system and build out the services we provide to our clients.
+All the points above will be covered in future posts as we dive deeper into our quality management system.
