@@ -62,13 +62,13 @@ And within each regulation is a set of rules that an organization must follow. F
 * data breach notification
 * and many more!
 
-What we end up with is a many-to-many relationship between the industry, sub-sector, applicable regulation, and laws/policies that must be honored. And just to make things even more complicated, some regulations have section with hidden implications that are interpreted differently based on the auditor. :facepalm:
+What we end up with is a many-to-many relationship between the industry, sub-sector, applicable regulation, and laws/policies that must be honored. And just to make things even more complicated, some regulations have sections with hidden implications that are interpreted differently based on the auditor. :facepalm:
 
 Many companies make ticking the regulatory compliance boxes easier by providing you with a service that checks most of these boxes, but you yourself need to be sure that the vendor does comply with all the correct regulation, typically through some type of vendor qualification process, and that you also list that vendor as a "processor". Using the payments example, you may elect to use Stripe as your processor, but you're still handling credit card data as the controller and other "subject" data and PII needed to provide your services that require you to still comply with sub sections of the applicable regulations.
 
 ## Policy Validation Service
 
-To use the policy validation service you first need to answer questions about where you do business and the industry/sub-sector you operate in. Based on your answers, the service has a mapping (directed graph) of all the applicable rules you must follow. Based on the rules you follow, you may have to answer additional questions for the evidence aggregator service to gather the evidence and pass it to the policy service for validation. To illustrate the point, we'll first walk through a simple validation then go into the more generic architecture diagram.
+To use the policy validation service you first need to answer questions about where you do business and the industry/sub-sector you operate in. Based on your answers, the service has a mapping ([directed graph](https://en.wikipedia.org/wiki/Directed_graph)) of all the applicable rules you must follow. Based on the rules you follow, you may have to answer additional questions for the evidence aggregator service to gather the evidence and pass it to the policy service for validation. To illustrate the point, we'll first walk through a simple validation then go into the more generic architecture diagram.
 
 1. Ugly sweater company enters information requested by the Neosofia Compliance platform website including their URL LoveUglySweater.com
 1. After pressing a validate me button, The evidence service makes a call to `https://LoveUglySweater.com`
@@ -79,7 +79,7 @@ Rinse and repeat the above process for each regulation/law/policy that applies t
 
 The process diagram below is a more generic form of how each system interacts with each other. In general, the evidence services should ask the organization looking to be compliant the fewest number of questions to produce a report that has the highest value in terms of proving compliance. The reports should drive a workflow that enables the organization to quickly and minimal effort, become increasingly compliant.
 
-TBD: add architecture diagram!
+![using the policy tools](/shared/images/using-policy-tools.svg)[^credit]
 
 ### Hard vs Soft and Internal vs External Validation
 

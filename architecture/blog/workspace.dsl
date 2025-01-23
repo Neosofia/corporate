@@ -1,6 +1,10 @@
 workspace extends ../workspace.dsl  {
 
     model {
+        uglySweaterEmployee = person "Ugly Sweater Employee" {
+
+        }
+
         browser = softwareSystem "Browser" {
             tags browser
             description "Any browser used to access the internet"
@@ -8,9 +12,15 @@ workspace extends ../workspace.dsl  {
         webservice = softwareSystem "Web Service" {
             description "a computer providing web services"
         }
+
+
         browser -> pDNS
         browser -> firewall
         firewall -> webservice
+
+
+        uglySweaterEmployee -> EvidenceAggregationService
+        EvidenceAggregationService -> webservice
     }
 
     views {
@@ -27,6 +37,17 @@ workspace extends ../workspace.dsl  {
             webservice -> firewall "web service returns request"
 
             firewall -> browser "send request back to browser"
+        }
+
+        dynamic iDNS {
+            title  "Using The Policy Tools"
+
+            uglySweaterEmployee -> EvidenceAggregationService "fill in company info (config forms)"
+            uglySweaterEmployee -> EvidenceAggregationService "manually start validation process (button)"
+            EvidenceAggregationService -> webservice "Gather evidence from service endpoints based on configuration"
+            EvidenceAggregationService -> policyValidationService "pass evidence results to validation service and store validation result"
+            EvidenceAggregationService -> uglySweaterEmployee "generate actionable reports"
+            uglySweaterEmployee -> EvidenceAggregationService "rerun validation process after making systems compliant"
         }
 
         styles {
