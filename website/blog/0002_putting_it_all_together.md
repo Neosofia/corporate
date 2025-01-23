@@ -46,7 +46,7 @@ Let's look at a hypothetical example of an organization to walk through how the 
 
 We're a technology services company that connects anybody on the planet with a web browser to their dream ugly sweater. The R&D team operates out of San Francisco, New York City, London, Madrid, and Berlin to bring your ugly sweater dreams to life. Our cotton is lovingly sheared from the finest alpacas in the Swiss Alps. Login to our site, answer three personal questions and our AI powered assistant will create your dream ugly sweater.
 
-TBD: ugly sweater image!
+![Ugly Sweater](/shared/images/ugly-sweater-swiss.png)[^credit]
 
 Despite the short company description, there is a minefield of regulations that a company would have to consider in order to legally operate without the fear of fines or lawsuits. If we were to map each activity to a regulation, it might look something like
 * Payment Processing => PCI DSS, PSD2 (EU), GDPR (EU)
@@ -70,12 +70,14 @@ Many companies make ticking the regulatory compliance boxes easier by providing 
 
 To use the policy validation service you first need to answer questions about where you do business and the industry/sub-sector you operate in. Based on your answers, the service has a mapping (directed graph) of all the applicable rules you must follow. Based on the rules you follow, you may have to answer additional questions for the evidence aggregator service to gather the evidence and pass it to the policy service for validation. To illustrate the point, we'll first walk through a simple validation then go into the more generic architecture diagram.
 
-1. Ugly sweater company enters information requested by the Neosofia Compliance platform including their URL LoveUglySweater.com
-1. The evidence service makes a call to `https://LoveUglySweater.com`
+1. Ugly sweater company enters information requested by the Neosofia Compliance platform website including their URL LoveUglySweater.com
+1. After pressing a validate me button, The evidence service makes a call to `https://LoveUglySweater.com`
 1. The evidence service makes a call to the policy validation service with the TLS result from hitting the companies URL
 1. The evidence service stores the result of the http call and the validation service result with policies/rules/regulations that the result supports as it relates to the company
 
 Rinse and repeat the above process for each regulation/law/policy that applies to the company, and you'll then have a full compliance report that is catered to your organization. You can even use the results to point auditors to when needed. :)
+
+The process diagram below is a more generic form of how each system interacts with each other. In general, the evidence services should ask the organization looking to be compliant the fewest number of questions to produce a report that has the highest value in terms of proving compliance. The reports should drive a workflow that enables the organization to quickly and minimal effort, become increasingly compliant.
 
 TBD: add architecture diagram!
 
@@ -86,10 +88,12 @@ The TLS example above is what we consider a "hard external" validation as you ca
 > [!NOTE]
 > Future versions of the evidence service may support storing api tokens to access protected/internal resources and may even apply string matching rules for documents like SOPs to help make soft validations harder. Until AI gets a lot smarter, we'll always have soft validations that require humans to validate.
 
-## Design Decisions
-
-For the policy validation service we elected to use [Cedar](https://www.cedarpolicy.com/) as it supports customized schemas and stores relationships as a directed graph. For the evidence gathering service we've elected to use [Ruby on Rails](https://rubyonrails.org/) for its easy of implementation, industry support, and extensive package set (Gems) that enables us to gather evidence from the widest range of resources possible. And for the website, we've elected to use [React](https://react.dev/) + [tailwindcss](https://tailwindcss.com/) because why would you use anything else ;)
-
 ## What's Next
 
 TBD: Setting up the validation and evidence services and walking through a real world example.
+
+## Deeper Cut: Design Decisions
+
+For the policy validation service we elected to use [Cedar](https://www.cedarpolicy.com/) as it supports customized schemas and stores relationships as a directed graph. For the evidence gathering service we've elected to use [Ruby on Rails](https://rubyonrails.org/) for its easy of implementation, industry support, and extensive package set (Gems) that enables us to gather evidence from the widest range of resources possible. And for the website, we've elected to use [React](https://react.dev/) + [tailwindcss](https://tailwindcss.com/) because why would you use anything else ;)
+
+[^credit]: created using [DALL•E 3 XL v2](https://huggingface.co/spaces/ChenoAi/dalle-3-xl-lora-v2) on Huggingface with the prompt: ugly sweater with alpaca and "swiss made" logo on it
