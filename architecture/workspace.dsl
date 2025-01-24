@@ -110,7 +110,7 @@ workspace "Compliant Work Environment" {
                 }
             }
 
-            policyDataAggregationService = softwareSystem "Neosofia Policy Data Aggregation Service" {
+            EvidenceAggregationService = softwareSystem "Neosofia Evidence Aggregation Service" {
                 description "A web service to gather data from compliant systems that is then passed into the policy service for validation."
 
                 perspectives {
@@ -134,8 +134,8 @@ workspace "Compliant Work Environment" {
         iDNS -> pDNS "If a DNS query can't be resolved internally, go to public DNS records"
         firewall -> authentication "Authenticate the user trying to do their job"
         firewall -> persistentDataStorageSystem "Save Employee work"
-        firewall -> policyDataAggregationService
-        policyDataAggregationService -> policyValidationService
+        firewall -> EvidenceAggregationService
+        EvidenceAggregationService -> policyValidationService
 
         customer -> uncontrolledWorkstation
         externalContributor -> uncontrolledWorkstation
@@ -171,7 +171,7 @@ workspace "Compliant Work Environment" {
                     deploymentNode "Containerization" {
                         technology "Ubuntu / Docker"
                         softwareSystemInstance policyValidationService
-                        softwareSystemInstance policyDataAggregationService
+                        softwareSystemInstance EvidenceAggregationService
                     }
                     deploymentNode "Identity Provider" {
                         technology "Authentik"

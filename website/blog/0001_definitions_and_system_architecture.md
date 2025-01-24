@@ -79,6 +79,6 @@ The [next post](1000_system_backup_and_recovery.md) in our series will go into m
 
 As an organization we're on a mission to help any company of any size improve their compliance and this is why we've elected to make all of our polices, procedures, roles, glossary, evidence, design, and implementation open source. Most organizations today store this information in a private corporate data store and make evidence available for "on-site" review to protect their IP (which makes a lot of sense). As this repository is open source, you're free to use any content as you like under the terms of the [MIT license](https://en.wikipedia.org/wiki/MIT_License). Our only (legally non-binding) request is that you cite [Neosofia](https://github.com/neosofia/corporate) in any public facing "thanks" or "powered by" section of your website should you use any of the content here. For other ways of supporting us, please check out our [contributing](/CONTRIBUTING.md) page.
 
-[^credit]: created using "DALL•E 3 XL v2" on Huggingface with the p  rompt "flintstones car driven by a frantic looking person" seed: 1059621461 no negative prompts
+[^credit]: created using "DALL•E 3 XL v2" on Huggingface with the prompt "flintstones car driven by a frantic looking person" seed: 1059621461 no negative prompts
 
 [^whynocloud]: Future blog posts will detail why we've elected to not use cloud providers for the majority of our EASs.
