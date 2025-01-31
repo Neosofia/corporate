@@ -73,7 +73,7 @@ For interactive architecture diagrams that allow you to change the layout, zoom 
 
 ## What's Next?
 
-The [next post](./0002_putting_it_all_together.md0002_) in our series will look at an example company and how the two services we're building can help them become more compliant. 
+The [next post](./0002_putting_it_all_together.md) in our series will look at an example company and how the two services we're building can help them become more compliant. 
 
 ## One More Thing
 
