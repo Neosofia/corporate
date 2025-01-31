@@ -73,7 +73,7 @@ For interactive architecture diagrams that allow you to change the layout, zoom 
 
 ## What's Next?
 
-The [next post](1000_system_backup_and_recovery.md) in our series will go into more detail on our system backup and recover SOP that will become part of our broader business continuity plan. 
+The [next post](./0002_putting_it_all_together.md0002_) in our series will look at an example company and how the two services we're building can help them become more compliant. 
 
 ## One More Thing
 
