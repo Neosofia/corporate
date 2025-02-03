@@ -31,21 +31,23 @@ This page is an index of all the current blog posts on this site plus a placehol
 
 | Num  | SOP                                                      | Release  |
 |------|----------------------------------------------------------|----------|
+| 1200 | Technology                                               | TBD      |
 | 1201 | System Backup and Recovery                               | 2025 Feb |
 | 12xx | Product Development and Delivery                         | TBD      |
 | 12xx | Systems Management and Monitoring                        | TBD      |
-| 13xx | Employee Engagement (qualify and train)                  | TBD      |
+| 1300 | Employee Engagement (qualify and train)                  | TBD      |
 | 13xx | Code of Conduct                                          | TBD      |
-| 14xx | Client Engagement                                        | TBD      |
-| 16xx | AP and AR                                                | TBD      |
-| 17xx | Quality Assurance (audits and SMT oversight)             | TBD      |
+| 1400 | Client Engagement                                        | TBD      |
+| 1500 | Sales and Marketing                                      | TBD      |
+| 1600 | Financial Management                                     | TBD      |
+| 1700 | Quality Assurance (audits and SMT oversight)             | TBD      |
 | 17xx | Fraud, anti-bribery, conflict of interest and disclosure | TBD      |
 | 17xx | Business Continuity                                      | TBD      |
-| 17xx | Privacy                                                  | TBD      |
+| 17xx | Data Management (PII, Public, Private)                   | TBD      |
 | 17xx | Vendor Management                                        | TBD      |
 | 17xx | Document Management (GDP)                                | TBD      |
 | 17xx | Deviation Management (CAPAs)                             | TBD      |
-| 17xx | Record Management (evidence)                             | TBD      |
+| 17xx | Records Management (evidence)                            | TBD      |
 | 17xx | Risk Management                                          | TBD      |
 | 17xx | Incident Management                                      | TBD      |
 
@@ -53,7 +55,7 @@ This page is an index of all the current blog posts on this site plus a placehol
 
 ## Information Technology (2000-2999)
 
-| Num  | Topic                                              | Release |
+| Num  | Blog Post                                          | Release |
 |------|----------------------------------------------------|---------|
 | 2000 | Why our tech stack?                                | TBD     |
 | 21xx | Hardware                                           | TBD     |
@@ -61,7 +63,11 @@ This page is an index of all the current blog posts on this site plus a placehol
 | 21xx | Compute - OSs, virtualization, CVE management      | TBD     |
 | 21xx | Storage - EAR, RAID, B&R                           | TBD     |
 | 21xx | Services - monitoring, logging, alerting, IDP, 2FA | TBD     |
-| 21xx | SDLC - OWASP, linting, CI/CD, testing, design, CVE | TBD     |
+| 21xx | Security - CVE, artifacts, plugins, pinning        | TBD     |
+| 21xx | SDLC - OWASP, linting, CI/CD, testing, design      | TBD     |
+| 21xx | DevOps                                             | TBD     |
+| 21xx | Logging, Monitoring, and Alerting                  | TBD     |
+| 21xx | Data Loss Prevention                               | TBD     |
 
 ## Employee Experience aka HR (3000-3999)
 

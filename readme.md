@@ -20,7 +20,7 @@ Do you only want to only use our compliance tools to validate and produce eviden
 
 ## Contributing
 
-TBD
+Check out our [contributing](/CONTRIBUTING.md) page
 
 ## Thanks
 
