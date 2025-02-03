@@ -46,10 +46,6 @@ Given the 30-day retention policy and as these vendors have been qualified, Neos
 
 By identifying the data assets we need to protect and by reviewing a common service access pattern, we developed a comprehensive SOP to ensure that all of our corporate and client data assets are backed up and that we can quickly restore services in the event of an unanticipated event.
 
-## What's Next?
-
-The [next post](0002_putting_it_all_together.md) in our series will go into the architecture and design of the policy validation and evidence aggregation services and how they will work with the system backup and recovery procedures we've put in place to prove we're compliant.
-
 ## Deeper Dive
 
 To reproduce this setup, follow the instructions in the [Proxmox README](/os/proxmox/README.md) setup guide. Upon finishing the guide, you should have fully functioning virtualization environment with backup and recovery procedures in place.

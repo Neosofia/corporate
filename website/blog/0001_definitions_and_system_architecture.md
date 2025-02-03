@@ -1,5 +1,7 @@
 # Neosofia Glossary and Architecture
 
+This post introduces Neosofia's approach to compliance and system architecture. After defining compliance and looking at a real world example, we introduce an initial glossary and system architecture that establishes standardized terminology and concepts throughout the organization. Lastly we state all documentation and code is and will continue to be open-source, reflecting Neosofia's dedication to transparency, information sharing, and community contribution.
+
 ## What is Compliance?
 
 What would the world be like if there were no regulations or polices? Or put another way, what if there was nothing to comply with? Would we live in a world packed with snake oil vendors pedaling whatever wares possible to consumers despite their safety and efficacy? A world where technology companies use every scrap of information without our consent to push whatever products the highest marketing bidder can pay for? A world where the risk of being harmed while driving or taking public transit is a function of how much safety you can afford to pay for?
@@ -46,15 +48,7 @@ To minimize the chance of mistakes, our [glossary](/shared/glossary.md) will inc
 
 At the foundation of any compliant [EAS](/shared/glossary.md#EAS) lies a set of system architecture diagrams that defines how technology systems and system users interact with each other. To express these relationships, Neosofia has elected to adopt the [C4 model](https://c4model.com/) and more specifically [Structurizr](https://structurizr.com/) to generate all architecture diagrams. 
 
-The initial set of [EASs](/shared/glossary.md#EAS) documented will include all the hardware and third party services needed to operate a minimally compliant technology organization including:
- * A [Beelink](bee-link.com) EQ12 with N100 processor for self-hosted services [^whynocloud]
- * [Proxmox](proxmox.com) (Debian 12) for the operating system to virtualize all employee workstations plus self-hosted [EASs](/shared/glossary.md#EAS).
- * [Cloudflare](https://www.cloudflare.com/) for public DNS resolution and https tunneling to self-hosted services
- * [Let's Encrypt](https://letsencrypt.org/) for SSL certificates
- * [GitHub](github.com) for [SCC](/shared/glossary.md#source-code-control) and [CI/CD](/shared/glossary.md#continuous-integration-and-continuous-delivery-cicd)
- * [Cloudflare](https://www.cloudflare.com/) for internal DNS resolution to provide malware protection (1.1.1.3 and 1.0.0.3)
- * [Digi]() provided router for 10G network connectivity
-
+The initial set of [EASs](/shared/glossary.md#EAS) documented will include all the hardware and third party services needed to operate a *minimally* compliant technology organization can be found in our [hardware readme](/hardware/readme.md)
 
 > [!NOTE]
 > The policy validation and evidence aggregation compliance tools are designed to work with any service regardless of the vendor. The choices above are ones Neosofia has elected to make for reasons that will be covered in future posts.
@@ -80,5 +74,3 @@ The [next post](./0002_putting_it_all_together.md) in our series will look at an
 As an organization we're on a mission to help any company of any size improve their compliance and this is why we've elected to make all of our polices, procedures, roles, glossary, evidence, design, and implementation open source. Most organizations today store this information in a private corporate data store and make evidence available for "on-site" review to protect their IP (which makes a lot of sense). As this repository is open source, you're free to use any content as you like under the terms of the [MIT license](https://en.wikipedia.org/wiki/MIT_License). Our only (legally non-binding) request is that you cite [Neosofia](https://github.com/neosofia/corporate) in any public facing "thanks" or "powered by" section of your website should you use any of the content here. For other ways of supporting us, please check out our [contributing](/CONTRIBUTING.md) page.
 
 [^credit]: created using "DALL•E 3 XL v2" on Huggingface with the prompt "flintstones car driven by a frantic looking person" seed: 1059621461 no negative prompts
-
-[^whynocloud]: Future blog posts will detail why we've elected to not use cloud providers for the majority of our EASs.
