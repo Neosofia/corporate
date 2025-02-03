@@ -43,7 +43,7 @@ This Code of Conduct applies both within project spaces and in public spaces whe
 
 ## Enforcement
 
-Instances of abusive, harassing, or otherwise unacceptable behavior may be reported by contacting Neosofia at ethics@neosofia.com. All complaints will be reviewed and investigated and will result in a response that is the result of applying Neosofia's incident management procedures. The company is obligated to maintain confidentiality with regard to the reporter of an incident.
+Instances of abusive, harassing, or otherwise unacceptable behavior may be reported by contacting Neosofia at <ethics@neosofia.tech>. All complaints will be reviewed and investigated and will result in a response that is the result of applying Neosofia's incident management procedures. The company is obligated to maintain confidentiality with regard to the reporter of an incident.
 
 ## Attribution
 
