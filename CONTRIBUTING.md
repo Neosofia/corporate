@@ -31,7 +31,7 @@ We appreciate your interest in contributing to our project! To get started, plea
 
 1. Search through our [issues](https://github.com/Neosofia/corporate/issues) to see if the fix or feature is already listed. If the issue does not exist please create one and wait for community manager to reach out.
 1. Fork the repository.
-1. Create a new branch wot your feature or bugfix.
+1. Create a new branch with your feature or bug fix.
 1. Write clear, concise commit messages.
 1. Submit a pull request with a detailed description of your changes.
 
