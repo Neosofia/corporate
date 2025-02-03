@@ -7,7 +7,7 @@ We're creating to the world's first fully open source organization that also com
 
 ## Reporting Security Issues and Bugs
 
-If you discover a security vulnerability, please do NOT open an issue. Email [security@neosofia.tech]() instead. For non-security issues/bugs please open an issue [here](https://github.com/Neosofia/corporate/issues).
+If you discover a security vulnerability, please do NOT open an issue. Email <security@neosofia.tech> instead. For non-security issues/bugs please open an issue [here](https://github.com/Neosofia/corporate/issues).
 
 For both types of issue please:
 1. Provide a detailed description of the issue
