@@ -26,6 +26,8 @@ Data/Support Asset         | RPO    | RP       | RTO     | OC
 [Virtual Machines](#vm)    | 1 day  | 28 days  | 1 hour  | 1 full + 27 incr.
 [Public DNS Records](#net) | N/A    | N/A      | 1 hour  | N/A
 [Source Code](#sc)         | 1 week | 25 years | 1 week  | 1 full
+[System Logs](#logs)       | 15 min | 28 days  | 1 hour  | 1 full
+[Credentials](#creds)      | 1 hour | 1 year   | 1 hour  | 1 full
 
 Neosofia will store one offline copy of each asset above
 
@@ -124,6 +126,29 @@ TBD
 
 TBD
 
+### Log File Procedures <a id="logs"></a>
+
+
+#### Log Backup Procedure
+
+TBD
+
+#### Log Restoration Procedure
+
+TBD
+
+### Credential Procedures <a id="creds"></a>
+
+
+#### Credential Backup Procedure
+
+TBD
+
+#### Credential Restoration Procedure
+
+TBD
+
+
 ## Policies Supported
 
 * [Neosofia System Backup and Recovery](/shared/policies.md#system-backup-and-recovery)
@@ -131,4 +156,4 @@ TBD
 ## Regulations Supported 
  * GDPR Article 32
  * NIST SP 800-53 Section 3.6 Contingency Planning
- * Many more TBD
+ * Many more to be documented in the validation service
