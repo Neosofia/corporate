@@ -15,7 +15,7 @@ Let's recap the prior posts before defining some new terms for our glossary.
 
 ### Hard/Soft Validation
 
-A hard validation is one which can be proven true based on the evidence. For example, if a policy implies TLS version 1.1 and the evidence service gathers the TLS version, the version that the given URL provides can be directly compared to the policy. Soft policies can not be proven true and must be validated by a human. For example, polices requiring SOPs can be a soft validation with a link to the SOP.
+A hard validation is one which can be proven true based on the evidence. For example, if a policy implies TLS version 1.1 and the evidence service gathers the TLS version, the version that the given URL provides can be directly compared to the policy. Soft policies can not be proven true and must be validated by a human. For example, policies requiring SOPs can be a soft validation with a link to the SOP.
 
 ### Internal/External Validation
 
