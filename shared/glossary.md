@@ -99,11 +99,38 @@ This section of the glossary is for terms used in the context of providing clien
 
 ## Information Technology Terms 
 
+### Data Integrity
+
+#### Data Loss Prevention (DLP)
+
+#### Data Sensitivity Levels
+
+* Low: Public information, marketing materials, press releases
+* Medium: Internal communications, company intellectual property, project documentation
+* High: Personally identifiable information (PII), health records, financial data, trade secrets
+
+### Encryption at Rest (EAR)
+
+### Encryption in Flight (EIF)
+
+### End-to-End Encryption (EEE)
+
+### Application Programming Interface (API)
+
+
+### Simple Messaging Service (SMS)
+
 
 ### Source Code Control (SCC)
 
 
 ### Continuous Integration and Continuous Delivery (CI/CD)
+
+
+### Single Sign On (SSO)
+
+
+### Multi-Factor Authentication (MFA)
 
 
 ### System Backup and Recovery
