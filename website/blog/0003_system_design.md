@@ -77,6 +77,6 @@ Now that we have our first simple TLS example fully implemented in the validatio
 * Write dozens of SOPs + blog posts
 * And many more!
 
-We'll have an initial map of this journey in our blog post [readme](./readme.md). We'll try to set expectations on when to expect various topics to be covered so you know when to check back on our progress and hopefully learn how to be more compliant, automate business operations, and perhaps get a good laugh along the way.
+Wow! That's a lot of stuff. Where should we even begin? The [next post](./0004_mvc.md) in our series will explore the concept of minimal viable compliance (MVC) and the policies that apply to any company of any size in any industry. After that, we'll delve deeper into some of the more complex policies that organizations in specific industries should consider.
 
 [^credit]: Created using [DALL•E 3 XL v2](https://huggingface.co/spaces/ChenoAi/dalle-3-xl-lora-v2) on Huggingface with the prompt: two people exchanging a gift and an atomic bomb detonating in the background.
