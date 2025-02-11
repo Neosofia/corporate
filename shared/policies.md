@@ -49,7 +49,7 @@ Neosofia *must* adopt the following level one [DI][di] policies:
 * All chat messages, without exception, will be deleted after 30 days.
 * All [EASs][eas] *should* be accessed through a single sign-on solution (SSO).
 * An [EAS][eas] that does not support [SSO][sso] may be used if the data it manages is classified as [low sensitivity][ds].
-* All systems must have multi-factor authentication (MFA) enabled. Authenticator apps with biometric verification are preferred for MFA, with SMS as a fallback option if app-based MFA is not an option.
+* All systems must have multi-factor authentication (MFA) enabled. Authenticator apps with biometric verification are preferred for [MFA][mfa], with SMS as a fallback option if app-based MFA is not an option.
 * Once per year, all documents not accessed or modified for over 365 days will be archived for long-term storage.
 * Once per year, all long-term storage documents older than two years will be purged. This policy does not apply to financial or legal documents that must be retained for more than two years.
 * All file-sharing activity will be logged.

@@ -1,10 +1,28 @@
 # Neosofia Glossary
 
-## Document Control Numbering
-
-TBD
-
 ## General Terms
+
+
+### Keep it Simple Stupid (KISS)
+
+A design principle that emphasizes simplicity and clarity in design and systems.
+
+### Do Not Repeat Yourself (DRY)
+
+> Every piece of knowledge must have a single, unambiguous, authoritative representation within a system. [^dry]
+
+### Minimal Viable Compliance (MVC)
+
+The smallest set of policies any organization of any size in any industry should consider implementing for their organization. This is also known as level 1 compliance.
+
+### Compliance Levels
+
+The classification of policies and procedures into three compliance levels to simplify the policy/regulation/industry matrix. The levels are
+
+* Level 1: The policies and procedures any organization should adopt if they're collecting non-public data of any kind.
+* Level 2: The policies and procedures any organization that deals with PII should adopt. For example, collecting data for the purpose of marketing on your website (PII), technology (SaaS) providers operating in lightly regulated industries, or any small business with employees beyond the owners.
+* Level 3: Specialized organizations operating in heavily regulated industries. Healthcare, banking, transportation, and power are some sectors that typically fall into level 3 compliance as they often have the most number of regulations governing them. [^regsbysector]
+
 
 ### Enterprise Application Software (EAS)
 
@@ -27,6 +45,9 @@ TBD
 
 
 ## Compliance Terms
+
+
+### Quality Management System (QMS)
 
 ### Policy (POL)
 
@@ -98,6 +119,11 @@ This section of the glossary is for terms used in the context of providing clien
 
 
 ## Information Technology Terms 
+
+
+### Software Development Lifecycle (SDLC)
+
+### Computer Systems Validation (CSV)
 
 ### Data Integrity
 
@@ -185,3 +211,7 @@ A real time copy of live data. This most common example is two hard drives in a 
 [^pol]:https://en.wikipedia.org/wiki/Policy "POL"
 
 [^backup]: https://en.wikipedia.org/wiki/Backup "Backup"
+
+[^regsbysector]: https://www.lisam.com/news/10-most-regulated-industries-in-the-us/ "10 Most Regulated Industries in the U.S."
+
+[^dry]: https://en.wikipedia.org/wiki/Don't_repeat_yourself "DRY"

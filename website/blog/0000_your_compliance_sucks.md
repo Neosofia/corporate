@@ -22,7 +22,7 @@ Given a magic wand, I would wish for an environment in which every employee has 
 
 Neosofia will be building two compliance tools -- a policy validation and evidence aggregation service to help organizations of any size prove they're compliant. Both tools will be open source and free to use in a self-hosted model with an option to pay for additional hosting models and services. The goal is to make adopting *compliance by design* way of thinking as painless as possible with a turnkey open source solution. Compliance for all!
 
-Neosofia will also open source our own business operations as we want other (smaller) organizations to benefit from our own compliance journey and help lower the startup investment bar by providing a real-life example of CBD. We'll also push the boundaries when it comes to operational automation and process efficiencies to create a leaner organization that is focused on its core competencies.
+Neosofia will also open source our own business operations as we want other organizations to benefit from our own compliance journey and help lower the startup investment bar by providing a real-life example of CBD. We'll also push the boundaries when it comes to operational automation and process efficiencies to create a leaner organization that is focused on its core competencies.
 
 ## How will we know when we are done?
 
