@@ -120,6 +120,7 @@ This section of the glossary is for terms used in the context of providing clien
 
 ## Information Technology Terms 
 
+### Role Based Access Control (RBAC)
 
 ### Software Development Lifecycle (SDLC)
 

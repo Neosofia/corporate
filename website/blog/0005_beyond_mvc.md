@@ -11,7 +11,7 @@ Referenced Glossary Terms
 [sdlc]: /shared/glossary.md#software-development-lifecycle-sdlc
 [csv]: /shared/glossary.md#computer-systems-validation-csv
 [sop]: /shared/glossary.md#standard-operating-procedure-sop
-
+[rbac]: /shared/glossary.md#role-based-access-control-rbac
 <!---
 Referenced Roles
 -->
@@ -67,8 +67,6 @@ What did the owner do? She fired Tony for "being stupid". When the client refuse
 
 ![Tony Hackaroni](/shared/images/tony-hackaroni.png)[^credit]
 
-TBD summary/takeaway
-
 ## Exploring Level 2
 
 *Get'er Done* is revolutionizing the world with their self-professed "greatest task management system ever". An amazingly intuitive web application that is also feature-rich and all for the ultra-low cost of $5/user/mo for their basic plan and $20/user/mo for their enterprise plan.
@@ -77,9 +75,9 @@ This company knows technology and has selected best-in-class SaaS solutions to u
 
 This SaaS company also has these level 2 compliance checks going for them:
 * A basic privacy policy posted on their website
-* Terms of services that are accepted as part of the sign-up process
+* Terms of services and EULA that are accepted as part of the sign-up process
 * Defined but untested system backup and recovery procedures
-* A managed device policy for company laptops
+* A managed device policy for company laptops and mobile phones
 * [EASs][eas] to handle all corporate-level compliance concerns like -- corporate, employee, and retail taxes, invoicing, contracts, etc.
 
 They're currently working on:
@@ -98,10 +96,47 @@ Get'er Done was so busy with all of their compliance items as they chased bigger
 
 > Your client data is for sale on the dark web for $5M if you want it.
 
-The CTO then promptly ordered their most senior [SA][sa] to execute the system restoration procedures. The SA heard the terrible news, quickly leapt into action, and logged into the AWS S3 bucket where all the system backups were kept. But there was nothing there. It was all gone. Because the production servers had access to the S3 buckets with all the backup files, the hackers nuked both the production database AND all the backups :( But this was no ordinary [SA][sa], she feared this might happen one day and just the other day she happened to copy the most recent backup file to a secure off-site location that the hackers did not have access to. VINDICATION!!! The hack had been thwarted and the data was secure. The CTO gleefully started to type a smug response to the hackers as the [SA][sa] went about restoring the data on the new production database. The [SA][sa] then walked through the CTO's door with a very solemn look on her face. The backup did not have the data on it. It never had the data they needed because they never tested the restoration process.
+The CTO then promptly ordered their most senior [SA][sa] to execute the system restoration procedures. The SA heard the terrible news, quickly leapt into action, and logged into the system (AWS S3 bucket) where all the system backups were kept. But there was nothing there. It was all gone. Because the production servers had access to the S3 buckets with all the backup files, the hackers nuked both the production database AND all the backups :( But this was no ordinary [SA][sa], she feared this might happen one day and just the other day she happened to copy the most recent backup file to a secure off-site location that the hackers did not have access to. VINDICATION!!! The hack had been thwarted and the data was secure. The CTO gleefully started to type a smug response to the hackers as the [SA][sa] went about restoring the data on the new production database. A few minutes later, the [SA][sa] then walked through the CTO's door with a very solemn look on her face. The backup did not have the data on it. It never had the data they needed because they never tested the restoration process.
 
 Get'er Done declared bankruptcy and insolvency the next day.
 
+Another sad but true story. When it comes to compliance and security, do the basic stuff (level 1) extremely well first then move onto the more advanced stuff. The key lessons, in priority order from this incident are
+* Define, implement, and TEST your system backup and recovery procedures
+* Make sure at least one of your full backups is not accessible to the machines that manage the data.
+* Make sure you have defined and tested server software patching procedures
+
 ## Exploring Level 3
+
+After numerous meetings with investors, the slick co-owners of Get'er Done have formed a new company and are determined continue on their path to creating the greatest task management system the world has ever seen! Smash Task (ST) has transcended what Get'er Done was able to do by learning from their mistakes and eventually completing all their level 1 and 2 compliance checks to obtain their ISO 27001 and SOC 2 certifications! Nothing can stop this juggernaut of a company. Well -- maybe their sales team can.
+
+The 800-pound gorilla that leads up the sales team is salivating over a $20M contract with the US government. In a sales pitch to the government, he proudly pounds his chest while waving ST's ISO and SOC certifications around as if he actually did any of the hard work needed to obtain them. While discussing compliance, the government employees' wry smile may have triggered alarm bells for normal people, but the 800-pound sales beast didn't even flinch when they plainly said "you need FedRAMP certification to work with us". Full of self-confidence the head of sales declared that they'll have the certification by the end of the month!
+
+If you're a compliance :nerd_face: like me, you know how absurd it would be to even think about FedRAMP certification in any less than two years. If you're not a compliance nerd, let's compare the various levels in terms of walking up a hill:
+* Level 1: basic best practices including MFA and system backups -- walking up a small hill in the woods (250M)
+* Level 2: Implementing controls to obtain ISO 27001 and SOC 2 certifications -- climbing up Machu Picchu (2,500M)
+* Level 3: implementing the controls needed to obtain FedRAMP -- climbing up a mountain 4x taller than Everest (25,000M)
+
+The added levels of time, cost, and complexity needed to obtain FedRAMP is, in the words of a famous rapper, "Kray Kray". This post won't go into the details as to why FedRAMP is "kray kray", but the topic will be explored in future posts.
+
+Back to our story -- upon return from his pitch, the head of sales proudly declares that they will be awarded the contract and all they have to do is have FedRAMP certification by the end of the month. Happy with the results, the CEO looks at the chief security and compliance officer (CCO/CSO) to validate the timelines for FedRAMP. The CSO is completely frozen in their expression. After about 10 seconds the CEO asks if the CSO is ok. Still no response and after many seconds of silence the CSO calmly stands up, walks out the door, and was never seen again. Of all the smart people in that room, only one knew the of the horrors that lie within that certification and the damage that it would cause to the organization to obtain it.
+
+Smash Task got their FedRAMP certification eventually. It only took 2 years, cost $25M, increased attrition rate from 10% to 30%, and resulted in numerous personal and professional relationships that were destroyed along the way. By the time ST got their certification, the government program was slashed and replaced with a $200k contract instead.
+
+## Summary
+
+It's fun telling these very close to real life stories, but what's the lesson in this one? Compliance is like an onion -- it has many layers. You have to focus the inner layers first and master them before moving out to the next layer. These blog posts exist to help make mastering those first couple of layers easier for small businesses to YOLO themselves without having to hire an army of compliance and security experts. We're doing that by highlighting the common failure points with funny stories, but we also need to condense those guidelines into a simple checklist without all the narration.
+
+## What's Next
+
+Our introduction to compliance series of posts ends here and now branches into a choose-your-own-adventure style book where you decide what to do/read next. Future posts will be indexed in our [readme](./readme.md) and organized into the following areas:
+ * Getting started checklists and document templates
+ * Picking best in class 3rd party vendors
+ * Quality Management Systems
+ * Security
+ * Technology
+ * Procedures, Policies, Guides and Evidence
+
+We want to make compliance and security more accessible for all. Thank you for making it through our first six posts. We hope you've been able to apply some of the lessons to your own organization and look forward to seeing you again.
+
 
 [^credit]: created using "DALL•E 3 XL v2" on Huggingface with the prompt: tan man with huge biceps, one arm has a large hammer breaking rocks, the other hand is pulling on a slot machine lever
