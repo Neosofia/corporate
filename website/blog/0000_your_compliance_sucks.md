@@ -30,6 +30,6 @@ We're done when any company, in any regulated industry, can use the tools we cre
 
 ## What is next?
 
-The [next post](0001_definitions_and_system_architecture.md) in this series will give a high-level overview of what compliance means and begin Neosofia's compliance journey with a glossary, system architecture, and SOP.
+The [next post](./0001_what_is_compliance.md) in this series will give a high-level overview of what compliance means and mark the start of our compliance journey together.
 
 [^ai]: Summary generated with GitHub Copilot

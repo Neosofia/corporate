@@ -3,7 +3,7 @@ Referenced Glossary Terms
 -->
 [eas]: /shared/glossary.md#enterprise-application-software-eas
 [ds]:  /shared/glossary.md#data-sensitivity-levels
-[di]:  /shared/glossary.md#data-integrity
+[dip]:  /shared/glossary.md#data-integrity4
 [sop]: /shared/glossary.md#standard-operating-procedure-sop
 [sso]: /shared/glossary.md#single-sign-on-sso
 [mfa]: /shared/glossary.md#multi-factor-authentication-mfa
@@ -12,7 +12,8 @@ Referenced Glossary Terms
 [ear]: /shared/glossary.md#encryption-at-rest-ear
 [eif]: /shared/glossary.md#encryption-in-flight-eif
 [eee]: /shared/glossary.md#end-to-end-encryption-eee
-[tbd]: /shared/glossary.md
+[tbd]: /shared/glossary.md#to-be-determined-tbd
+
 <!---
 Referenced Roles
 -->
@@ -37,13 +38,13 @@ Welcome to the Neosofia Policies document. This document outlines the policies t
 * Everything as Code (or config) (or markdown) in a public source code control system.
 * Automate everything that can be automated.
 
-### Data Integrity (DI)
+### Data Integrity and Privacy (DIP)
 
 The following policies are designed to ensure that all Neosofia data assets are protected from unauthorized or unintended data access or manipulation.
 
-#### Level 1 DI
+#### Level 1 DIP
 
-Neosofia *must* adopt the following level one [DI][di] policies:
+Neosofia *must* adopt the following level one [DIP][dip] policies:
 
 <!--- Proton Links --->
 [psfg]: https://proton.me/support/sieve-advanced-custom-filters
@@ -71,10 +72,13 @@ Neosofia *must* adopt the following level one [DI][di] policies:
 [macearg]: https://support.apple.com/guide/mac-help/protect-data-on-your-mac-with-filevault-mh11785/mac
 [clevisg]: https://github.com/latchset/clevis
 [luksg]: https://gitlab.com/cryptsetup/cryptsetup
-
-
 [cleivs+luksg]: https://blog.dowhile0.org/2017/10/18/automatic-luks-volumes-unlocking-using-a-tpm2-chip/
 
+[winble]: /shared/images/evidence/WindowsDesktopBitlocker.png
+[macfve]: /shared/images/evidence/MacDesktopFileVault.png
+[lukse]: /shared/images/evidence/PVE0001LUKS.png
+
+[pveluksi]: /os/proxmox/pveSetup.sh
 
 <!--- Neosofia Links --->
 [sopsbr]: /website/procedures/IT-245-System%20Backup%20and%20Recovery.md
@@ -87,7 +91,7 @@ Neosofia *must* adopt the following level one [DI][di] policies:
 | POL-IT-0004 | Once per year, all documents not accessed or modified for over 365 days will be archived for long-term storage. Once per year, all long-term storage documents older than two years will be purged. This policy does not apply to financial or legal documents that must be retained for more than two years. | N/A | [TBD][tbd]: Currently confirming if Proton Drive supports data retention policy settings or tools to manually comply | [TBD][tbd] | [TBD][tbd]
 | POL-IT-0005 | Neosofia will define and maintain system backup and recovery [SOP][sop]s to protect client, company, and employee data from loss, unintended manipulation, and improper data residency. The 3-2-1-1-0 backup principle will be employed for all data. | [System Backup and Recovery SOP][sopsbr] | N/A | [TBD][tbd] | [TBD][tbd] |
 | POL-IT-0006 | All [EASs][eas] will employ encryption at rest and in flight. | [TBD][tbd]: add EAR and EIF to vendor qualification SOP.| N/A | N/A | N/A |
-| POL-IT-0007 | All company workstations and servers will employ disk-level encryption to ensure all cached information saved from an [EASs][eas] or entered by a client is encrypted at rest | [TBD][tbd]: add to system administration SOP | [Windows BitLocker][winearg], Mac OS [FileVault][macearg], Linux [LUKS][luksg] + [Clevis][clevisg] | [TBD][tbd] | [TBD][tbd] |
+| POL-IT-0007 | All company workstations and servers will employ disk-level encryption to ensure all cached information saved from [EASs][eas] or entered by a client, is encrypted at rest | [TBD][tbd]: add to system administration SOP | [Windows BitLocker][winearg], Mac OS [FileVault][macearg], Linux [LUKS][luksg] + [Clevis][clevisg] | [PVE LUKS Setup Automation][pveluksi] | [Ben's Windows Desktop][winble], [Ben's Mac Desktop][macfve], [Neosofia PVE Server][lukse] |
 
 
 #### Level 2 DI
