@@ -58,11 +58,40 @@ apt-get update
 apt-get -y dist-upgrade
 
 
-# Setup spinning metal drive for PBS and ISOs
+
+# EAR Setup using Clevis and LUKS
+# TBD: Do we still need clevis for systemd-cryptenroll?
+apt-get install clevis clevis-tpm2 clevis-luks -y
+
+# Use the commented commands below to cleanup the disk and start over
+#
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+# !!! WARNING: these commands are hardcoded to /dev/sda and will wipe the disk
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+#
+# cryptsetup close secbackups
+# echo "YES" | cryptsetup erase /dev/sda1
+# wipefs -a /dev/sda
+# echo 'type=83' | sfdisk /dev/sda 
+
+cryptsetup luksFormat /dev/${PBS_BACKUP_DEVICE} <<< ${EAR_PASSPHRASE}
+cryptsetup open /dev/${PBS_BACKUP_DEVICE} secbackups <<< ${EAR_PASSPHRASE}
+mkfs.ext4 /dev/mapper/secbackups 
+systemd-cryptenroll --tpm2-device=auto --tpm2-pcrs=7 /dev/${PBS_BACKUP_DEVICE} <<< ${EAR_PASSPHRASE}
+
+export PBS_BACKUP_UUID=`blkid -s UUID -o value /dev/${PBS_BACKUP_DEVICE}`
+
+cat <<QED > /etc/crypttab
+secbackups /dev/disk/by-uuid/${PBS_BACKUP_UUID} none tpm2-device=auto" >> /etc/crypttab'
+QED
+
+update-initramfs -u
+
+# Now mount the LUKS device (secbackups) and add it to Proxmox VE for backups and ISOs
 echo "setting up PBS backups and ISOs mount point"
 mkdir /mnt/backups
 cat <<QED >> /etc/fstab
-/dev/${PBS_BACKUP_DEVICE} /mnt/backups ext4 rw,relatime 0 0 
+/dev/mapper/secbackups /mnt/backups ext4 rw,relatime 0 0 
 QED
 systemctl daemon-reload
 mount /mnt/backups
