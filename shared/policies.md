@@ -3,7 +3,7 @@ Referenced Glossary Terms
 -->
 [eas]: /shared/glossary.md#enterprise-application-software-eas
 [ds]:  /shared/glossary.md#data-sensitivity-levels
-[di]:  /shared/glossary.md#data-integrity
+[dip]:  /shared/glossary.md#data-integrity4
 [sop]: /shared/glossary.md#standard-operating-procedure-sop
 [sso]: /shared/glossary.md#single-sign-on-sso
 [mfa]: /shared/glossary.md#multi-factor-authentication-mfa
@@ -12,6 +12,7 @@ Referenced Glossary Terms
 [ear]: /shared/glossary.md#encryption-at-rest-ear
 [eif]: /shared/glossary.md#encryption-in-flight-eif
 [eee]: /shared/glossary.md#end-to-end-encryption-eee
+[tbd]: /shared/glossary.md#to-be-determined-tbd
 
 <!---
 Referenced Roles
@@ -37,58 +38,82 @@ Welcome to the Neosofia Policies document. This document outlines the policies t
 * Everything as Code (or config) (or markdown) in a public source code control system.
 * Automate everything that can be automated.
 
-### Data Integrity (DI)
+### Data Integrity and Privacy (DIP)
 
 The following policies are designed to ensure that all Neosofia data assets are protected from unauthorized or unintended data access or manipulation.
 
-#### Level 1 DI
+#### Level 1 DIP
 
-Neosofia *must* adopt the following level one [DI][di] policies:
+Neosofia *must* adopt the following level one [DIP][dip] policies:
 
-* All emails, without exception, will be deleted after 30 days.
-* All chat messages, without exception, will be deleted after 30 days.
-* All [EASs][eas] *should* be accessed through a single sign-on solution (SSO).
-* An [EAS][eas] that does not support [SSO][sso] may be used if the data it manages is classified as [low sensitivity][ds].
-* All systems must have multi-factor authentication (MFA) enabled. Authenticator apps with biometric verification are preferred for [MFA][mfa], with SMS as a fallback option if app-based MFA is not an option.
-* Once per year, all documents not accessed or modified for over 365 days will be archived for long-term storage.
-* Once per year, all long-term storage documents older than two years will be purged. This policy does not apply to financial or legal documents that must be retained for more than two years.
-* All file-sharing activity will be logged.
-* Neosofia will define and maintain system backup and recovery [SOP][sop]s to protect client, company, and employee data from loss, unintended manipulation, and improper data residency. The 3-2-1-1-0 backup principle will be employed for all data.
-* All documents and long-term storage mediums will be encrypted at rest and in flight.
-* All company workstations and servers will employ disk-level encryption to ensure all information is encrypted at rest.
-* All networking equipment will enforce [EIF][eif].
-* Decryption credentials will only be accessible to [SAs][sa] responsible for the system backup and recovery procedures.
+<!--- Proton Links --->
+[psfg]: https://proton.me/support/sieve-advanced-custom-filters
+[efe]: /email/expire_after_90_days.sieve
+[pf]: https://account.proton.me/u/4/mail/filters
+[eec]: /shared/images/evidence/ProtonEmail90DayFilter.png
+[eet]: /shared/images/evidence/ProtonEmail90DayTest.png
+[pmfag]: https://proton.me/support/two-factor-authentication-2fa
+[pmfaa]: /shared/images/evidence/ProtonMFAAdmin.png
+
+<!--- Zoom Links --->
+[zcg]: https://support.zoom.com/hc/en/article?id=zm_kb&sysparm_article=KB0060329
+[zcws]: https://zoom.us/account/setting?tab=chat
+[zces]: /shared/images/evidence/ZoomChat90DayPolicy.png
+[zmfag]: https://support.zoom.com/hc/en/article?id=zm_kb&sysparm_article=KB0066054
+[zmfas]: /shared/images/evidence/ZoomMFAAdminSetting.png
+
+<!--- Cloudflare Links --->
+[cfmfag]: https://developers.cloudflare.com/fundamentals/setup/account/account-security/2fa/
+[cfmfaa]: /shared/images/evidence/CloudFlareMFAAdmin.png
+[cfmfas]: /shared/images/evidence/CloudflareMFASetup.png
+
+<!--- OS Links --->
+[winearg]: https://learn.microsoft.com/en-us/windows/security/operating-system-security/data-protection/bitlocker/
+[macearg]: https://support.apple.com/guide/mac-help/protect-data-on-your-mac-with-filevault-mh11785/mac
+[clevisg]: https://github.com/latchset/clevis
+[luksg]: https://gitlab.com/cryptsetup/cryptsetup
+[cleivs+luksg]: https://blog.dowhile0.org/2017/10/18/automatic-luks-volumes-unlocking-using-a-tpm2-chip/
+
+[winble]: /shared/images/evidence/WindowsDesktopBitlocker.png
+[macfve]: /shared/images/evidence/MacDesktopFileVault.png
+[lukse]: /shared/images/evidence/PVE0001LUKS.png
+
+[pveluksi]: /os/proxmox/pveSetup.sh
+
+<!--- Neosofia Links --->
+[sopsbr]: /website/procedures/IT-245-System%20Backup%20and%20Recovery.md
+
+| ID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Policy | SOP | Guides | Implementation | Evidence |
+|-|-|-|-|-|-|
+| POL-IT-0001 | All emails, without exception, will be deleted after 90 days | N/A | [Proton Sieve Filters][psfg] | [Proton Sieve Filter Code][efe], [Proton Filter List][pf], [Configured Filter Screen Shot][eec] | [Configured Filter Test][eet] |
+| POL-IT-0002 | All chat messages, without exception, will be deleted after 90 days | N/A | [Zoom Team chat settings][zcg] | [Configured Chat Retention Screen Shot][zces] | [TBD][tbd] |
+| POL-IT-0003 | All systems must have multifactor authentication (MFA) enabled. Authenticator apps with biometric verification are preferred for [MFA][mfa], with SMS as a fallback option if app-based MFA is not an option. | N/A | [Proton MFA][pmfag], [Zoom MFA][zmfag], [Cloudflare MFA][cfmfag] | [Proton MFA Global Setting][pmfaa], [Zoom MFA Global Setting][zmfas], [Cloudflare MFA Global Setting][cfmfaa]     | [TBD][tbd] | 
+| POL-IT-0004 | Once per year, all documents not accessed or modified for over 365 days will be archived for long-term storage. Once per year, all long-term storage documents older than two years will be purged. This policy does not apply to financial or legal documents that must be retained for more than two years. | N/A | [TBD][tbd]: Currently confirming if Proton Drive supports data retention policy settings or tools to manually comply | [TBD][tbd] | [TBD][tbd]
+| POL-IT-0005 | Neosofia will define and maintain system backup and recovery [SOP][sop]s to protect client, company, and employee data from loss, unintended manipulation, and improper data residency. The 3-2-1-1-0 backup principle will be employed for all data. | [System Backup and Recovery SOP][sopsbr] | N/A | [TBD][tbd] | [TBD][tbd] |
+| POL-IT-0006 | All [EASs][eas] will employ encryption at rest and in flight. | [TBD][tbd]: add EAR and EIF to vendor qualification SOP.| N/A | N/A | N/A |
+| POL-IT-0007 | All company workstations and servers will employ disk-level encryption to ensure all cached information saved from [EASs][eas] or entered by a client, is encrypted at rest | [TBD][tbd]: add to system administration SOP | [Windows BitLocker][winearg], Mac OS [FileVault][macearg], Linux [LUKS][luksg] + [Clevis][clevisg] | [PVE LUKS Setup Automation][pveluksi] | [Ben's Windows Desktop][winble], [Ben's Mac Desktop][macfve], [Neosofia PVE Server][lukse] |
+
 
 #### Level 2 DI
 
 In addition to the level 1 DI, Neosofia *should* adopt the following level two data integrity policies:
 
-##### Authentication
-* [EAS][eas]s *must* be accessed through a [SSO][sso] solution.
+* All networking equipment will enforce [EIF][eif].
+* [EAS][eas]s are accessed through a [SSO][sso] solution. An [EAS][eas] that does not support [SSO][sso] may be used if the data it manages is classified as [low sensitivity][ds].
 * Passwords will be no less than 15 characters in length and rotated on an annual basis.
 * Accounts will be locked after 5 failed login attempts and reset after 1 hour. Lockouts will alert all [SAs][sa].
 * [API][api] Access tokens will be rotated on an annual basis.
 * [MFA][mfa] must be app-based, not [SMS][sms] based.
 * All company workstations will employ a 30-minute screen saver timeout to force re-authentication. For portable systems, lid shut events will force re-authentication, and all employees that leave their workstation unattended must lock the screen in public spaces.
 
-##### Authorization
 * [EAS][eas]s must employ role-based access and follow the principle of least privilege.
-
-##### EAR and EIF
 * All company workstations will require username and password authentication to unlock the disk encryption.
-
-##### Training
 * All employees will be trained on anti-phishing tactics.
-
-##### Monitoring
 * [EAS][eas]s must have audit trails and access logs pushed into a central location.
-
-##### Security
 * Workstations will use sinkhole DNS providers for anti-malware protection.
 * Workstations and servers will have security patches applied no less than once per month.
 * All systems will employ UPS backup power systems and have graceful shutdown procedures defined/tested.
-
-##### Procedural
+* All file-sharing activity will be logged.
 * Documents may only be shared with internal company employees via pre-defined functional teams.
 * If documents/data must be shared with clients, service providers, or external contractors, access must be password protected and limited to 28 days.
 

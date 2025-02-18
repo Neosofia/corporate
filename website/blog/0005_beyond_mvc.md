@@ -129,6 +129,8 @@ It's fun telling these very close to real life stories, but what's the lesson in
 ## What's Next
 
 Our introduction to compliance series of posts ends here and now branches into a choose-your-own-adventure style book where you decide what to do/read next. Future posts will be indexed in our [readme](./readme.md) and organized into the following areas:
+
+ * [Neosofia validation and evidence service system architecture and design](./2000_system_architecture_and_design.md)
  * Getting started checklists and document templates
  * Picking best in class 3rd party vendors
  * Quality Management Systems
@@ -136,7 +138,7 @@ Our introduction to compliance series of posts ends here and now branches into a
  * Technology
  * Procedures, Policies, Guides and Evidence
 
-We want to make compliance and security more accessible for all. Thank you for making it through our first six posts. We hope you've been able to apply some of the lessons to your own organization and look forward to seeing you again.
+We want to make compliance and security more accessible for all. Thank you for making it through our first set of posts. We hope you've been able to apply some of the lessons to your own organization and look forward to seeing you again.
 
 
 [^credit]: created using "DALL•E 3 XL v2" on Huggingface with the prompt: tan man with huge biceps, one arm has a large hammer breaking rocks, the other hand is pulling on a slot machine lever

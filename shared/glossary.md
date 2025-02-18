@@ -2,6 +2,9 @@
 
 ## General Terms
 
+### To Be Determined (TBD)
+
+TBD is used to introduce an idea that is intended to be proven or confirmed as true, indicating that further evidence or proof is needed. For Neosofia it is a placeholder to indicate that upon request, evidence for the supported policy or procedure can be demonstrated. Also, an alias for to be demonstrated or to be done. 
 
 ### Keep it Simple Stupid (KISS)
 
@@ -119,6 +122,47 @@ This section of the glossary is for terms used in the context of providing clien
 
 
 ## Information Technology Terms 
+
+### Neosofia Services
+
+
+#### Industry
+
+The sector of an economy made up of manufacturing enterprises. Examples include:
+ * finance
+ * healthcare
+ * textile
+
+#### Sub-sector
+
+An area of economic activity that forms part of one of the larger areas into which the economic activity is divided. Examples include:
+  * healthcare - pharma, medical devices, provider, payer, etc.
+  * finance - retail banking, business banking, investment banking, etc.
+
+#### Business Operations
+
+Activities that businesses engage in on a daily basis to increase the value of the enterprise and earn a profit. Subcategories include regions where:
+* your employees work
+* you provide services
+* you provide goods
+* you manufacture goods
+* you source materials
+* you do R&D
+* you're publicly traded
+
+
+#### Hard/Soft Validation
+
+A hard validation is one that can be proven true based on the evidence. For example, if a policy implies TLS version 1.1 and the evidence service gathers the TLS version, the version that the given URL provides can be directly compared to the policy. Soft policies cannot be proven true and must be validated by a human. For example, policies requiring SOPs can be a soft validation with a link to the SOP.
+
+#### Internal/External Validation
+
+An external validation is one that can be performed from the public internet. For example, testing that the company's public-facing website conforms to a set of policies vs internal validations like testing disk encryption inside a company's cloud provider or data center.
+
+#### Push/Pull Validation
+
+A pull validation is one that is initiated by the validation service. For example, getting the TLS version from a company's public-facing website is a pull validation. An example of push validation would be a system backup and recovery execution log being pushed into the evidence service.
+
 
 ### Role Based Access Control (RBAC)
 
