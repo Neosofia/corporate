@@ -2,6 +2,9 @@
 
 ## General Terms
 
+### To Be Determined (TBD)
+
+TBD is used to introduce an idea that is intended to be proven or confirmed as true, indicating that further evidence or proof is needed. For Neosofia it is a placeholder to indicate that upon request, evidence for the supported policy or procedure can be demonstrated upon request. Also, an alias for to be demonstrated or to be done. 
 
 ### Keep it Simple Stupid (KISS)
 
