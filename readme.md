@@ -1,13 +1,16 @@
+<!--- Glossary Terms Used --->
+[qms]: /shared/glossary.md#quality-management-system-qms
+
 # Neosofia
 
-Neo and Sofia are the Greek words for new and wisdom. As a consulting and technology services company, our mission is to create new wisdom in the compliance space to give organizations the tools needed to deliver safe and effective technology solutions.
+Neo and Sofia are the Greek words for new and wisdom. As a technology services company, our mission is to create new wisdom in the compliance space to give organizations the tools and knowledge needed to deliver safe and effective services to their clients.
 
 ## Navigating Our Site
 
-Interested in learning more about why compliance matters and how to achieve it? Start with our [zeroth post](/website/blog/0000_your_compliance_sucks.md) and follow along as we go on our compliance journey together.
+Interested in learning more about why compliance matters and how to achieve it? Start with our [zeroth post](/website/blog/0000_why_compliance.md) and follow along as we go on our compliance journey together.
 
 
-If you're interested in building out a quality management system (QMS) the Neosofia [procedures](/website/procedures/), [policies](/shared/policies.md), and [roles](/shared/roles.md) can be used as a template for your organization. You can also use some of the concepts like full traceability to apply to an existing QMS.
+If you're interested in building out a quality management system ([QMS][qms]) the Neosofia [procedures](/website/procedures/), [policies](/shared/policies.md), and [roles](/shared/roles.md) can be used as a template for your organization. You can also use concepts like full traceability to apply to an existing [QMS][qms].
 
 
 Are you an IT system administrator looking to automate your operations? Check out the [operating system scripts](/os/) we use to automate our business operations.

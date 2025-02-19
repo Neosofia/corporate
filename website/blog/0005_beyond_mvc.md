@@ -55,7 +55,7 @@ When Tony installed the software on his computer, it also installed a keylogger.
 I know, all the IT and compliance people are screaming at their monitors:
 
 * DID YOU ENABLE MFA?!?!?!
-* WHY DOES A STONEWORKER NEED ACCESS TO ALL CLIENT AND EMPLOYEE DATA?!?!?!
+* WHY DOES A STONE WORKER NEED ACCESS TO ALL CLIENT AND EMPLOYEE DATA?!?!?!
 * WHY ARE YOU CLINGING TO 25 YEARS OF DATA?!?!?!
 
 The answer is interesting because this company is **real**. The names have been changed, and some creative liberties were taken in telling the story, but this actually happened. So what were the excuses the owner gave for not following the simple and easy-to-implement best practices?
@@ -71,9 +71,9 @@ What did the owner do? She fired Tony for "being stupid". When the client refuse
 
 *Get'er Done* is revolutionizing the world with their self-professed "greatest task management system ever". An amazingly intuitive web application that is also feature-rich and all for the ultra-low cost of $5/user/mo for their basic plan and $20/user/mo for their enterprise plan.
 
-This company knows technology and has selected best-in-class SaaS solutions to use as their [EASs][eas]. They've enabled [MFA][mfa] on all of their systems, implemented [SSO][sso] when possible or not locked behind a steep enterprise/SSO paywall, and manually review access logs periodically to check for unauthorized access. Get'er Done has checked all the level 1 compliance boxes and is going through their level 2 journey as they attempt to get a SOC2 Type 2 certification. Get'er Done is starting to experience the compliance wall as most of their medium-sized and larger clients insist on some type of security certification before adopting the product beyond basic limited pilots and proof of concepts.
+This company knows technology and has selected best-in-class SaaS solutions to use as its [EASs][eas]. They've enabled [MFA][mfa] on all of their systems, implemented [SSO][sso] when possible or not locked behind a steep enterprise/SSO paywall, and manually review access logs periodically to check for unauthorized access. Get'er Done has checked all the level 1 compliance boxes and is going through its level 2 journey as it attempts to get a SOC2 Type 2 certification. Get'er Done is starting to experience the compliance wall as most of its medium-sized and larger clients insist on some type of security certification before adopting the product beyond basic limited pilots and proof of concepts.
 
-This SaaS company also has these level 2 compliance checks going for them:
+This SaaS company also has these level 2 compliance checks going for it:
 * A basic privacy policy posted on their website
 * Terms of services and EULA that are accepted as part of the sign-up process
 * Defined but untested system backup and recovery procedures
@@ -92,11 +92,11 @@ They're currently working on:
 
 Things were going well! That is -- until the day they were hacked.
 
-Get'er Done was so busy with all of their compliance items as they chased bigger contracts that they failed to fully execute on one of their level 1 checks. The hack went something like this -- due to a bug in one of the logging packages that their software relied on, hackers were able to gain access to company production servers, export all client data, and then delete everything! About an hour after the hack, the CTO had an email from the hackers:
+Get'er Done was so busy with all of its compliance items as it chased bigger contracts that it failed to fully execute on one of its level one checks. The hack went something like this -- due to a bug in one of the logging packages that its software relied on, hackers were able to gain access to company production servers, export all client data, and then delete everything! About an hour after the hack, the CTO had an email from the hackers:
 
 > Your client data is for sale on the dark web for $5M if you want it.
 
-The CTO then promptly ordered their most senior [SA][sa] to execute the system restoration procedures. The SA heard the terrible news, quickly leapt into action, and logged into the system (AWS S3 bucket) where all the system backups were kept. But there was nothing there. It was all gone. Because the production servers had access to the S3 buckets with all the backup files, the hackers nuked both the production database AND all the backups :( But this was no ordinary [SA][sa], she feared this might happen one day and just the other day she happened to copy the most recent backup file to a secure off-site location that the hackers did not have access to. VINDICATION!!! The hack had been thwarted and the data was secure. The CTO gleefully started to type a smug response to the hackers as the [SA][sa] went about restoring the data on the new production database. A few minutes later, the [SA][sa] then walked through the CTO's door with a very solemn look on her face. The backup did not have the data on it. It never had the data they needed because they never tested the restoration process.
+The CTO then promptly ordered the most senior [SA][sa] to execute the system restoration procedures. The SA heard the terrible news, quickly leapt into action, and logged into the system (AWS S3 bucket) where all the system backups were kept. But there was nothing there. It was all gone. Because the production servers had access to the S3 buckets with all the backup files, the hackers nuked both the production database AND all the backups :( But this was no ordinary [SA][sa], she feared this might happen one day and just the other day she happened to copy the most recent backup file to a secure off-site location that the hackers did not have access to. VINDICATION!!! The hack had been thwarted, and the data was secure. The CTO gleefully started to type a smug response to the hackers as the [SA][sa] went about restoring the data on the new production database. A few minutes later, the [SA][sa] then walked through the CTO's door with a very solemn look on her face. The backup did not have the data on it. It never had the data they needed because they never tested the restoration process.
 
 Get'er Done declared bankruptcy and insolvency the next day.
 
@@ -113,7 +113,7 @@ The 800-pound gorilla that leads up the sales team is salivating over a $20M con
 
 If you're a compliance :nerd_face: like me, you know how absurd it would be to even think about FedRAMP certification in any less than two years. If you're not a compliance nerd, let's compare the various levels in terms of walking up a hill:
 * Level 1: basic best practices including MFA and system backups -- walking up a small hill in the woods (250M)
-* Level 2: Implementing controls to obtain ISO 27001 and SOC 2 certifications -- climbing up Machu Picchu (2,500M)
+* Level 2: Implementing controls to obtain ISO 27001 and SOC 2 certifications -- climbing up Machu Pichu (2,500M)
 * Level 3: implementing the controls needed to obtain FedRAMP -- climbing up a mountain 4x taller than Everest (25,000M)
 
 The added levels of time, cost, and complexity needed to obtain FedRAMP is, in the words of a famous rapper, "Kray Kray". This post won't go into the details as to why FedRAMP is "kray kray", but the topic will be explored in future posts.

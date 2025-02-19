@@ -31,6 +31,6 @@ rear -v mkbackup
 # Setup the backup and restore cronjob
 # TBD: need to lookup efi boot manager device vs hardcode 0000B
 cat <<EOF >> /etc/crontab
-*  2    * * *   root    rear -v mkbackup; efibootmgr -n 000B; systemctl reboot
+15  2    * * *   root    rear -v mkbackup; efibootmgr -n 000B; systemctl reboot
 EOF
 

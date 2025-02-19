@@ -13,13 +13,13 @@ export WAN_GW="${WAN_GW:=192.168.1.1}"
 
 # !!!!!! WARNING !!!!!!!!
 # Running this script then rebooting into the the PVE INSTALL device will nuke
-# everything from all of the devices below except the PBS backup device.
+# everything from all of the devices below
 # 
 # Assumed device layout
 # NVME for PVE to be installed on
 # SATA (sda) spinning metal drive for PBS
 # USB stick (sdb) for host level backups using REAR
-# USB stick (sdc) for PVE install media (last resort if REAR is corrupted)
+
 
 export PVE_INSTALL_TO_DEVICE="${INSTALL_DEVICE_ID:=nvme0n1}"
 export PBS_BACKUP_DEVICE="${PBS_BACKUP_DEVICE:=sda}"
