@@ -2,90 +2,69 @@
 
 This page is an index of all the current blog posts on this site plus a placeholder for (some) future posts. If you would like to see a particular topic covered, please check out our [contributing](/CONTRIBUTING.md) page.
 
-## Introduction and Background (0000-0999)
+## Introduction to Compliance
 
-| Num                                                   | Purpose                                            | Release  |
-|-------------------------------------------------------|----------------------------------------------------|----------|
-| [0000](./0000_your_compliance_sucks.md)               | Defining why are we focusing on compliance         | 2025 Jan |
-| [0001](./0001_definitions_and_system_architecture.md) | Establishing a shared context                      | 2025 Jan |
-| [0002](./0002_putting_it_all_together.md)             | Presenting a real world example                    | 2025 Jan |
-| [0003](./0003_system_design.md)                       | Designing the system to handle any validation type | 2025 Jan |
+| Num                                                | Release  |
+|----------------------------------------------------|----------|
+| [Why Compliance Matters](./0000_why_compliance.md) | 2025 Jan |
+| [What is Compliance](./0001_what_is_compliance.md) | 2025 Jan |
+| [Minimal Viable Compliance (MVC)](./0004_mvc.md)   | 2025 Jan |
+| [Compliance Levels](./0005_beyond_mvc.md)          | 2025 Jan |
 
 
-## Quality Management (1000-1999)
+## Quality Management System (QMS)
 
 ### General QMS Topics
 
-| Num                                          | Topic                                  | Release  |
-|----------------------------------------------|----------------------------------------|----------|
-| [1000](./1000_system_backup_and_recovery.md) | What is a QMS? (PDCA)                  | 2025 Feb |
-| 1001                                         | Why SOPs?                              | TBD      |
-| 10xx                                         | Why formal training and qualification? | TBD      |
-| 10xx                                         | SLOs and SLAs                          | TBD      |
-| 10xx                                         | Continual Improvement through CAPAs    | TBD      |
-| 10xx                                         | Validation vs Testing                  | TBD      |
-| 10xx                                         | Electronic Signatures                  | TBD      |
-| 10xx                                         | Version Control and ALCOA++            | TBD      |
+| Topic                                  | Release  |
+|----------------------------------------|----------|
+| What is a QMS? (PDCA)                  | 2025 Feb |
+| SOPs                                   | TBD      |
+| Formal training and qualification?     | TBD      |
+| SLOs and SLAs                          | TBD      |
+| Continual Improvement through CAPAs    | TBD      |
+| Validation vs Testing                  | TBD      |
+| Electronic Signatures                  | TBD      |
+| Version Control and ALCOA++            | TBD      |
 
 ### SOPs
 
-| Num  | SOP                                                      | Release  |
-|------|----------------------------------------------------------|----------|
-| 1200 | Technology                                               | TBD      |
-| 1201 | System Backup and Recovery                               | 2025 Feb |
-| 12xx | Product Development and Delivery                         | TBD      |
-| 12xx | Systems Management and Monitoring                        | TBD      |
-| 1300 | Employee Engagement (qualify and train)                  | TBD      |
-| 13xx | Code of Conduct                                          | TBD      |
-| 1400 | Client Engagement                                        | TBD      |
-| 1500 | Sales and Marketing                                      | TBD      |
-| 1600 | Financial Management                                     | TBD      |
-| 1700 | Quality Assurance (audits and SMT oversight)             | TBD      |
-| 17xx | Fraud, anti-bribery, conflict of interest and disclosure | TBD      |
-| 17xx | Business Continuity                                      | TBD      |
-| 17xx | Data Management (PII, Public, Private)                   | TBD      |
-| 17xx | Vendor Management                                        | TBD      |
-| 17xx | Document Management (GDP)                                | TBD      |
-| 17xx | Deviation Management (CAPAs)                             | TBD      |
-| 17xx | Records Management (evidence)                            | TBD      |
-| 17xx | Risk Management                                          | TBD      |
-| 17xx | Incident Management                                      | TBD      |
+| SOP                                                                | Release  |
+|--------------------------------------------------------------------|----------|
+| [System Backup and Recovery](./1000_system_backup_and_recovery.md) | 2025 Feb |
+| Product Development and Delivery                                   | TBD      |
+| Systems Management and Monitoring                                  | TBD      |
+| Employee Engagement (qualify and train)                            | TBD      |
+| Code of Conduct                                                    | TBD      |
+| Client Engagement                                                  | TBD      |
+| Sales and Marketing                                                | TBD      |
+| Financial Management                                               | TBD      |
+| Quality Assurance (audits and SMT oversight)                       | TBD      |
+| Fraud, anti-bribery, conflict of interest and disclosure           | TBD      |
+| Business Continuity                                                | TBD      |
+| Data Management (PII, Public, Private)                             | TBD      |
+| Vendor Management                                                  | TBD      |
+| Document Management (GDP)                                          | TBD      |
+| Deviation Management (CAPAs)                                       | TBD      |
+| Records Management (evidence)                                      | TBD      |
+| Risk Management                                                    | TBD      |
+| Incident Management                                                | TBD      |
 
 
+## Architecting, Designing, Implementing, and Operating Neosofia Services
 
-## Information Technology (2000-2999)
-
-| Num  | Blog Post                                          | Release |
-|------|----------------------------------------------------|---------|
-| 2000 | Why our tech stack?                                | TBD     |
-| 21xx | Hardware                                           | TBD     |
-| 21xx | Networking - EIF, IPS, IDS, DNS, SIEM, Honeypots,  | TBD     |
-| 21xx | Compute - OSs, virtualization, CVE management      | TBD     |
-| 21xx | Storage - EAR, RAID, B&R                           | TBD     |
-| 21xx | Services - monitoring, logging, alerting, IDP, 2FA | TBD     |
-| 21xx | Security - CVE, artifacts, plugins, pinning        | TBD     |
-| 21xx | SDLC - OWASP, linting, CI/CD, testing, design      | TBD     |
-| 21xx | DevOps                                             | TBD     |
-| 21xx | Logging, Monitoring, and Alerting                  | TBD     |
-| 21xx | Data Loss Prevention                               | TBD     |
-
-## Employee Experience aka HR (3000-3999)
-
-
-## Client Services (4000-4999)
-
-
-## Sales and Marketing (5000-5999)
-
-
-## Finance and Accounting (6000-6999)
-
-
-## Operations (7000-9999)
-
-
-## IMHO (9000-9999)
-
-| Num  | Topic              | Release |
-|------|--------------------|---------|
-| 9000 | Why I'm doing this | TBD     |
+| Post                                                                        | Release  |
+|-----------------------------------------------------------------------------|----------|
+| [Service Architecture and Design](./2000_system_architecture_and_design.md) | 2025 Feb |
+| Why our tech stack?                                                         | TBD      |
+| Implementation (SDLC, CI/CD)                                                | TBD      |
+| Operations (DevOps)                                                         | TBD      |
+| Hardware                                                                    | TBD      |
+| Network - EIF, IPS, IDS, DNS, SIEM, Honeypots                               | TBD      |
+| Compute - OSs, virtualization, CVE management                               | TBD      |
+| Storage - EAR, RAID, B&R                                                    | TBD      |
+| Services - monitoring, logging, alerting, IDP, 2FA                          | TBD      |
+| Security - CVE, artifacts, plugins, pinning                                 | TBD      |
+| SDLC - OWASP, linting, CI/CD, testing, design                               | TBD      |
+| Logging, Monitoring, and Alerting                                           | TBD      |
+| Data Loss Prevention                                                        | TBD      |
