@@ -26,7 +26,7 @@ For interactive architecture diagrams that allow you to change the layout, zoom 
 
 ## An Example Organization
 
-Rather than continue to look at Neosofia, let's look at a hypothetical example of an organization to walk through how the policy validation and evidence aggregation services can help them become more compliant. Here is a short description of our example organization:
+Rather than continue to look at Neosofia, Let's look at a hypothetical example of an organization to walk through how the policy validation and evidence aggregation services can help them become more compliant. Here is a short description of our example organization:
 
 > We're a technology services company that connects anybody on the planet with a web browser to their dream ugly sweater. The R&D team operates out of San Francisco, New York City, London, Madrid, and Berlin to bring your ugly sweater dreams to life. Our cotton is lovingly sheared from the finest alpacas in the Swiss Alps. Login to our site, answer three personal questions, and our AI-powered assistant will create your dream ugly sweater.
 
