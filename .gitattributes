@@ -1,3 +1,5 @@
 *.svg filter=lfs diff=lfs merge=lfs -text
 *.png filter=lfs diff=lfs merge=lfs -text
 *.json filter=lfs diff=lfs merge=lfs -text
+*.yaml filter=lfs diff=lfs merge=lfs -text
+website/pnpm-lock.yaml filter=lfs diff=lfs merge=lfs -text
