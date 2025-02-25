@@ -5,6 +5,7 @@
 **/.pnpm-store/
 /.pnp
 .pnp.js
+.vite/
 
 # testing
 /coverage
