@@ -8,8 +8,8 @@ WORKDIR /frontend
 # TBD: Need to add this to dev container only
 RUN apt-get update && apt-get install -y xdg-utils
 
-# Copy package.json and package-lock.json
-COPY package*.json ./
+# Copy package files
+COPY package*.json pnpm-lock.yaml ./
 
 # Install pnpm
 RUN npm install -g pnpm
