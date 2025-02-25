@@ -24,4 +24,4 @@ COPY . .
 RUN pnpm run build
 
 # Start the React app
-CMD ["pnpm", "start" ]
+CMD ["pnpm", "run", "dev" ]
