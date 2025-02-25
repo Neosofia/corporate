@@ -11,9 +11,9 @@ function App() {
         </div>
         <div className="w-32"></div>
 
-        <div className="columns-2 text-left flex color-gray-900">
+        <div className="text-left text-red-800 flex">
           <div className="p-1 pr-6">
-            <a href="/#" className="text-xl">Products</a>
+            <a href="/#" className="text-xl">Product</a>
           </div>
           <div className="p-1 pr-6">
             <a href="/#" className="text-xl">Blog</a>
