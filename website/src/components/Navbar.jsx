@@ -1,45 +1,12 @@
 import { useEffect } from "react";
+import { useState } from "react";
+
 import logo from '../assets/Neosofia.png';
 
-const MenuItems = ({ mobile = false, menuOpen, setMenuOpen }) => {
-  const menu = [
-    { name: "Home", link: "/#home" },
-    { name: "About", link: "/#about" },
-    { name: "Contact", link: "/#contact" },
-    { name: "Blog", link: "/blog/" },
-  ]
 
-  if (mobile) {
-    return (
-      <div className="flex flex-col items-center space-y-4">
-        {menu.map((item, index) => (
-          <a
-            href={item.link}
-            key={item.name}
-            onClick={() => setMenuOpen(false)}
-            className={`text-xl font-semibold text-white my-4 transform transition-transform duration-300
-      ${menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
-          >
-            {item.name}
-          </a>
+export const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
 
-        ))
-        }
-      </div>
-    )
-  }
-  else {
-    return (
-      <div className="hidden md:flex items-center space-x-8">
-        {menu.map((item, index) => (
-          <a href={item.link} key={item.name} className="text-gray-300 hover:text-white transition-colors">{item.name}</a>
-        ))}
-      </div>
-    )
-  }
-}
-
-export const Navbar = ({ menuOpen, setMenuOpen }) => {
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
   }, [menuOpen]);
@@ -80,3 +47,43 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
     </nav>
   );
 };
+
+
+const MenuItems = ({ mobile = false, menuOpen, setMenuOpen }) => {
+
+  const menu = [
+    { name: "Home", link: "/#home" },
+    { name: "About", link: "/#about" },
+    { name: "Contact", link: "/#contact" },
+    { name: "Blog", link: "/blog/" },
+  ]
+
+  if (mobile) {
+    return (
+      <div className="flex flex-col items-center space-y-4">
+        {menu.map((item, index) => (
+          <a
+            href={item.link}
+            key={item.name}
+            onClick={() => setMenuOpen(false)}
+            className={`text-xl font-semibold text-white my-4 transform transition-transform duration-300
+      ${menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
+          >
+            {item.name}
+          </a>
+
+        ))
+        }
+      </div>
+    )
+  }
+  else {
+    return (
+      <div className="hidden md:flex items-center space-x-8">
+        {menu.map((item, index) => (
+          <a href={item.link} key={item.name} className="text-gray-300 hover:text-white transition-colors">{item.name}</a>
+        ))}
+      </div>
+    )
+  }
+}

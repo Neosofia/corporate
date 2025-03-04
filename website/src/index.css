@@ -1,8 +1,8 @@
 @import 'tailwindcss';
+@plugin '@tailwindcss/typography';
 
 @theme {
   --font-sans: InterVariable, sans-serif;
-
   --font-mono: 'Fira Code', monospace;
 }
 
@@ -22,6 +22,24 @@
   ::file-selector-button {
     border-color: var(--color-gray-200, currentColor);
   }
+
+  /* Style the footnotes section. */
+  .footnotes {
+    font-size: var(--text-sm);
+    color: var(--color-slate-700);
+  }
+
+  /* Place `[` and `]` around footnote references. */
+  [data-footnote-ref]::before {
+    content: '[';
+  }
+
+  [data-footnote-ref]::after {
+    content: ']';
+  }
+  a {
+    @apply underline text-slate-400 hover:text-slate-300 visited:text-slate-500
+ }
 }
 
 
