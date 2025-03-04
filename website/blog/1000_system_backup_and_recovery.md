@@ -8,8 +8,8 @@
 [blog-arch]: /website/blog/2000_system_architecture_and_design.md
 [blog-comp]: /website/blog/0001_what_is_compliance.md
 
-[glos-eas]: /shared/glossary.md#enterprise-application-software-eas
-[glos-tbd]: /shared/glossary.md#to-be-determined-tbd
+[glos-eas]: /qms/glossary.md#enterprise-application-software-eas
+[glos-tbd]: /qms/glossary.md#to-be-determined-tbd
 
 [proton]: https://proton.me/
 [zoom]: https://www.zoom.com/

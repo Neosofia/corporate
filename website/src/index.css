@@ -23,12 +23,6 @@
     border-color: var(--color-gray-200, currentColor);
   }
 
-  /* Style the footnotes section. */
-  .footnotes {
-    font-size: var(--text-sm);
-    color: var(--color-slate-700);
-  }
-
   /* Place `[` and `]` around footnote references. */
   [data-footnote-ref]::before {
     content: '[';
@@ -37,9 +31,6 @@
   [data-footnote-ref]::after {
     content: ']';
   }
-  a {
-    @apply underline text-slate-400 hover:text-slate-300 visited:text-slate-500
- }
 }
 
 
@@ -52,6 +43,52 @@
     50% {
       opacity: 0;
     }
+  }
+
+
+  .prose-sm {
+    ul {
+      list-style: disc;
+      padding: 0 0 0 calc(var(--spacing) * 4);
+    }
+    ol {
+      list-style: decimal;
+      padding: 0 0 0 calc(var(--spacing) * 4);
+    }
+
+    table {
+      border-width: 1px;
+      border-color: var(--color-gray-500);
+    }
+
+    th, td {
+      vertical-align: center;
+      text-align: left;
+      border-width: 1px;
+      border-color: var(--color-gray-500);
+      padding: calc(var(--spacing) * 1);
+    }
+
+    a {
+      @apply underline text-slate-400 hover:text-slate-300 visited:text-slate-500
+   }
+  }
+
+  /* Style the footnotes section. */
+  .footnotes {
+    font-size: var(--text-sm);
+    color: var(--color-slate-700);
+
+    ol{    
+      list-style-type: none;
+      padding: 0px;
+      margin: 0px;
+    }
+
+    li {
+      padding:0px
+    }
+
   }
 
   .animate-blink {

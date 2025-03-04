@@ -1,21 +1,21 @@
 <!---
 Referenced Glossary Terms
 -->
-[cl]: /shared/glossary.md#compliance-levels
-[kiss]: /shared/glossary.md#keep-it-simple-stupid-kiss
-[ear]: /shared/glossary.md#encryption-at-rest-ear
-[mfa]: /shared/glossary.md#multi-factor-authentication-mfa
-[eas]: /shared/glossary.md#enterprise-application-software-eas
-[sso]: /shared/glossary.md#single-sign-on-sso
-[qms]: /shared/glossary.md#quality-management-system-qms
-[sdlc]: /shared/glossary.md#software-development-lifecycle-sdlc
-[csv]: /shared/glossary.md#computer-systems-validation-csv
-[sop]: /shared/glossary.md#standard-operating-procedure-sop
-[rbac]: /shared/glossary.md#role-based-access-control-rbac
+[cl]: /qms/glossary.md#compliance-levels
+[kiss]: /qms/glossary.md#keep-it-simple-stupid-kiss
+[ear]: /qms/glossary.md#encryption-at-rest-ear
+[mfa]: /qms/glossary.md#multi-factor-authentication-mfa
+[eas]: /qms/glossary.md#enterprise-application-software-eas
+[sso]: /qms/glossary.md#single-sign-on-sso
+[qms]: /qms/glossary.md#quality-management-system-qms
+[sdlc]: /qms/glossary.md#software-development-lifecycle-sdlc
+[csv]: /qms/glossary.md#computer-systems-validation-csv
+[sop]: /qms/glossary.md#standard-operating-procedure-sop
+[rbac]: /qms/glossary.md#role-based-access-control-rbac
 <!---
 Referenced Roles
 -->
-[sa]: /shared/roles.md#system-administrator-sa
+[sa]: /qms/roles.md#system-administrator-sa
 
 <!---
 External Links
