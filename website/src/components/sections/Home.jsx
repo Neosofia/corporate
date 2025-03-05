@@ -26,7 +26,7 @@ export const Home = () => {
         >
           <RevealOnScroll>
             <div className="text-center z-10 px-4">
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-red-800 to-red-600 bg-clip-text text-transparent leading-right">
+              <h1 className="text-4xl md:text-6xl/18 font-bold mb-6 bg-gradient-to-r from-red-800 to-red-600 bg-clip-text text-transparent leading-right">
                 Transforming Compliance
               </h1>
 
