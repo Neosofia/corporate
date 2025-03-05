@@ -49,8 +49,7 @@ jobs:
         with:
           name: github-pages
           path: website/dist
-          if-no-files-found: error
-
+          
   deploy:
     environment:
       name: github-pages
