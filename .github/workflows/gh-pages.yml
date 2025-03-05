@@ -45,10 +45,11 @@ jobs:
         run: cd website && pnpm run build
 
       - name: Upload production-ready build files
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v3
         with:
           name: github-pages
-          path: ./website/dist
+          path: website/dist
+          if-no-files-found: error
 
   deploy:
     environment:
