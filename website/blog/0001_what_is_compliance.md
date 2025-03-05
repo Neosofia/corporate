@@ -1,15 +1,14 @@
 <!--- Internal References -->
-[pol]:   /shared/policies.md#data-integrity-and-privacy-dip
+[pol]:   /qms/policies.md#data-integrity-and-privacy-dip
+[compg]: /qms/glossary.md#compliance-terms
+[g]:     /qms/glossary.md
 [flint]: /shared/images/flintstones-car.png
-[compg]: /shared/glossary.md#compliance-terms
-[g]:     /shared/glossary.md
-[contrib]: /CONTRIBUTING.md
 
 <!--- External References -->
 [ther]: https://en.wikipedia.org/wiki/Theranos#Exposure_and_downfall
 [mit]: https://en.wikipedia.org/wiki/MIT_License
 [ns]: https://github.com/neosofia/corporate
-
+[contrib]: https://github.com/Neosofia/corporate/blob/main/CONTRIBUTING.md
 
 # Neosofia Glossary and Architecture
 

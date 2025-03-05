@@ -4,9 +4,9 @@ Our introductory posts to compliance have been focused on manually curating poli
 
 ## Architecture
 
-At the foundation of any compliant [EAS](/shared/glossary.md#EAS) lies a set of system architecture diagrams that define how technology systems and system users interact with each other. To express these relationships, Neosofia has elected to adopt the [C4 model](https://c4model.com/) and more specifically [Structurizr](https://structurizr.com/) to generate all architecture diagrams.
+At the foundation of any compliant [EAS](/qms/glossary.md#EAS) lies a set of system architecture diagrams that define how technology systems and system users interact with each other. To express these relationships, Neosofia has elected to adopt the [C4 model](https://c4model.com/) and more specifically [Structurizr](https://structurizr.com/) to generate all architecture diagrams.
 
-The initial set of [EASs](/shared/glossary.md#EAS) documented will include all the hardware and third-party services needed to operate a *minimally* compliant technology organization, which can be found in our [hardware readme](/hardware/readme.md).
+The initial set of [EASs](/qms/glossary.md#EAS) documented will include all the hardware and third-party services needed to operate a *minimally* compliant technology organization, which can be found in our [hardware readme](/hardware/readme.md).
 
 > [!NOTE]
 > The policy validation and evidence aggregation compliance tools are designed to work with any service regardless of the vendor. The choices above are ones Neosofia has elected to make for reasons that will be covered in future posts.
@@ -93,7 +93,7 @@ There are many programs today that can run inside a protected/internal network t
 
 ### Push vs Pull
 
-Ideally, all of our checks would be a pull style so that we can gather evidence without modifying existing [EASs](/shared/glossary.md#enterprise-application-software-eas) to push evidence into the service. For any organizations that are unwilling or unable to install an evidence service into their protected networks, modifications to existing [EASs](/shared/glossary.md#enterprise-application-software-eas) could push the needed evidence into the service. This is not ideal as every system wishing to adopt the push method would have to be modified to do so requiring significant effort by system administrators within the organization. The fallback to pushing evidence into the service would simply be linking to results of the running processes/procedures output. This adds value by creating traceability to the protected resources that could be made available for onsite inspection.
+Ideally, all of our checks would be a pull style so that we can gather evidence without modifying existing [EASs](/qms/glossary.md#enterprise-application-software-eas) to push evidence into the service. For any organizations that are unwilling or unable to install an evidence service into their protected networks, modifications to existing [EASs](/qms/glossary.md#enterprise-application-software-eas) could push the needed evidence into the service. This is not ideal as every system wishing to adopt the push method would have to be modified to do so requiring significant effort by system administrators within the organization. The fallback to pushing evidence into the service would simply be linking to results of the running processes/procedures output. This adds value by creating traceability to the protected resources that could be made available for onsite inspection.
 
 For example, our system backup and recovery SOP states or links to the implementation that enables us to back up each virtualization environment (Proxmox) every day using REAR. A natural byproduct of the backup and restoration procedures are the logs and exit code for the process. If Neosofia wanted to provide evidence that backup and recovery procedures were being successfully run we can do one of the following things:
 * Point the evidence service to the central log location for all the backup and restoration tests. This requires our system administrators to put all the log files in a central location.

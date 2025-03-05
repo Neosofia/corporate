@@ -1,23 +1,23 @@
 <!---
 Referenced Glossary Terms
 -->
-[eas]: /shared/glossary.md#enterprise-application-software-eas
-[ds]:  /shared/glossary.md#data-sensitivity-levels
-[dip]:  /shared/glossary.md#data-integrity4
-[sop]: /shared/glossary.md#standard-operating-procedure-sop
-[sso]: /shared/glossary.md#single-sign-on-sso
-[mfa]: /shared/glossary.md#multi-factor-authentication-mfa
-[api]: /shared/glossary.md#application-programming-interface-api
-[sms]: /shared/glossary.md#simple-messaging-service-sms
-[ear]: /shared/glossary.md#encryption-at-rest-ear
-[eif]: /shared/glossary.md#encryption-in-flight-eif
-[eee]: /shared/glossary.md#end-to-end-encryption-eee
-[tbd]: /shared/glossary.md#to-be-determined-tbd
+[eas]: /qms/glossary.md#enterprise-application-software-eas
+[ds]:  /qms/glossary.md#data-sensitivity-levels
+[dip]: /qms/glossary.md#data-integrity4
+[sop]: /qms/glossary.md#standard-operating-procedure-sop
+[sso]: /qms/glossary.md#single-sign-on-sso
+[mfa]: /qms/glossary.md#multi-factor-authentication-mfa
+[api]: /qms/glossary.md#application-programming-interface-api
+[sms]: /qms/glossary.md#simple-messaging-service-sms
+[ear]: /qms/glossary.md#encryption-at-rest-ear
+[eif]: /qms/glossary.md#encryption-in-flight-eif
+[eee]: /qms/glossary.md#end-to-end-encryption-eee
+[tbd]: /qms/glossary.md#to-be-determined-tbd
 
 <!---
 Referenced Roles
 -->
-[sa]: /shared/roles.md#system-administrator-sa
+[sa]: /qms/roles.md#system-administrator-sa
 
 <!---
 External Links
