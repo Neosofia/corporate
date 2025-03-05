@@ -46,7 +46,6 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: ghp-prod-files
-          run-id: ${{ github.event.workflow_run.id }}
           path: ./dist
 
       - name: Deploy to GitHub Pages
