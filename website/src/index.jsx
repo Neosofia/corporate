@@ -20,6 +20,8 @@ ReactDOM.createRoot(root).render(
 
       <Route path="/qms/" element={<QMS />} />
       <Route path="/qms/:id" element={<QMS />} />
+
+      <Route path="*" element={<Home />} />
     </Routes>
   </BrowserRouter>
 );
