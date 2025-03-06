@@ -1,10 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter, Routes, Route } from "react-router";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router";
 
+import { Navbar } from "./components/Navbar";
 import { Home } from './components/sections/Home';
 import { Blog } from './components/sections/blog/index';
 import { QMS } from './components/sections/qms/index';
+import { Footer } from './components/Footer';
 
 import './index.css';
 
@@ -12,16 +14,22 @@ const root = document.getElementById("root");
 
 ReactDOM.createRoot(root).render(
   <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<Home />} />
+    <main className="bg-slate-900 text-gray-100">
+      <Navbar />
 
-      <Route path="/blog/" element={<Blog />} />
-      <Route path="/blog/:id" element={<Blog />} />
+      <Routes>
+        <Route path="/" element={<Home />} />
 
-      <Route path="/qms/" element={<QMS />} />
-      <Route path="/qms/:id" element={<QMS />} />
+        <Route path="/blog/" element={<Blog />} />
+        <Route path="/blog/:id" element={<Blog />} />
 
-      <Route path="*" element={<Home />} />
-    </Routes>
-  </BrowserRouter>
+        <Route path="/qms/" element={<QMS />} />
+        <Route path="/qms/:id" element={<QMS />} />
+        
+        <Route path="*" element={<Navigate to="/" />} />
+      </Routes>
+
+      <Footer />
+    </main>
+  </BrowserRouter >
 );
