@@ -71,7 +71,12 @@
 
     a {
       @apply underline text-slate-400 hover:text-slate-300 visited:text-slate-500
-   }
+    }
+
+    /* Add a margin to the top of headings to account for the fixed header. */
+    h1, h2, h3, h4, h5, h6, a {
+      scroll-margin-top: calc(var(--spacing) * 16);
+    }
   }
 
   /* Style the footnotes section. */
