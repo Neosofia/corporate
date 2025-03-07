@@ -46,7 +46,7 @@
   }
 
 
-  .prose-sm {
+  .prose-base {
     ul {
       list-style: disc;
       padding: 0 0 0 calc(var(--spacing) * 4);
@@ -56,13 +56,17 @@
       padding: 0 0 0 calc(var(--spacing) * 4);
     }
 
+    li {
+      margin: calc(var(--spacing) * 1);
+    }
+
     table {
       border-width: 1px;
       border-color: var(--color-gray-500);
+      margin: calc(var(--spacing) * 8) 0;
     }
 
     th, td {
-      vertical-align: center;
       text-align: left;
       border-width: 1px;
       border-color: var(--color-gray-500);
@@ -73,15 +77,37 @@
       @apply underline text-slate-400 hover:text-slate-300 visited:text-slate-500
     }
 
+    blockquote {
+      border-left-width: 4px;
+      border-left-color: var(--color-slate-500);
+      margin: calc(var(--spacing) * 2) 0;
+    }
+    img {
+      margin: calc(var(--spacing) * 2) 0;
+    }
+    sup {
+      font-size: var(--text-xs);
+      vertical-align: super;
+      line-height: 0;
+      margin: calc(var(--spacing) * 4) 0;
+      a {
+        @apply no-underline
+      }
+    }
+    p {
+      margin-top: 0;
+      margin-bottom: calc(var(--spacing) * 4);
+    }
     /* Add a margin to the top of headings to account for the fixed header. */
     h1, h2, h3, h4, h5, h6, a {
       scroll-margin-top: calc(var(--spacing) * 16);
+      margin: calc(var(--spacing) * 7) 0;
     }
   }
 
   /* Style the footnotes section. */
   .footnotes {
-    font-size: var(--text-sm);
+    font-size: var(--text-xs);
     color: var(--color-slate-700);
 
     ol{    
