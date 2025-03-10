@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useParams } from "react-router";
 
 import ReactMarkdown from 'react-markdown';
@@ -18,7 +18,7 @@ const GetMD = () => {
     useEffect(() => {
         const loadContent = async () => {
             try {
-                const response = await fetch(`${path}${params.id || '0000_why_compliance'}.md`);
+                const response = await fetch(`${path}${params.id || 'readme'}.md`);
                 const text = await response.text();
                 setContent(text);
             } catch (error) {
@@ -28,7 +28,31 @@ const GetMD = () => {
         };
         loadContent();
     }, [params.id]);
-
+    
+    /* TBD: I give up. I wanted to keep things DRY, but useEffect has defeated me...
+     * Once I better understand React internals and useEffect ordering, state sharing, 
+     * etc. I'll revisit this and merge it into the ScrollToAnchor component.
+     * I really can't understand why HTML 4 concepts (hash links) are so hard in React almost
+     * 30 years after they became a standard.  Maybe day 9 in my learn React in 21 days is too soon :(
+     */
+    const lastHash = useRef('');
+    useEffect(() => {
+      if (location.hash.length > 0) {
+        lastHash.current = location.hash.slice(1);
+      }
+      console.log(document.getElementById(lastHash.current));
+      if ((lastHash.current.length > 0) && (document.getElementById(lastHash.current) != null)) {
+        setTimeout(() => {
+          const element = document.getElementById(lastHash.current);
+          const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+          window.scrollTo({
+            top: elementPosition - 80,
+            behavior: 'smooth'
+          });
+        }, 100);
+      }
+    }, [content]);
+    
     return content;
 }
 

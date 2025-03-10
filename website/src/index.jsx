@@ -7,16 +7,17 @@ import { Home } from './components/sections/Home';
 import { Blog } from './components/sections/blog/index';
 import { QMS } from './components/sections/qms/index';
 import { Footer } from './components/Footer';
+import { ScrollToAnchor } from './components/ScrollToAnchor';
 
 import './index.css';
 
 const root = document.getElementById("root");
 
 ReactDOM.createRoot(root).render(
-  <BrowserRouter>
-    <main className="bg-slate-900 text-gray-100">
-      <Navbar />
+  <main className="bg-slate-900 text-gray-100">
+    <Navbar />
 
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
 
@@ -25,11 +26,13 @@ ReactDOM.createRoot(root).render(
 
         <Route path="/qms/" element={<QMS />} />
         <Route path="/qms/:id" element={<QMS />} />
-        
+
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
+      
+      <ScrollToAnchor />
+    </BrowserRouter >
 
-      <Footer />
-    </main>
-  </BrowserRouter >
+    <Footer />
+  </main>
 );

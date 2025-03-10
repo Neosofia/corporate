@@ -35,9 +35,6 @@ export const Home = () => {
           </div>
         </div>
       </section>
-
-      <About />
-      <Contact />
     </>
   );
 };

@@ -62,8 +62,7 @@ const MenuItems = ({ mobile = false, menuOpen, setMenuOpen }) => {
 
   const menu = [
     { name: "Home", link: "/#home" },
-    { name: "About", link: "/#about" },
-    { name: "Contact", link: "/#contact" },
+    { name: "QMS", link: "/qms/" },
     { name: "Blog", link: "/blog/" },
   ]
 

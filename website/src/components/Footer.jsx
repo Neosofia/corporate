@@ -32,13 +32,37 @@ export const Footer = () => {
             <ul className="mt-2 space-y-2 text-gray-600">
               <li><a href="/blog/">Blog</a></li>
               <li><a href="/qms/">QMS</a></li>
+              <li className="hidden"><a href="/qms/procedures">Procedures</a></li>
             </ul>
           </div>
           <div>
-            <p className="font-semibold tracking-wide text-gray-800">Us</p>
-            <ul className="mt-2 space-y-2 text-gray-600">
-              <li><a href="/#about">About</a></li>
-              <li><a href="/#contact">Contact</a></li>
+            <p className="font-semibold tracking-wide text-gray-800">Resources</p>
+            <ul className="mt-2 space-y-2 text-gray-600 hidden">
+              <li><a href="/qms/glossary#tbd">Getting Started</a></li>
+              <li><a href="/qms/glossary#tbd">Use Cases</a></li>
+              <li><a href="/qms/glossary#tbd">Training</a></li>
+            </ul>
+          </div>
+          <div>
+            <p className="font-semibold tracking-wide text-gray-800">Product</p>
+            <ul className="mt-2 space-y-2 text-gray-600 hidden">
+              <li><a href="/qms/glossary#tbd">Pricing</a></li>
+              <li><a href="/qms/glossary#tbd">Support</a></li>
+              <li><a href="/qms/glossary#tbd">Operational Status</a></li>
+              <li><a href="/qms/glossary#tbd">Docs</a></li>
+              <li><a href="/qms/glossary#tbd">Certifications</a></li>
+            </ul>
+          </div>
+          <div>
+            <p className="font-semibold tracking-wide text-gray-800">Company</p>
+            <ul className="mt-2 space-y-2 text-gray-600 hidden">
+              <li><a href="/qms/glossary#tbd">Brand</a></li>
+              <li><a href="/qms/glossary#tbd">News & Press</a></li>
+              <li><a href="/qms/glossary#tbd">Careers</a></li>
+              <li><a href="/qms/glossary#tbd">Events</a></li>
+              <li><a href="/qms/glossary#tbd">Legal</a></li>
+              <li><a href="/qms/glossary#tbd">Leadership</a></li>
+              <li><a href="/qms/glossary#tbd">Contact Us</a></li>
             </ul>
           </div>
         </div>
