@@ -100,7 +100,15 @@ A set of steps taken to achieve a desired outcome
 
 ### Standard Operating Procedure (SOP)
 
-An approved procedures employees must follow. In addition to procedures, SOPs will typically include entry/exit criteria, assigned roles, responsibilities, purpose, scope/limitations and [SLOs](#service-level-objective-slo) for determining How Who does What and When.
+An approved procedures employees must be trained on and follow. In addition to procedures, SOPs will typically include entry/exit criteria, assigned roles, responsibilities, purpose, scope/limitations and [SLOs](#service-level-objective-slo) for determining How Who does What and When.
+
+
+#### Formal vs Informal Procedures
+
+SOPs are typically considered a formal procedure as they are a standardized set of steps that must be followed to complete a specific task or process. They're also approved by SMEs and require documented training by each employee before executing the procedure.
+
+Informal procedures on the other hand, are typically a documented set of steps that do not require SME authoring/approval or documented employee training. These are sometimes referred to as work guides (WG) or work instructions (WI).
+
 
 ### Evidence
 
@@ -115,6 +123,28 @@ NOTE: Validation != Testing.
 ### Audit
 
 Validation of a system or multiple systems (set of evidence). Audits can be internal or external from the organizations point of view.
+
+
+### Good Documentation Practices (GDP)
+
+A set of standards and guidelines for creating and maintaining documentation to ensure accuracy, consistency, and reliability. GDP is essential in regulated industries to ensure compliance and to provide clear, concise, and traceable documentation.
+
+#### Key Principles of GDP
+
+* **Accuracy**: Documentation must be precise and free from errors.
+* **Clarity**: Information should be clear and easily understood.
+* **Consistency**: Documentation should be consistent in format and content.
+* **Traceability**: Changes and updates to documentation should be traceable.
+* **Completeness**: All necessary information should be included.
+* **Legibility**: Documentation should be readable and accessible.
+
+### Nonconformities
+
+Instances where a process, product, or service does not meet specified requirements or standards. Nonconformities can be identified through audits, inspections, or customer feedback and require corrective actions to address the root cause and prevent recurrence.
+
+### Corrective Action and Preventative Action (CAPA)
+
+Actions taken to eliminate the causes of existing nonconformities (corrective) and to prevent the occurrence of potential nonconformities (preventative). CAPAs are essential for continuous improvement and compliance in quality management systems.
 
 ## Customer Service Terms
 
