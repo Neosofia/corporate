@@ -10,11 +10,11 @@
 [ns]: https://github.com/neosofia/corporate
 [contrib]: https://github.com/Neosofia/corporate/blob/main/CONTRIBUTING.md
 
-# Neosofia Glossary and Architecture
+# What is compliance?
 
 This post introduces Neosofia's approach to compliance. After defining compliance and looking at a real-world example, we introduce an initial glossary that establishes standardized terminology and concepts throughout the organization. Lastly, we state that all documentation and code are and will continue to be open-source, reflecting Neosofia's dedication to transparency, information sharing, and community contribution.
 
-## What is Compliance?
+## Our Take on Compliance
 
 What would the world be like if there were no regulations or policies? Or put another way, what if there was nothing to comply with? Would we live in a world packed with snake oil vendors peddling whatever wares possible to consumers despite their safety and efficacy? A world where technology companies use every scrap of information without our consent to push whatever products the highest marketing bidder can pay for? A world where the risk of being harmed while driving or taking public transit is a function of how much safety you can afford to pay for?
 
