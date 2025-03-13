@@ -81,7 +81,7 @@ Neosofia *must* adopt the following level one [DIP][dip] policies:
 [pveluksi]: https://github.com/Neosofia/corporate/blob/main/os/proxmox/pveSetup.sh
 
 <!--- Neosofia Links --->
-[sopsbr]: /website/procedures/IT-245-System%20Backup%20and%20Recovery.md
+[sopsbr]: /website/qms/procedures/IT-245-System%20Backup%20and%20Recovery.md
 
 | ID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Policy | SOP | Guides | Implementation | Evidence |
 |-|-|-|-|-|-|
