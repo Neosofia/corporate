@@ -4,7 +4,7 @@
 [qms]: #quality-management-systems-qms
 [sop]: #standard-operating-procedures-sops
 
-[qmss]: ../qms/glossary.md#quality-management-system-qms
+[qmss]: /website/qms/glossary.md#quality-management-system-qms
 
 # Blog Posts
 
@@ -14,10 +14,10 @@ Welcome to our blog index. The sections below organize compliance topics into ar
 
 Our introduction to compliance series of blog posts outlines the regulatory and security challenges organizations face as they grow, establishes a baseline for what compliance is, and introduces a guide for identifying which compliance level your organization is currently operating at. If you're new to compliance or don't know which compliance level your organization is/should be operating at, the posts below are a good place to start.
 
-- [Why Compliance Matters](./0000_why_compliance.md)
-- [What is Compliance](./0001_what_is_compliance.md)
-- [Minimal Viable Compliance (MVC)](./0004_mvc.md)
-- [Compliance Levels](./0005_beyond_mvc.md)
+- [Why Compliance Matters](/website/blog/0000_why_compliance.md)
+- [What is Compliance](/website/blog/0001_what_is_compliance.md)
+- [Minimal Viable Compliance (MVC)](/website/blog/0004_mvc.md)
+- [Compliance Levels](/website/blog/0005_beyond_mvc.md)
 
 ## Quality Management Systems (QMS)
 
@@ -43,7 +43,7 @@ This section covers a wide range of topics concerning [QMSs][qmss]. Many of thes
 
 ### Standard Operating Procedures (SOPs)
 
-- [System Backup and Recovery](./1000_system_backup_and_recovery.md)
+- [System Backup and Recovery](/website/blog/1000_system_backup_and_recovery.md)
 - Product Development and Delivery
 - Systems Management and Monitoring
 - Employee Engagement (qualify and train)
@@ -66,7 +66,7 @@ This section covers a wide range of topics concerning [QMSs][qmss]. Many of thes
 
 This section is for architects, IT system administrators, and software engineers looking for new ways of thinking about the systems you build and how you operate. Many of these posts will go into detail on automating the compliance checks needed for L2 and L3 organizations so you can focus on quickly shipping amazing software solutions that are secure and compliant.
 
-- [Service Architecture and Design](./2000_system_architecture_and_design.md)
+- [Service Architecture and Design](/website/blog/2000_system_architecture_and_design.md)
 - Why our tech stack?
 - Implementation (SDLC, CI/CD)
 - Operations (DevOps)

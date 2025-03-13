@@ -1,5 +1,5 @@
 <!--- Referenced Glossary Terms -->
-[ear]: /shared/glossary.md#encryption-at-rest-ear
+[ear]: /website/qms/glossary.md#encryption-at-rest-ear
 
 
 <!--- External Links -->
@@ -12,7 +12,7 @@
 
 # Proxmox Setup
 
-In order to run corporate services and applications, Neosofia has elected to use Proxmox for virtualization. To support our compliance by design objective, the following procedures are followed in order to create the system that will automatically back up and restore the entire operating system on a daily basis. These scripts also support our [policies](/shared/policies.md) by setting up:
+In order to run corporate services and applications, Neosofia has elected to use Proxmox for virtualization. To support our compliance by design objective, the following procedures are followed in order to create the system that will automatically back up and restore the entire operating system on a daily basis. These scripts also support our [policies](/website/qms/policies.md) by setting up:
  * Encryption at Rest ([EAR][ear]) for the [PVE][pve] backup device
  * [REAR][rear] setup for automated host level backup and recovery
  * Tools need to move backups to an offsite location ([OneDrive][od])
@@ -32,7 +32,7 @@ Before starting this process, you will need the following:
 
 ## OS Setup
 
-In order to bootstrap our system, an existing Proxmox installation must be used to create your first USB stick. Standard Proxmox installation instructions can be found [here][pvesetup] and if you don't have a subscription, you must also run the Proxmox post install helper scripts [here][pvehs]. Once the machine is booted we must set up environment variables to be used by the [prepareMedia.sh](./prepareMedia.sh) script by copying the [env.sample](./.env.sample) to `.env` and modifying to suit our hardware. Below are the defaults used in the current setup scripts.
+In order to bootstrap our system, an existing Proxmox installation must be used to create your first USB stick. Standard Proxmox installation instructions can be found [here][pvesetup] and if you don't have a subscription, you must also run the Proxmox post install helper scripts [here][pvehs]. Once the machine is booted we must set up environment variables to be used by the [prepareMedia.sh](prepareMedia.sh) script by copying the [env.sample](.env.sample) to `.env` and modifying to suit our hardware. Below are the defaults used in the current setup scripts.
 
 > [!WARNING]
 > Based on how you configure your environment variables, the unattended install process will **wipe out all devices** without any prompting!

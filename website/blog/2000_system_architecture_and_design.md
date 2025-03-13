@@ -1,27 +1,58 @@
+<!--- Internal Links --->
+[eas]:  /website/qms/glossary.md#enterprise-application-software-eas 
+[land]: /website/public/shared/images/system-landscape-v1.svg
+[dd]:   /website/public/shared/images/deployment-diagram-v1.svg
+[ugly]: /website/public/shared/images/ugly-sweater-swiss.png
+[tool]: /website/public/shared/images/using-policy-tools.svg
+[gift]: /website/public/shared/images/atomic-gift-exchange.png
+
+[sop-sbr]: /website/qms/procedures/IT-245-System%20Backup%20and%20Recovery.md
+
+<!--- External Links --->
+[c4]:   https://c4model.com/
+[str]:  https://structurizr.com/
+[hw]:   https://github.com/Neosofia/corporate/tree/main/hardware/readme.md
+[arch]: https://github.com/Neosofia/corporate/tree/main/architecture/README.md
+[pci]:  https://en.wikipedia.org/wiki/Payment_Card_Industry_Data_Security_Standard
+[psd2]: https://en.wikipedia.org/wiki/Payment_Services_Directive
+[gdpr]: https://en.wikipedia.org/wiki/General_Data_Protection_Regulation
+[flsa]: https://en.wikipedia.org/wiki/Fair_Labor_Standards_Act_of_1938
+[osha]: https://en.wikipedia.org/wiki/Occupational_Safety_and_Health_Administration
+[ewtd]: https://en.wikipedia.org/wiki/Working_Time_Directive_2003
+[rba]:  https://www.gov.uk/government/publications/bribery-act-2010-guidance
+[stri]: https://stripe.com/en-es/guides/pci-compliance
+[pvs]:  https://github.com/Neosofia/policy-validation-service
+[dg]:   https://en.wikipedia.org/wiki/Directed_graph
+[ev]:   https://github.com/Neosofia/evidence-aggregator-service
+[cedar]: https://www.cedarpolicy.com/
+[tailw]: https://tailwindcss.com/
+[rails]: https://rubyonrails.org/
+[react]: https://react.dev/
+
 # Architecture and Design
 
 Our introductory posts to compliance have been focused on manually curating policies, procedures, guides, implementation, and the evidence needed to prove your organization is compliant. To make this process more efficient, we'll be outlining the architecture and design of the validation and evidence gathering services to automate these manual processes.
 
 ## Architecture
 
-At the foundation of any compliant [EAS](/qms/glossary.md#EAS) lies a set of system architecture diagrams that define how technology systems and system users interact with each other. To express these relationships, Neosofia has elected to adopt the [C4 model](https://c4model.com/) and more specifically [Structurizr](https://structurizr.com/) to generate all architecture diagrams.
+At the foundation of any compliant [EAS][eas] lies a set of system architecture diagrams that define how technology systems and system users interact with each other. To express these relationships, Neosofia has elected to adopt the [C4 model][c4] and more specifically [Structurizr][str] to generate all architecture diagrams.
 
-The initial set of [EASs](/qms/glossary.md#EAS) documented will include all the hardware and third-party services needed to operate a *minimally* compliant technology organization, which can be found in our [hardware readme](/hardware/readme.md).
+The initial set of [EASs][eas] documented will include all the hardware and third-party services needed to operate a *minimally* compliant technology organization, which can be found in our [hardware readme][hw].
 
 > [!NOTE]
 > The policy validation and evidence aggregation compliance tools are designed to work with any service regardless of the vendor. The choices above are ones Neosofia has elected to make for reasons that will be covered in future posts.
 
 To better understand the relationship between the systems above, we created two C4 diagrams. The first architecture diagram is a system landscape diagram that shows the role of each software system and how it relates to other systems and users.
 
-![System Landscape Diagram](../../shared/images/system-landscape-v1.svg)
+![System Landscape Diagram][land]
 
 Our second diagram shows how systems are deployed from a physical and logical point of view with a description of the technologies used to provide the service in question.
 
-![Deployment Diagram](../../shared/images/deployment-diagram-v1.svg)
+![Deployment Diagram][dd]
 
 ### Deeper Dive
 
-For interactive architecture diagrams that allow you to change the layout, zoom in/out of the various components, filter based on tags, and/or reveal regulatory perspectives for each system, clone this repo and follow the instructions in the [architecture README](../../architecture/README.md).
+For interactive architecture diagrams that allow you to change the layout, zoom in/out of the various components, filter based on tags, and/or reveal regulatory perspectives for each system, clone this repo and follow the instructions in the [architecture README][arch].
 
 
 ## An Example Organization
@@ -30,11 +61,11 @@ Rather than continue to look at Neosofia, Let's look at a hypothetical example o
 
 > We're a technology services company that connects anybody on the planet with a web browser to their dream ugly sweater. The R&D team operates out of San Francisco, New York City, London, Madrid, and Berlin to bring your ugly sweater dreams to life. Our cotton is lovingly sheared from the finest alpacas in the Swiss Alps. Login to our site, answer three personal questions, and our AI-powered assistant will create your dream ugly sweater.
 
-![Ugly Sweater](/shared/images/ugly-sweater-swiss.png)[^credit]
+![Ugly Sweater][ugly][^credit]
 
 Despite the short company description, there is a minefield of regulations that they need to consider in order to legally operate without the fear of fines or lawsuits. If we were to map each activity to a regulation, it might look something like:
-* Payment Processing => [PCI DSS](https://en.wikipedia.org/wiki/Payment_Card_Industry_Data_Security_Standard), [PSD2](https://en.wikipedia.org/wiki/Payment_Services_Directive) (EU), [GDPR](https://en.wikipedia.org/wiki/General_Data_Protection_Regulation) (EU)
-* R&D (employees) => [FLSA](https://en.wikipedia.org/wiki/Fair_Labor_Standards_Act_of_1938) (US), [OSHA](https://en.wikipedia.org/wiki/Occupational_Safety_and_Health_Administration) (US), [EWTD](https://en.wikipedia.org/wiki/Working_Time_Directive_2003) (EU), [Read Bribery Act 2010](https://www.gov.uk/government/publications/bribery-act-2010-guidance) (UK)
+* Payment Processing => [PCI DSS][pci], [PSD2][psd2] (EU), [GDPR][gdpr] (EU)
+* R&D (employees) => [FLSA][flsa] (US), [OSHA][osha] (US), [EWTD][ewtd] (EU), [Read Bribery Act 2010][rba] (UK)
 * Supply Chain and Manufacturing => SCO (CH)
 
 And within each regulation is a set of rules that an organization must follow. For example, GDPR directly states or indirectly implies that the "controller" must respect the rights of the "data subject," which includes:
@@ -49,11 +80,11 @@ And within each regulation is a set of rules that an organization must follow. F
 
 What we end up with is a many-to-many (spiderweb) relationship between the industry, sub-sector, applicable regulation, and laws/policies that must be honored. And just to make things even more complicated, some regulations have sections with hidden implications that are interpreted differently based on the auditor! :facepalm:
 
-Many companies make ticking the regulatory compliance boxes easier by providing you with a service that handles the compliance aspects, but you need to be sure that the vendor complies with all the correct regulations, typically through some type of vendor qualification process, and that you also list that vendor as a "processor." Using the payments example, you may elect to use [Stripe](https://stripe.com/en-es/guides/pci-compliance) as your processor, but you're still handling PII data as the controller! The email address used to sign up plus three personal questions to customize the sweater are considered PII and would still fall under GDPR, numerous other regional regulations, and many subsections of the PCI DSS if any piece of credit card information touches your systems (even if it acts as a proxy to the payment provider). More broadly put, compliance is not a one-off event – it's a continuous and substantial effort of assessment and remediation that requires you to have awareness of the regulations that apply to you and how information flows through every part of your company.
+Many companies make ticking the regulatory compliance boxes easier by providing you with a service that handles the compliance aspects, but you need to be sure that the vendor complies with all the correct regulations, typically through some type of vendor qualification process, and that you also list that vendor as a "processor." Using the payments example, you may elect to use [Stripe][stri] as your processor, but you're still handling PII data as the controller! The email address used to sign up plus three personal questions to customize the sweater are considered PII and would still fall under GDPR, numerous other regional regulations, and many subsections of the PCI DSS if any piece of credit card information touches your systems (even if it acts as a proxy to the payment provider). More broadly put, compliance is not a one-off event – it's a continuous and substantial effort of assessment and remediation that requires you to have awareness of the regulations that apply to you and how information flows through every part of your company.
 
 ## Using the Policy Validation Service For Our Example
 
-To use our [policy validation service](https://github.com/Neosofia/policy-validation-service), a company would first need to answer questions about where they do business and the industry/sub-sector they operate in. Based on your answers, the service has a mapping ([directed graph](https://en.wikipedia.org/wiki/Directed_graph)) of all the applicable rules you must follow. Based on the rules you need to follow, you may have to answer additional questions for the [evidence aggregator service](https://github.com/Neosofia/evidence-aggregator-service) to gather evidence and pass it to the policy service for validation. To illustrate the point, we'll walk through one simple validation then go into the more generic architecture diagram.
+To use our [policy validation service][pvs], a company would first need to answer questions about where they do business and the industry/sub-sector they operate in. Based on your answers, the service has a mapping ([directed graph][dg]) of all the applicable rules you must follow. Based on the rules you need to follow, you may have to answer additional questions for the [evidence aggregator service][ev] to gather evidence and pass it to the policy service for validation. To illustrate the point, we'll walk through one simple validation then go into the more generic architecture diagram.
 
 1. Ugly sweater company enters information requested by the Neosofia Compliance platform website, including their URL LoveUglySweater.com.
 1. After pressing a validate me button, the evidence service makes a call to `https://LoveUglySweater.com` to gather one piece of evidence -- the supported TLS versions.
@@ -64,7 +95,7 @@ The validation and evidence services will continue this process for each regulat
 
 The process diagram below is a more generic set of steps including human/software system interactions with the evidence service. In general, the company tracking website should ask the organization looking to be compliant the fewest number of questions to produce a report that has the highest value in terms of proving compliance. The reports should drive a workflow that enables the organization to quickly and with minimal effort, become increasingly compliant. The two main actors in the setup and continued interaction are the employees at Love Ugly Sweater responsible for ensuring they're compliant and the IT system administrators that can fill in the technical details to validate the systems they manage. With minimal effort, the software system helps companies become increasingly compliant over time with the evidence needed to prove their compliance to external entities.
 
-![using the policy tools](/shared/images/using-policy-tools.svg)
+![using the policy tools][tool]
 
 ## System Design
 
@@ -79,11 +110,11 @@ With any software system, it's critical to think through the UX, architecture, a
 
 Overall, we want to make the process of becoming and proving your compliance require a minimal amount of effort so that your initial set of audits don't end up looking like a scene where the shinny package you give to the auditor is missing several key features which then turns into an atomic bomb of audit findings.
 
-![Atomic Gift](/shared/images/atomic-gift-exchange.png)[^credit]
+![Atomic Gift][gift][^credit-atom]
 
 ### Example
 
-The simple TLS example in our last post is what we consider a "hard external pull" validation as you can gather the evidence from outside the company network and test the result against a very specific requirement of TLS 1.2 or higher. A soft validation is when you can't test the policy against a specific expectation. An example of "soft internal" validation would be GDPR having the hidden implication that you should have a well-defined [System Backup and Recovery SOP](/website/procedures/IT-245-System%20Backup%20and%20Recovery.md). When setting up your company, we may ask -- please enter the location of your system backup and recovery SOP to which you may respond `https://SomeInternalFileSystem.com/QMS/SOPs/Current/IT-B&R.doc` which the evidence service cannot access (as it's internal) and even if it was externally accessible, we can't validate the SOP as being sufficient to satisfy a regulation. However, providing the URL does add value as it is sufficient to soft check the regulation and make it easy for any auditor to quickly access the thing you claim satisfies the regulation.
+The simple TLS example in our last post is what we consider a "hard external pull" validation as you can gather the evidence from outside the company network and test the result against a very specific requirement of TLS 1.2 or higher. A soft validation is when you can't test the policy against a specific expectation. An example of "soft internal" validation would be GDPR having the hidden implication that you should have a well-defined [System Backup and Recovery SOP][sop-sbr]. When setting up your company, we may ask -- please enter the location of your system backup and recovery SOP to which you may respond `https://SomeInternalFileSystem.com/QMS/SOPs/Current/IT-B&R.doc` which the evidence service cannot access (as it's internal) and even if it was externally accessible, we can't validate the SOP as being sufficient to satisfy a regulation. However, providing the URL does add value as it is sufficient to soft check the regulation and make it easy for any auditor to quickly access the thing you claim satisfies the regulation.
 
 ### Internal vs External
 
@@ -93,7 +124,7 @@ There are many programs today that can run inside a protected/internal network t
 
 ### Push vs Pull
 
-Ideally, all of our checks would be a pull style so that we can gather evidence without modifying existing [EASs](/qms/glossary.md#enterprise-application-software-eas) to push evidence into the service. For any organizations that are unwilling or unable to install an evidence service into their protected networks, modifications to existing [EASs](/qms/glossary.md#enterprise-application-software-eas) could push the needed evidence into the service. This is not ideal as every system wishing to adopt the push method would have to be modified to do so requiring significant effort by system administrators within the organization. The fallback to pushing evidence into the service would simply be linking to results of the running processes/procedures output. This adds value by creating traceability to the protected resources that could be made available for onsite inspection.
+Ideally, all of our checks would be a pull style so that we can gather evidence without modifying existing [EASs][eas] to push evidence into the service. For any organizations that are unwilling or unable to install an evidence service into their protected networks, modifications to existing [EASs][eas] could push the needed evidence into the service. This is not ideal as every system wishing to adopt the push method would have to be modified to do so requiring significant effort by system administrators within the organization. The fallback to pushing evidence into the service would simply be linking to results of the running processes/procedures output. This adds value by creating traceability to the protected resources that could be made available for onsite inspection.
 
 For example, our system backup and recovery SOP states or links to the implementation that enables us to back up each virtualization environment (Proxmox) every day using REAR. A natural byproduct of the backup and restoration procedures are the logs and exit code for the process. If Neosofia wanted to provide evidence that backup and recovery procedures were being successfully run we can do one of the following things:
 * Point the evidence service to the central log location for all the backup and restoration tests. This requires our system administrators to put all the log files in a central location.
@@ -113,7 +144,7 @@ The easiest design consideration by far is hard vs soft validations. If a valida
 
 Based on all the design considerations above, we've elected to use the following technologies.
 
-For the policy validation service, we've elected to use [Cedar](https://www.cedarpolicy.com/) as it supports customized schemas and stores relationships as a directed graph. For the evidence gathering service, we've elected to use [Ruby on Rails](https://rubyonrails.org/) for its ease of implementation, industry support, and extensive package set (Gems) that enables us to gather evidence from the widest range of resources possible. And for the website, we've elected to use [React](https://react.dev/) + [tailwindcss](https://tailwindcss.com/) because why would you use anything else for a front end ;)
+For the policy validation service, we've elected to use [Cedar][cedar] as it supports customized schemas and stores relationships as a directed graph. For the evidence gathering service, we've elected to use [Ruby on Rails][rails] for its ease of implementation, industry support, and extensive package set (Gems) that enables us to gather evidence from the widest range of resources possible. And for the website, we've elected to use [React][react] + [tailwindcss][tailw] because why would you use anything else for a front end ;)
 
 ## What's Next
 

@@ -1,13 +1,13 @@
 <!--- Internal References -->
-[pol]:   /qms/policies.md#data-integrity-and-privacy-dip
-[compg]: /qms/glossary.md#compliance-terms
-[g]:     /qms/glossary.md
-[flint]: /shared/images/flintstones-car.png
+[pol]:   /website/qms/policies.md#data-integrity-and-privacy-dip
+[compg]: /website/qms/glossary.md#compliance-terms
+[g]:     /website/qms/glossary.md
+[flint]: /website/public/shared/images/flintstones-car.png
 
 <!--- External References -->
 [ther]: https://en.wikipedia.org/wiki/Theranos#Exposure_and_downfall
-[mit]: https://en.wikipedia.org/wiki/MIT_License
-[ns]: https://github.com/neosofia/corporate
+[mit]:  https://en.wikipedia.org/wiki/MIT_License
+[ns]:   https://neosofia.tech
 [contrib]: https://github.com/Neosofia/corporate/blob/main/CONTRIBUTING.md
 
 # What is compliance?
@@ -56,7 +56,7 @@ To minimize the chance of mistakes, our [glossary][g] will include the terminolo
 
 ## What's Next?
 
-The [next post](./0004_mvc.md) will explore the policies and procedures **all** companies should consider adopting to secure their corporate and client data.
+The [next post](/website/blog/0004_mvc.md) will explore the policies and procedures **all** companies should consider adopting to secure their corporate and client data.
 
 ## One More Thing
 

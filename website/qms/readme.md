@@ -1,18 +1,18 @@
-[glos]: ./glossary.md
-[pol]: ./policies.md
+[glos]: /website/qms/glossary.md
+[pol]: /website/qms/policies.md
 [blog-0005]: /blog/0005_beyond_mvc.md
 
-[sop]: ./glossary.md#standard-operating-procedure-sop
-[qms]: ./glossary.md#quality-management-system-qms
-[qmsel]: ./glossary.md#elements-of-a-qms
-[mfa]: ./glossary.md/#multi-factor-authentication-mfa
-[eas-ex]: ./glossary.md#eas-examples
-[gdp]: ./glossary.md#good-documentation-practices-gdp
-[capa]: ./glossary.md#corrective-action-and-preventative-action-capa
+[sop]:   /website/qms/glossary.md#standard-operating-procedure-sop
+[qms]:   /website/qms/glossary.md#quality-management-system-qms
+[qmsel]: /website/qms/glossary.md#elements-of-a-qms
+[mfa]:   /website/qms/glossary.md/#multi-factor-authentication-mfa
+[eas-ex]: /website/qms/glossary.md#eas-examples
+[gdp]:   /website/qms/glossary.md#good-documentation-practices-gdp
+[capa]:  /website/qms/glossary.md#corrective-action-and-preventative-action-capa
 
-[lvl]: ./glossary.md#compliance-levels
-[inf]: ./glossary.md#formal-vs-informal-procedures
-[sop-sbr]: ./procedures/IT-245-System%20Backup%20and%20Recovery.md
+[lvl]: /website/qms/glossary.md#compliance-levels
+[inf]: /website/qms/glossary.md#formal-vs-informal-procedures
+[sop-sbr]: /website/qms/procedures/IT-245-System%20Backup%20and%20Recovery.md
 
 [lic]: https://github.com/Neosofia/corporate/blob/main/LICENSE
 [iso9001]: https://www.iso.org/standard/62085.html
