@@ -83,7 +83,7 @@ Neosofia *must* adopt the following level one [DIP][dip] policies:
 <!--- Neosofia Links --->
 [sopsbr]: /website/qms/procedures/IT-245-System%20Backup%20and%20Recovery.md
 
-| ID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Policy | SOP | Guides | Implementation | Evidence |
+| ID | Policy | SOP | Guides | Implementation | Evidence |
 |-|-|-|-|-|-|
 | POL-IT-0001 | All emails, without exception, will be deleted after 90 days | N/A | [Proton Sieve Filters][psfg] | [Proton Sieve Filter Code][efe], [Proton Filter List][pf], ![Configured Filter Screen Shot][eec] | ![Configured Filter Test][eet] |
 | POL-IT-0002 | All chat messages, without exception, will be deleted after 90 days | N/A | [Zoom Team chat settings][zcg] | ![Configured Chat Retention Screen Shot][zces] | [TBD][tbd] |
