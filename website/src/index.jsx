@@ -26,6 +26,7 @@ ReactDOM.createRoot(root).render(
 
         <Route path="/qms/" element={<QMS />} />
         <Route path="/qms/:id" element={<QMS />} />
+        <Route path="/qms/procedures/:id" element={<QMS />} />
 
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>

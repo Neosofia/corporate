@@ -45,11 +45,11 @@
     }
   }
 
-
+  
   .prose-base {
     ul {
       list-style: disc;
-      padding: 0 0 0 calc(var(--spacing) * 4);
+      padding: 0 0 0 calc(var(--spacing) * 4); 
     }
     ol {
       list-style: decimal;
@@ -61,16 +61,29 @@
     }
 
     table {
+      display: block;
+      overflow-x: auto;
       border-width: 1px;
       border-color: var(--color-gray-500);
-      margin: calc(var(--spacing) * 8) 0;
+    }
+    
+    thead {
+      background-color: var(--color-gray-800);
     }
 
+    /* Force uniform spacing on smaller tables */
+    tr>*:nth-last-child(3) ~ * { width:50% }
+    tr>*:nth-last-child(4) ~ * { width:33.33% } 
+    tr>*:nth-last-child(5) ~ * { width:25% }
+    tr>*:nth-last-child(6) ~ * { width:20% }
+
     th, td {
+      min-width: calc(var(--spacing) * 32);
       text-align: left;
-      border-width: 1px;
+      vertical-align: top;
+      border-width: 1px 0px;
       border-color: var(--color-gray-500);
-      padding: calc(var(--spacing) * 1);
+      padding: calc(var(--spacing) * 3);
     }
 
     a {
@@ -96,7 +109,7 @@
     }
     p {
       margin-top: 0;
-      margin-bottom: calc(var(--spacing) * 4);
+      margin-bottom: calc(var(--spacing) * 2);
     }
     /* Add a margin to the top of headings to account for the fixed header. */
     h1, h2, h3, h4, h5, h6, a {
