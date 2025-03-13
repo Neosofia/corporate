@@ -1,25 +1,26 @@
-<!---  References --->
-[sop-sbr]: /website/procedures/IT-245-System%20Backup%20and%20Recovery.md
-[sop-sbr-hw]: /website/procedures/IT-245-System%20Backup%20and%20Recovery.md#hardware-procedures
-[sop-sbr-os]: /website/procedures/IT-245-System%20Backup%20and%20Recovery.md#operating-system-procedures
-[sop-sbr-vm]: /website/procedures/IT-245-System%20Backup%20and%20Recovery.md#vm-procedures
-[sop-sbr-net]: /website/procedures/IT-245-System%20Backup%20and%20Recovery.md#networking-procedures
+<!---  Internal Links --->
+[sop-sbr]:     /website/qms/procedures/IT-245-System%20Backup%20and%20Recovery.md
+[sop-sbr-hw]:  /website/qms/procedures/IT-245-System%20Backup%20and%20Recovery.md#hardware-procedures
+[sop-sbr-os]:  /website/qms/procedures/IT-245-System%20Backup%20and%20Recovery.md#operating-system-procedures
+[sop-sbr-vm]:  /website/qms/procedures/IT-245-System%20Backup%20and%20Recovery.md#vm-procedures
+[sop-sbr-net]: /website/qms/procedures/IT-245-System%20Backup%20and%20Recovery.md#networking-procedures
 
 [blog-arch]: /website/blog/2000_system_architecture_and_design.md
 [blog-comp]: /website/blog/0001_what_is_compliance.md
 
-[glos-eas]: /qms/glossary.md#enterprise-application-software-eas
-[glos-tbd]: /qms/glossary.md#to-be-determined-tbd
+[glos-eas]:  /website/qms/glossary.md#enterprise-application-software-eas
+[glos-tbd]:  /website/qms/glossary.md#to-be-determined-tbd
 
+[csrd]: /website/public/shared/images/client-server-request-process.svg
+
+
+<!---  External Links --->
 [proton]: https://proton.me/
 [zoom]: https://www.zoom.com/
 
-
-
-
 # System Backup and Recovery
 
-Whether you host services in the cloud or self-host, the vast majority (if not all) of regulations mandate that you must have well-defined system backup and recovery procedures that are tested periodically and can quickly restore user access to their data. Regulations aside, it's good business practice to think through your operational dependencies and how you could recover from a loss of service. When most startups begin their technology journey, no thought is given to all the failure modes that can result in the loss of operations. And even if you start in the cloud, you don't magically get system backup and recovery for free!
+Whether you host services in the cloud or self-host, the vast majority (if not all) of regulations mandate that you must have well-defined system backup and recovery procedures that are tested periodically and can quickly restore user access to their data. Regulations aside, it's good business practice to think through your operational dependencies and how you could recover from a loss of service. When most startups begin their technology journey, no thought is given to all the failure modes that can result in the loss of operations. **And even if you start in the cloud, you don't magically get system backup and recovery for free!**
 
 This post will discuss some of the failure modes that can interrupt business operations and explore how our [IT-245 System Backup and Recovery][sop-sbr] SOP addresses those failure modes.
 
@@ -50,7 +51,7 @@ Based on our system architecture, we've elected to use REAR for our host-level b
 
 The first iteration in this project is a single node in our business mesh network, thus routing is limited to a single public access point for (http and https) services plus public DNS. The process diagram below helps us identify the data we need to back up in order to quickly recover from a compromise in our DNS or networking solutions.
 
-![client server request diagram](/shared/images/client-server-request-process.svg)
+![client server request diagram][csrd]
 
 Our procedures need to cover backup and restoration of the following data used to:
 * translate our host name to an IP address (Cloudflare)

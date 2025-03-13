@@ -1,25 +1,21 @@
-<!---
-Referenced Glossary Terms
--->
-[cl]: /qms/glossary.md#compliance-levels
-[kiss]: /qms/glossary.md#keep-it-simple-stupid-kiss
-[ear]: /qms/glossary.md#encryption-at-rest-ear
-[mfa]: /qms/glossary.md#multi-factor-authentication-mfa
-[eas]: /qms/glossary.md#enterprise-application-software-eas
-[sso]: /qms/glossary.md#single-sign-on-sso
-[qms]: /qms/glossary.md#quality-management-system-qms
-[sdlc]: /qms/glossary.md#software-development-lifecycle-sdlc
-[csv]: /qms/glossary.md#computer-systems-validation-csv
-[sop]: /qms/glossary.md#standard-operating-procedure-sop
-[rbac]: /qms/glossary.md#role-based-access-control-rbac
-<!---
-Referenced Roles
--->
-[sa]: /qms/roles.md#system-administrator-sa
+<!--- Internal Links -->
+[cl]:   /website/qms/glossary.md#compliance-levels
+[kiss]: /website/qms/glossary.md#keep-it-simple-stupid-kiss
+[ear]:  /website/qms/glossary.md#encryption-at-rest-ear
+[mfa]:  /website/qms/glossary.md#multi-factor-authentication-mfa
+[eas]:  /website/qms/glossary.md#enterprise-application-software-eas
+[sso]:  /website/qms/glossary.md#single-sign-on-sso
+[qms]:  /website/qms/glossary.md#quality-management-system-qms
+[sdlc]: /website/qms/glossary.md#software-development-lifecycle-sdlc
+[csv]:  /website/qms/glossary.md#computer-systems-validation-csv
+[sop]:  /website/qms/glossary.md#standard-operating-procedure-sop
+[rbac]: /website/qms/glossary.md#role-based-access-control-rbac
+[sa]:   /website/qms/roles.md#system-administrator-sa
+[rm]:   /website/blog/readme.md
+[next]: /website/blog/2000_system_architecture_and_design.md
+[tony]: /website/public/shared/images/tony-hackaroni.png
 
-<!---
-External Links
--->
+<!--- External Links -->
 
 # Beyond MVC
 
@@ -65,7 +61,7 @@ The answer is interesting because this company is **real**. The names have been 
 
 What did the owner do? She fired Tony for "being stupid". When the client refused to accept even the most basic suggestions of employing MFA and restricting document/folder access to the office manager and owner -- I knew they were doomed. After the fact, trying to explain how privacy, security, and compliance start at the top of the organization was clearly going to be a lost cause. Had the organization taken 2 minutes to check the MFA option for the MS account then take 10 minutes ensuring everybody had a phone number in the company directory or the Authenticator app installed on their phone, millions of dollars in damages, hundreds of hours of billable time, and poor Tony's job loss could have been averted.
 
-![Tony Hackaroni](/shared/images/tony-hackaroni.png)[^credit]
+![Tony Hackaroni][tony][^credit]
 
 ## Exploring Level 2
 
@@ -128,9 +124,9 @@ It's fun telling these very close to real life stories, but what's the lesson in
 
 ## What's Next
 
-Our introduction to compliance series of posts ends here and now branches into a choose-your-own-adventure style book where you decide what to do/read next. Future posts will be indexed in our [readme](./readme.md) and organized into the following areas:
+Our introduction to compliance series of posts ends here and now branches into a choose-your-own-adventure style book where you decide what to do/read next. Future posts will be indexed in our [readme][rm] and organized into the following areas:
 
- * [Neosofia validation and evidence service system architecture and design](./2000_system_architecture_and_design.md)
+ * [Neosofia validation and evidence service system architecture and design][next]
  * Getting started checklists and document templates
  * Picking best in class 3rd party vendors
  * Quality Management Systems

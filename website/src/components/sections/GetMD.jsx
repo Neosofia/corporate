@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import { useParams } from "react-router";
+import { useParams, Link } from "react-router";
 
 import ReactMarkdown from 'react-markdown';
 
@@ -40,7 +40,6 @@ const GetMD = () => {
       if (location.hash.length > 0) {
         lastHash.current = location.hash.slice(1);
       }
-      console.log(document.getElementById(lastHash.current));
       if ((lastHash.current.length > 0) && (document.getElementById(lastHash.current) != null)) {
         setTimeout(() => {
           const element = document.getElementById(lastHash.current);
@@ -59,7 +58,7 @@ const GetMD = () => {
 
 /* What a PITA this was to get working! 
  *
- * Need to prepend the /blog/ path to all anchors so footnotes work with linkComonpent
+ * Need to prepend the /blog/ path to all anchors so footnotes work with linkComponent
  * Need to strip the .md extension from the href so raw content is not served 
  * Need rehype raw to remove html comments in md files
  * Need rehype slug to generate ids for headings (needed for glossary and policies)
@@ -74,12 +73,19 @@ export const RenderMD = () => {
 
     const linkComponent = ({ href = '', ...props }) => {
         if (href.startsWith('http')) {
-            return <a href={href} {...props} />;
+            return <Link to={href} target="_blank" rel="noreferrer" {...props} />;
         }
         else {
             var path = location.pathname.substring(0, location.pathname.lastIndexOf("/") + 1);
-            return <a href={href.replace("./", path).replace(".md", "")} {...props} />;
+            href = href.replace(".md", "").replace("/website/", "/");
+
+            var target = href.includes('glossary') ? 'ns-ref' : '';
+            return <Link to={href} target={target} {...props} />;
         }
+    };
+
+    const imgComponent = ({ src = '', ...props }) => {
+        return <img src={src.replace("/website/", "/").replace("/public/", "/")} {...props} />
     };
 
     const quoteComponent = ({ children, ...props }) => {
@@ -112,7 +118,7 @@ export const RenderMD = () => {
         <ReactMarkdown
             rehypePlugins={[rehypeSlug, rehypeRaw]}
             remarkPlugins={[remarkGfm]}
-            components={{ a: linkComponent, p: quoteComponent }}
+            components={{ a: linkComponent, p: quoteComponent, img: imgComponent }}
         >
             {GetMD()}
         </ReactMarkdown >

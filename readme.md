@@ -1,5 +1,5 @@
 <!--- Glossary Terms Used --->
-[qms]: /shared/glossary.md#quality-management-system-qms
+[qms]: /website/qms/glossary.md#quality-management-system-qms
 
 # Neosofia
 
@@ -10,7 +10,7 @@ Neo and Sofia are the Greek words for new and wisdom. As a technology services c
 Interested in learning more about why compliance matters and how to achieve it? Start with our [zeroth post](/website/blog/0000_why_compliance.md) and follow along as we go on our compliance journey together.
 
 
-If you're interested in building out a quality management system ([QMS][qms]) the Neosofia [procedures](/website/procedures/), [policies](/shared/policies.md), and [roles](/shared/roles.md) can be used as a template for your organization. You can also use concepts like full traceability to apply to an existing [QMS][qms].
+If you're interested in building out a quality management system ([QMS][qms]) the Neosofia [procedures](/website/qms/procedures/), [policies](/website/qms/policies.md), and [roles](/website/qms/roles.md) can be used as a template for your organization. You can also use concepts like full traceability to apply to an existing [QMS][qms].
 
 
 Are you an IT system administrator looking to automate your operations? Check out the [operating system scripts](/os/) we use to automate our business operations.

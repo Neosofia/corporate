@@ -32,6 +32,6 @@ We're done when any company, in any regulated industry, can use the tools and gu
 
 ## What is next?
 
-The [next post](./0001_what_is_compliance.md) in this series will give a high-level overview of what compliance means and mark the start of our compliance journey together.
+The [next post](/website/blog/0001_what_is_compliance.md) in this series will give a high-level overview of what compliance means and mark the start of our compliance journey together.
 
 [^ai]: Summary generated with GitHub Copilot

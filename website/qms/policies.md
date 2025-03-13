@@ -1,23 +1,23 @@
 <!---
 Referenced Glossary Terms
 -->
-[eas]: /qms/glossary.md#enterprise-application-software-eas
-[ds]:  /qms/glossary.md#data-sensitivity-levels
-[dip]: /qms/glossary.md#data-integrity4
-[sop]: /qms/glossary.md#standard-operating-procedure-sop
-[sso]: /qms/glossary.md#single-sign-on-sso
-[mfa]: /qms/glossary.md#multi-factor-authentication-mfa
-[api]: /qms/glossary.md#application-programming-interface-api
-[sms]: /qms/glossary.md#simple-messaging-service-sms
-[ear]: /qms/glossary.md#encryption-at-rest-ear
-[eif]: /qms/glossary.md#encryption-in-flight-eif
-[eee]: /qms/glossary.md#end-to-end-encryption-eee
-[tbd]: /qms/glossary.md#to-be-determined-tbd
+[eas]: /website/qms/glossary.md#enterprise-application-software-eas
+[ds]:  /website/qms/glossary.md#data-sensitivity-levels
+[dip]: /website/qms/glossary.md#data-integrity
+[sop]: /website/qms/glossary.md#standard-operating-procedure-sop
+[sso]: /website/qms/glossary.md#single-sign-on-sso
+[mfa]: /website/qms/glossary.md#multi-factor-authentication-mfa
+[api]: /website/qms/glossary.md#application-programming-interface-api
+[sms]: /website/qms/glossary.md#simple-messaging-service-sms
+[ear]: /website/qms/glossary.md#encryption-at-rest-ear
+[eif]: /website/qms/glossary.md#encryption-in-flight-eif
+[eee]: /website/qms/glossary.md#end-to-end-encryption-eee
+[tbd]: /website/qms/glossary.md#to-be-determined-tbd
 
 <!---
 Referenced Roles
 -->
-[sa]: /qms/roles.md#system-administrator-sa
+[sa]: /website/qms/roles.md#system-administrator-sa
 
 <!---
 External Links
@@ -48,24 +48,24 @@ Neosofia *must* adopt the following level one [DIP][dip] policies:
 
 <!--- Proton Links --->
 [psfg]: https://proton.me/support/sieve-advanced-custom-filters
-[efe]: /email/expire_after_90_days.sieve
+[efe]: https://github.com/Neosofia/corporate/blob/main/email/expire_after_90_days.sieve
 [pf]: https://account.proton.me/u/4/mail/filters
-[eec]: /shared/images/evidence/ProtonEmail90DayFilter.png
-[eet]: /shared/images/evidence/ProtonEmail90DayTest.png
+[eec]: /website/public/shared/images/evidence/ProtonEmail90DayFilter.png
+[eet]: /website/public/shared/images/evidence/ProtonEmail90DayTest.png
 [pmfag]: https://proton.me/support/two-factor-authentication-2fa
-[pmfaa]: /shared/images/evidence/ProtonMFAAdmin.png
-
+[pmfaa]: /website/public/shared/images/evidence/ProtonMFAAdmin.png
+ 
 <!--- Zoom Links --->
 [zcg]: https://support.zoom.com/hc/en/article?id=zm_kb&sysparm_article=KB0060329
 [zcws]: https://zoom.us/account/setting?tab=chat
-[zces]: /shared/images/evidence/ZoomChat90DayPolicy.png
+[zces]: /website/public/shared/images/evidence/ZoomChat90DayPolicy.png
 [zmfag]: https://support.zoom.com/hc/en/article?id=zm_kb&sysparm_article=KB0066054
-[zmfas]: /shared/images/evidence/ZoomMFAAdminSetting.png
+[zmfas]: /website/public/shared/images/evidence/ZoomMFAAdminSetting.png
 
 <!--- Cloudflare Links --->
 [cfmfag]: https://developers.cloudflare.com/fundamentals/setup/account/account-security/2fa/
-[cfmfaa]: /shared/images/evidence/CloudFlareMFAAdmin.png
-[cfmfas]: /shared/images/evidence/CloudflareMFASetup.png
+[cfmfaa]: /website/public/shared/images/evidence/CloudFlareMFAAdmin.png
+[cfmfas]: /website/public/shared/images/evidence/CloudflareMFASetup.png
 
 <!--- OS Links --->
 [winearg]: https://learn.microsoft.com/en-us/windows/security/operating-system-security/data-protection/bitlocker/
@@ -74,24 +74,24 @@ Neosofia *must* adopt the following level one [DIP][dip] policies:
 [luksg]: https://gitlab.com/cryptsetup/cryptsetup
 [cleivs+luksg]: https://blog.dowhile0.org/2017/10/18/automatic-luks-volumes-unlocking-using-a-tpm2-chip/
 
-[winble]: /shared/images/evidence/WindowsDesktopBitlocker.png
-[macfve]: /shared/images/evidence/MacDesktopFileVault.png
-[lukse]: /shared/images/evidence/PVE0001LUKS.png
+[winble]: /website/public/shared/images/evidence/WindowsDesktopBitlocker.png
+[macfve]: /website/public/shared/images/evidence/MacDesktopFileVault.png
+[lukse]: /website/public/shared/images/evidence/PVE0001LUKS.png
 
-[pveluksi]: /os/proxmox/pveSetup.sh
+[pveluksi]: https://github.com/Neosofia/corporate/blob/main/os/proxmox/pveSetup.sh
 
 <!--- Neosofia Links --->
 [sopsbr]: /website/procedures/IT-245-System%20Backup%20and%20Recovery.md
 
 | ID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Policy | SOP | Guides | Implementation | Evidence |
 |-|-|-|-|-|-|
-| POL-IT-0001 | All emails, without exception, will be deleted after 90 days | N/A | [Proton Sieve Filters][psfg] | [Proton Sieve Filter Code][efe], [Proton Filter List][pf], [Configured Filter Screen Shot][eec] | [Configured Filter Test][eet] |
-| POL-IT-0002 | All chat messages, without exception, will be deleted after 90 days | N/A | [Zoom Team chat settings][zcg] | [Configured Chat Retention Screen Shot][zces] | [TBD][tbd] |
-| POL-IT-0003 | All systems must have multifactor authentication (MFA) enabled. Authenticator apps with biometric verification are preferred for [MFA][mfa], with SMS as a fallback option if app-based MFA is not an option. | N/A | [Proton MFA][pmfag], [Zoom MFA][zmfag], [Cloudflare MFA][cfmfag] | [Proton MFA Global Setting][pmfaa], [Zoom MFA Global Setting][zmfas], [Cloudflare MFA Global Setting][cfmfaa]     | [TBD][tbd] | 
+| POL-IT-0001 | All emails, without exception, will be deleted after 90 days | N/A | [Proton Sieve Filters][psfg] | [Proton Sieve Filter Code][efe], [Proton Filter List][pf], ![Configured Filter Screen Shot][eec] | ![Configured Filter Test][eet] |
+| POL-IT-0002 | All chat messages, without exception, will be deleted after 90 days | N/A | [Zoom Team chat settings][zcg] | ![Configured Chat Retention Screen Shot][zces] | [TBD][tbd] |
+| POL-IT-0003 | All systems must have multifactor authentication (MFA) enabled. Authenticator apps with biometric verification are preferred for [MFA][mfa], with SMS as a fallback option if app-based MFA is not an option. | N/A | [Proton MFA][pmfag], [Zoom MFA][zmfag], [Cloudflare MFA][cfmfag] | ![Proton MFA Global Setting][pmfaa] ![Zoom MFA Global Setting][zmfas] ![Cloudflare MFA Global Setting][cfmfaa]     | [TBD][tbd] | 
 | POL-IT-0004 | Once per year, all documents not accessed or modified for over 365 days will be archived for long-term storage. Once per year, all long-term storage documents older than two years will be purged. This policy does not apply to financial or legal documents that must be retained for more than two years. | N/A | [TBD][tbd]: Currently confirming if Proton Drive supports data retention policy settings or tools to manually comply | [TBD][tbd] | [TBD][tbd]
 | POL-IT-0005 | Neosofia will define and maintain system backup and recovery [SOP][sop]s to protect client, company, and employee data from loss, unintended manipulation, and improper data residency. The 3-2-1-1-0 backup principle will be employed for all data. | [System Backup and Recovery SOP][sopsbr] | N/A | [TBD][tbd] | [TBD][tbd] |
 | POL-IT-0006 | All [EASs][eas] will employ encryption at rest and in flight. | [TBD][tbd]: add EAR and EIF to vendor qualification SOP.| N/A | N/A | N/A |
-| POL-IT-0007 | All company workstations and servers will employ disk-level encryption to ensure all cached information saved from [EASs][eas] or entered by a client, is encrypted at rest | [TBD][tbd]: add to system administration SOP | [Windows BitLocker][winearg], Mac OS [FileVault][macearg], Linux [LUKS][luksg] + [Clevis][clevisg] | [PVE LUKS Setup Automation][pveluksi] | [Ben's Windows Desktop][winble], [Ben's Mac Desktop][macfve], [Neosofia PVE Server][lukse] |
+| POL-IT-0007 | All company workstations and servers will employ disk-level encryption to ensure all cached information saved from [EASs][eas] or entered by a client, is encrypted at rest | [TBD][tbd]: add to system administration SOP | [Windows BitLocker][winearg], Mac OS [FileVault][macearg], Linux [LUKS][luksg] + [Clevis][clevisg] | [PVE LUKS Setup Automation][pveluksi] | ![Ben's Windows Desktop][winble] ![Ben's Mac Desktop][macfve] ![Neosofia PVE Server][lukse] |
 
 
 #### Level 2 DI

@@ -5,11 +5,11 @@
 Neosofia will define hardware/software systems in "mark" versions to walk other organizations through the cost/scale/compliance levels achieved based on the level of investment for each version. The goal is to minimize operational costs while maximizing scale and compliance. We'll start with a single piece of hardware plus key 3rd party services and scale up to a max size "home lab" setup with a half rack of servers drawing no more than 2k watts.
 
 ### Services and Software used for all Systems
- * [Proxmox](proxmox.com) (Debian 12) for the operating system to virtualize all employee workstations plus self-hosted [EASs](/shared/glossary.md#EAS).
+ * [Proxmox](proxmox.com) (Debian 12) for the operating system to virtualize all employee workstations plus self-hosted [EASs](/website/qms/glossary.md#enterprise-application-software-eas).
  * [Cloudflare](https://www.cloudflare.com/) for public DNS resolution and https tunneling to self-hosted services
  * [Cloudflare](https://www.cloudflare.com/) for internal DNS resolution to provide malware protection (1.1.1.3 and 1.0.0.3)
  * [Let's Encrypt](https://letsencrypt.org/) for SSL certificates
- * [GitHub](github.com) for [SCC](/shared/glossary.md#source-code-control) and [CI/CD](/shared/glossary.md#continuous-integration-and-continuous-delivery-cicd)
+ * [GitHub](github.com) for [SCC](/website/qms/glossary.md#source-code-control) and [CI/CD](/website/qms/glossary.md#continuous-integration-and-continuous-delivery-cicd)
 
 
 ### Neosofia Mark 1 System (NS-MK1)
