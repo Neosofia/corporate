@@ -2,9 +2,9 @@ import { CodeBracketIcon } from '@heroicons/react/24/solid'
 
 export const Footer = () => {
   return (
-    <div className="max-w-5xl mx-auto px-6">
-      <div className="grid gap-16 row-gap-10 mb-8 lg:grid-cols-6">
-        <div className="md:max-w-md md:col-span-2">
+    <div className="max-w-5xl mx-auto px-4 md:px-0">
+      <div className="grid gap-16 row-gap-10 mb-6 mt-4 lg:grid-cols-6 border-t">
+        <div className="md:max-w-md mt-4 md:col-span-2">
           <a
             href="/"
             aria-label="Go home"
@@ -26,7 +26,7 @@ export const Footer = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-5 row-gap-8 lg:col-span-4 md:grid-cols-4">
+        <div className="grid grid-cols-2 mt-4 gap-5 row-gap-8 lg:col-span-4 md:grid-cols-4">
           <div>
             <p className="font-semibold tracking-wide text-gray-800">Compliance</p>
             <ul className="mt-2 space-y-2 text-gray-600">
