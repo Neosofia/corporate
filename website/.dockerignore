@@ -1,5 +1,7 @@
 **/node_modules/
 **/.pnpm-store/
+.react-router
+build
 npm-debug.log
 Dockerfile
 .dockerignore

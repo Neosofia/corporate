@@ -4,6 +4,8 @@
 **/node_modules/
 **/.pnpm-store/
 **/dist/
+/.react-router/
+
 /.pnp
 .pnp.js
 .vite/
