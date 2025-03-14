@@ -1,8 +1,4 @@
-import { About } from "./About";
-import { Contact } from "./Contact";
-
-
-export const Home = () => {
+export default function Home() {
   return (
     <>
       <section
