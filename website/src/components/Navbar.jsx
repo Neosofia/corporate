@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 
-import logo from '../assets/Neosofia.png';
+import logo from '../../app/assets/Neosofia.png';
 import { LoadingScreen } from "./LoadingScreen";
 
 export const Navbar = () => {
