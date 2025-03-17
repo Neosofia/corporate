@@ -8,17 +8,24 @@ import rehypeSlug from 'rehype-slug';
 
 import { InformationCircleIcon } from '@heroicons/react/24/outline'
 
-export const RenderMD = (props) => {
+export async function LoadMD(params: { id?: string }) {
+    let filename = `https://raw.githubusercontent.com/Neosofia/corporate/refs/heads/main/website/blog/${params.id || 'readme'}.md`
+
+    const res = await fetch(filename);
+    const content = await res.text();
+
+    return content;
+}
+
+export const RenderMD = (props: any) => {
     const linkComponent = ({ href = '', ...props }) => {
         if (href.startsWith('http')) {
             return <Link to={href} target="_blank" rel="noreferrer" {...props} />;
         }
         else {
-            var path = location.pathname.substring(0, location.pathname.lastIndexOf("/") + 1);
-            href = href.replace(".md", "").replace("/website/", "/");
-
+            href = href.replace(".md", "/").replace("/website/", "/");
             var target = href.includes('glossary') ? 'ns-ref' : '';
-            return <Link to={href} target={target} {...props} />;
+            return <Link to={href} reloadDocument target={target} {...props} />;
         }
     };
 
@@ -26,7 +33,7 @@ export const RenderMD = (props) => {
         return <img src={src.replace("/website/", "/").replace("/public/", "/")} {...props} />
     };
 
-    const quoteComponent = ({ children, ...props }) => {
+    const quoteComponent = ({ children, ...props }: { children?: any }) => {
         if (typeof children === 'string' && children.includes('[!')) {
             let style;
             switch (true) {
