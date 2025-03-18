@@ -48,7 +48,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           name: github-pages
-          path: website/dist
+          path: website/build/client
           
   deploy:
     environment:

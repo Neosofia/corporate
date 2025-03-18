@@ -1,9 +1,9 @@
 <!---  Internal Links --->
-[sop-sbr]:     /website/qms/procedures/IT-245-System%20Backup%20and%20Recovery.md
-[sop-sbr-hw]:  /website/qms/procedures/IT-245-System%20Backup%20and%20Recovery.md#hardware-procedures
-[sop-sbr-os]:  /website/qms/procedures/IT-245-System%20Backup%20and%20Recovery.md#operating-system-procedures
-[sop-sbr-vm]:  /website/qms/procedures/IT-245-System%20Backup%20and%20Recovery.md#vm-procedures
-[sop-sbr-net]: /website/qms/procedures/IT-245-System%20Backup%20and%20Recovery.md#networking-procedures
+[sop-sbr]:     /website/qms/procedures/IT-245-SystemBackupandRecovery.md
+[sop-sbr-hw]:  /website/qms/procedures/IT-245-SystemBackupandRecovery.md#hardware-procedures
+[sop-sbr-os]:  /website/qms/procedures/IT-245-SystemBackupandRecovery.md#operating-system-procedures
+[sop-sbr-vm]:  /website/qms/procedures/IT-245-SystemBackupandRecovery.md#vm-procedures
+[sop-sbr-net]: /website/qms/procedures/IT-245-SystemBackupandRecovery.md#networking-procedures
 
 [blog-arch]: /website/blog/2000_system_architecture_and_design.md
 [blog-comp]: /website/blog/0001_what_is_compliance.md

@@ -1,13 +1,11 @@
 import { useEffect } from "react";
 import { useState } from "react";
 
-import logo from '../assets/Neosofia.png';
+import logo from '../../app/assets/Neosofia.png';
 import { LoadingScreen } from "./LoadingScreen";
 
 export const Navbar = () => {
-  /* Only show the loading screen if the first entry point is the root URL with no hash */
-  var isRoot = document.location.pathname === "/" && document.location.hash === "";
-  const [isLoaded, setIsLoaded] = useState(!isRoot);
+  const [isLoaded, setIsLoaded] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {

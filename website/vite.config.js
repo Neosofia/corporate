@@ -1,15 +1,10 @@
 import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
-
+import { reactRouter } from "@react-router/dev/vite";
+import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [reactRouter(),tsconfigPaths()],
   base: "/",
-  test: {
-    globals: true,
-    environment: 'jsdom',
-    setupFiles: ['./src/setupTests.js'],
-  },
   server: {
     host: '0.0.0.0',
     port: 3000,
