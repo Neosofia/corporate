@@ -9,8 +9,8 @@ export default [
   ]),
   
   ...prefix("qms", [
-    index(       "../src/components/sections/qms/index.jsx"),
-    route(":id", "../src/components/sections/qms/index.jsx", { id: "qms-id" } ),
+    index(       "../src/components/sections/qms/index.tsx"),
+
   ]),
 
 ] satisfies RouteConfig;

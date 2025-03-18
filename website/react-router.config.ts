@@ -17,6 +17,7 @@ export default {
     return [
       "/",
       "/blog",
+      "/qms",
       ...posts.map((post) => post.href),
     ];
   },

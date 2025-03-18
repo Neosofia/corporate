@@ -8,8 +8,22 @@ import rehypeSlug from 'rehype-slug';
 
 import { InformationCircleIcon } from '@heroicons/react/24/outline'
 
-export async function LoadMD(params: { id?: string }) {
-    let filename = `https://raw.githubusercontent.com/Neosofia/corporate/refs/heads/main/website/blog/${params.id || 'readme'}.md`
+export async function ClientLoadMD(params: { id?: string }, folder?: string) {
+    let filename = `/${folder}/${params.id || 'readme'}.md`
+
+    const res = await fetch(filename);
+    const content = await res.text();
+
+    return content;
+}
+
+export async function ServerLoadMD(params: { id?: string }, folder?: string) {
+    /* TBD: This will work for production builds (main), but will need to be redone for staging/preview builds.
+     * I'm done trying to fight the ssr/ssg, client/server, dev/prod magic incantation to make every environment
+     * work in every permutation and combination of the above. Filesystem reads are not possible even when
+     * doing ssg in a "server"
+     */
+    let filename = `https://raw.githubusercontent.com/Neosofia/corporate/refs/heads/main/website/${folder}/${params.id || 'readme'}.md`
 
     const res = await fetch(filename);
     const content = await res.text();
