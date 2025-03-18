@@ -12,7 +12,7 @@
 
 [lvl]: /website/qms/glossary.md#compliance-levels
 [inf]: /website/qms/glossary.md#formal-vs-informal-procedures
-[sop-sbr]: /website/qms/procedures/IT-245-System%20Backup%20and%20Recovery.md
+[sop-sbr]: /website/qms/procedures/IT-245-SystemBackupandRecovery.md
 
 [lic]: https://github.com/Neosofia/corporate/blob/main/LICENSE
 [iso9001]: https://www.iso.org/standard/62085.html

@@ -6,7 +6,7 @@
 [tool]: /website/public/shared/images/using-policy-tools.svg
 [gift]: /website/public/shared/images/atomic-gift-exchange.png
 
-[sop-sbr]: /website/qms/procedures/IT-245-System%20Backup%20and%20Recovery.md
+[sop-sbr]: /website/qms/procedures/IT-245-SystemBackupandRecovery.md
 
 <!--- External Links --->
 [c4]:   https://c4model.com/

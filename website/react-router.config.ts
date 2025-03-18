@@ -2,23 +2,29 @@ import type { Config } from "@react-router/dev/config";
 import fs from 'fs';
 import path from 'path';
 
+function getMarkdownFiles(dir: string): string[] {
+  const files = fs.readdirSync(path.join(__dirname,dir));
+  return files
+    .filter(file => path.extname(file) === '.md')
+    .map(file => `/${dir}/` + path.basename(file, '.md'));
+}
+
+const qmsFiles = getMarkdownFiles( 'qms' );
+const blogFiles = getMarkdownFiles( 'blog' );
+const sopFiles = getMarkdownFiles( 'qms/procedures' );
+
 export default {
   ssr: false,
 
   async prerender() {
-
-    const blogDir = path.join(__dirname, 'blog');
-    const filenames = fs.readdirSync(blogDir).filter(file => file.endsWith('.md'));
-    const posts = filenames.map(file => ({
-      href: `/blog/${file.replace('.md', '')}`
-    }));
-
-
     return [
       "/",
       "/blog",
       "/qms",
-      ...posts.map((post) => post.href),
+      "/qms/procedures",
+      ...qmsFiles,
+      ...blogFiles,
+      ...sopFiles,
     ];
   },
 } satisfies Config;

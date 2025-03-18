@@ -1,12 +1,12 @@
-import {RenderMD, ClientLoadMD, ServerLoadMD } from "../GetMD";
-import type { Route } from "../../../../app/+types/root";
+import {RenderMD, ClientLoadMD, ServerLoadMD } from "../../components/GetMD";
+import type { Route } from "../../+types/root";
 
-export async function clientLoader( { params }: Route.ClientLoaderArgs ) {
-  return ClientLoadMD( params, "blog" )
+export async function clientLoader( { params, request }: Route.ClientLoaderArgs) {
+  return ClientLoadMD( params, request )
 }
 
-export async function loader( { params }: Route.LoaderArgs ) {
-  return ServerLoadMD( params, "blog" )
+export async function loader( { params, request }: Route.LoaderArgs ) {
+  return ServerLoadMD( params, request )
 }
 
 export function meta({ matches }: Route.MetaArgs) {
