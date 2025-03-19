@@ -15,22 +15,12 @@ import { Navbar } from "./components/Navbar";
 import { Footer } from './components/Footer';
 
 export const links: Route.LinksFunction = () => [
-  { rel: "preconnect", href: "https://fonts.googleapis.com" },
-  {
-    rel: "preconnect",
-    href: "https://fonts.gstatic.com",
-    crossOrigin: "anonymous",
-  },
-  {
-    rel: "stylesheet",
-    href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
-  },
 ];
 
 export function meta() {
   return [
     { title: "Neosofia" },
-    { name: "description", content: "" },
+    { name: "description", content: "Neosofia -- New Wisdom" },
   ]
 }
 

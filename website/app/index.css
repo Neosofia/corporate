@@ -1,8 +1,10 @@
 @import 'tailwindcss';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
 @plugin '@tailwindcss/typography';
 
 @theme {
-  --font-sans: InterVariable, sans-serif;
+  --font-sans: 'inter', 'inter Fallback', sans-serif;
   --font-mono: 'Fira Code', monospace;
 }
 
