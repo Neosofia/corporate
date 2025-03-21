@@ -14,4 +14,8 @@ export default [
     route("procedures/:id",   "./routes/qms/show.tsx", { id: "procedures" }),
   ]),
 
+  ...prefix("resources", [
+    route("*",   "./routes/resources/index.tsx"),
+  ]),
+
 ] satisfies RouteConfig;
