@@ -46,7 +46,12 @@
     }
   }
 
-  
+  #footer {
+    a {
+      @apply text-slate-400 hover:text-slate-300 visited:text-slate-500
+    }
+  }
+
   .prose-base {
     ul {
       list-style: disc;
