@@ -12,6 +12,7 @@ function getMarkdownFiles(dir: string): string[] {
 const qmsFiles = getMarkdownFiles( 'qms' );
 const blogFiles = getMarkdownFiles( 'blog' );
 const sopFiles = getMarkdownFiles( 'qms/procedures' );
+const resourceFiles = getMarkdownFiles( 'resources' );
 
 export default {
   ssr: false,
@@ -25,6 +26,7 @@ export default {
       ...qmsFiles,
       ...blogFiles,
       ...sopFiles,
+      ...resourceFiles,
     ];
   },
 } satisfies Config;

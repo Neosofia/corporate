@@ -10,28 +10,34 @@ import { InformationCircleIcon } from '@heroicons/react/24/outline'
 
 export async function LoadMD(
     params: { id?: string, "*"?: string },
-    request: { url: string },
-    prefix: string = '') {
+    request: { url: string }) {
 
+    console.log("REQUEST URL:", request.url)
     const url = new URL(request.url);
-    // If we don't have a param id, build an index route based on the full pathname
-    if (!params.id) {
-        var path = url.pathname
-    } else {
-        var path = url.pathname.substring(1, url.pathname.lastIndexOf('/')).replace(params.id || '', '');
+    // Strip the trailing slash from a splat route so we don't get into a recursion
+    // Default to the readme file if the route is a predefined index route 
+    var id = (params.id || params["*"] || 'readme').replace(/\/$/, '')
+    var path = url.pathname.substring(1).replace(id, '');
+    
+    if (process.env.NODE_ENV === "production") {
+        /* This should only be used when we generate a static website 
+         * TBD: Need to eventually take the branch from an environment variable to build preview envs.
+         */
+        var prefix = "https://raw.githubusercontent.com/Neosofia/corporate/refs/heads/main/website"
+    }
+    else {
+        var prefix = url.origin;
     }
 
-    let filename = prefix + `/${path}/${params.id || params["*"] || 'readme'}.md`.replace(/(?<!https:)\/+/g, '/')
-    console.log("LOADING", filename)
+
+    let filename = prefix + `/${path}/${id}.md`.replace('//', '/').replace('//', '/')
+
+    console.log("LOADING", filename, "based on this path:", path, ", and this id:", id)
 
     const res = await fetch(filename);
     const content = await res.text();
 
     return content;
-}
-
-export async function ServerLoadMD(params: { id?: string, "*"?: string }, request: { url: string }) {
-    LoadMD( params, request, `https://raw.githubusercontent.com/Neosofia/corporate/refs/heads/main/website` );
 }
 
 export const RenderMD = (props: any) => {
@@ -40,9 +46,9 @@ export const RenderMD = (props: any) => {
             return <Link to={href} target="_blank" rel="noreferrer" {...props} />;
         }
         else {
-            href = href.replace(".md", "").replace("/website/", "/");
-
-            return <Link to={href} prefetch="viewport" {...props} />;
+            href = href.replace(".md", "/").replace("/website/", "/");
+            // TBD: Figure out why we need to reload the document when navigating between dynamic routes
+            return <Link to={href} reloadDocument {...props} />;
         }
     };
 

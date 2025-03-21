@@ -65,8 +65,8 @@ interface MenuItemsProps {
 const MenuItems = ({ mobile = false, menuOpen, setMenuOpen }: MenuItemsProps) => {
 
   const menu = [
-    { name: "Home", link: "/#home" },
-    { name: "QMS", link: "/qms/" },
+    { name: "Home", link: "/" },
+    { name: "Resources", link: "/resources/" },
     { name: "Blog", link: "/blog/" },
   ]
 
