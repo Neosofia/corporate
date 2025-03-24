@@ -1,7 +1,6 @@
 [pol]: /website/qms/policies.md
 [pol-email]: /website/qms/policies.md#level-1-dip
 [ns]: https://neosofia.tech
-[nsgh]: https://github.com/Neosofia/corporate/tree/main/website
 
 # Privacy Policy
 
@@ -30,27 +29,25 @@ If you choose to sign up for an account, our Terms of Service (ToS) will govern 
 
 If you contact us, your message will be deleted after a period of time per our [level one data integrity and privacy policies][pol-email]. Your email address, name, and phone number will only be stored in our customer relationship management (CRM) platform if you consent to being contacted in the future.
 
-If you or your organization engage in a consulting agreement, the terms of the agreement may contain additional data privacy language that will be adhered to under the terms of the agreement.
+If you or your organization engages in a consulting agreement with us, the terms of the agreement may contain additional data privacy language that will be adhered to under the terms of the agreement.
 
 ## Third-Party Services
 
-Neosofia relies on third-party data processors to provide certain services. Below is a list of our third party data processors, the services they provide and a link to their respective privacy policies.
+Neosofia relies on third-party data processors to provide certain services. Below is a list of our third party data processors, the services they provide, and a link to their respective privacy policies.
 
-<!--- External References -->
 [pr]: https://proton.me/
 [gh]: https://github.com/
 [ghpages]: https://pages.github.com/
 [pm]: https://proton.me/mail
 [ghpriv]: https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement
 [prpriv]: https://proton.me/legal/privacy
-
-
 [zoom]: https://www.zoom.com/
 [zoom-serv]: https://www.zoom.com/en/products/voip-phone/
 [zoom-priv]: https://www.zoom.com/en/trust/privacy/privacy-statement/
+[nsgh]: https://github.com/Neosofia/corporate/commits/main/website/resources/privacy.md
 
 
-| Vendor       | Service (link to privacy)                 | Privacy Link                     |
+| Vendor       | Service                                   | Privacy Link                     |
 |--------------|-------------------------------------------|----------------------------------|
 | [GitHub][gh] | Website - [GitHub Pages][ghpages]         | [GitHub Privacy Policy][ghpriv]  |
 | [Proton][pr] | Email - [Proton Mail][pm]                 | [Proton Privacy Policy][prpriv]  |
