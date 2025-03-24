@@ -24,6 +24,14 @@ export default defineConfig({
         input: "qms/**",
         output: "/qms"
       },
+      { 
+        input: "resources/**",
+        output: "/resources"
+      },
+      { 
+        input: "public/**",
+        output: "/public"
+      },
     ])
   ],
   base: "/",
