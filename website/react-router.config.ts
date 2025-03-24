@@ -23,6 +23,7 @@ export default {
       "/blog",
       "/qms",
       "/qms/procedures",
+      "/resources",
       ...qmsFiles,
       ...blogFiles,
       ...sopFiles,
