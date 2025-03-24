@@ -14,6 +14,10 @@ A design principle that emphasizes simplicity and clarity in design and systems.
 
 > Every piece of knowledge must have a single, unambiguous, authoritative representation within a system. [^dry]
 
+### Work in Progress (WIP)
+
+A task, project, or deliverable that is currently being worked on but has not yet been completed. WIP is often used to track ongoing efforts and ensure visibility into the status of work within a team or organization.
+
 ### Enterprise Application Software (EAS)
 
 > Computer software used to satisfy the needs of an organization rather than its individual users. [^eas]
@@ -177,6 +181,11 @@ This section of the glossary is for terms used in the context of providing clien
 
 
 ## Information Technology Terms 
+
+### Software as a Service (SaaS)
+
+A software distribution model in which applications are hosted by a service provider or vendor and made available to users over the internet. SaaS eliminates the need for organizations to install and run applications on their own computers or in their own data centers, reducing the cost of hardware, maintenance, and support.
+
 
 ### Terms Specific to Neosofia Services
 
