@@ -1,0 +1,74 @@
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{titlesec}
+\usepackage{graphicx}
+\usepackage{advdate}
+
+
+\newcommand\twodigits[1]{\ifnum#1<10 0#1\else #1\fi}
+\newcommand{\docversion}{\the\year.\twodigits{\the\month}.\twodigits{\the\day}}
+% Default fancy header style and formatting
+\pagestyle{fancy}
+
+\fancyhead[L]{\leftmark}
+\fancyhead[R]{\thepage\ of \pageref*{LastPage}}
+
+\fancyfoot[L]{FINAL}
+\fancyfoot[C]{\copyright\the\year \quad \UseName{@author}}
+\fancyfoot[R]{\docversion}
+
+
+% Ensure chapters use fancy header and footer style
+% I wish I knew why this is needed and how it works...
+\makeatletter
+\let\ps@plain\ps@fancy
+\makeatother
+
+
+% Reduce chapter size and margins so it is hidden on the first page
+\titleformat{\chapter}[block]{\normalfont\tiny\bfseries}{}{0pt}{\color{white}}
+\titlespacing*{\chapter}{0pt}{-40pt}{0pt}
+
+
+% Remove header and footer from title page and TOC
+\fancypagestyle{title}{%
+    \fancyhf{} % Clear all headers and footers
+    \renewcommand{\headrulewidth}{0pt} % Remove header rule
+    \renewcommand{\footrulewidth}{0pt} % Remove footer rule
+}
+
+
+% Customize TOC and title page
+\makeatletter
+\renewcommand{\tableofcontents}{%
+    \begin{titlepage}
+        \thispagestyle{title}
+        \vspace*{2cm}
+        \begin{center}
+            {\huge \textbf{Table of Contents}\par}
+            \vspace{1cm}
+            \@starttoc{toc}%
+        \end{center}
+    \end{titlepage}
+}
+
+\renewcommand{\maketitle}{%
+    \begin{titlepage}
+        \thispagestyle{title}
+        \vspace*{2cm}
+        \begin{center}
+            \includegraphics[width=0.8\textwidth]{../../public/shared/images/Neosofia.png}\par
+            \vspace{2cm}
+            {\huge \UseName{@title}\par}
+            \vspace{1cm}
+            {\Large \UseName{@author}\par}
+            \vspace{2cm}
+            {\Large Version: \docversion\par}
+            {\Large Effective: \AdvanceDate[30]\the\year-\two@digits\month-\two@digits\day\par}
+            \vspace{2cm}
+            {Disclaimer: This document is for informational purposes only. It comes with no warranties, express or implied. }
+        \end{center}
+    \end{titlepage}
+}
+\makeatother
+
