@@ -19,12 +19,13 @@ Our introduction to compliance series of blog posts outlines the regulatory and 
 - [Minimal Viable Compliance (MVC)](/website/blog/0004_mvc.md)
 - [Compliance Levels](/website/blog/0005_beyond_mvc.md)
 
+[gdp]: /website/blog/1100_gdp.md
 ## Quality Management Systems (QMS)
 
 This section covers a wide range of topics concerning [QMSs][qmss]. Many of these posts will introduce new ways of building and maintaining a QMS that makes your company more efficient, secure, and compliant!
 
 - What is a QMS? (PDCA)
-- Policies and Procedures
+- [Policies and Procedures][gdp]
 - Formal training, qualification, R&R, and defining your org structure
 - SLOs and SLAs to measure and enforce quality
 - Continual Improvement through CAPAs
