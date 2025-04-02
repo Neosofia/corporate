@@ -82,6 +82,27 @@ Neosofia may also use the acronym PIE-ME (Plan, rapid Implementation, Experiment
 * Internal audits
 * Corrective and preventive actions
 
+### Quality Assurance (QA)
+
+A systematic process designed to determine if a product or service meets specified requirements and standards. Quality assurance focuses on improving and stabilizing production and associated processes to avoid or minimize issues that lead to defects. It encompasses the entire development process, including planning, design, development, and testing, ensuring that quality is built into the product from the beginning.
+
+### Quality Control (QC)
+
+A systematic process through which an organization ensures that its products and services meet specified quality standards and requirements as defined by a QA group. It involves operational techniques and activities aimed at fulfilling these quality requirements. QC typically includes the inspection and testing of products, processes, and services to identify defects and ensure conformity to established specifications and standards. 
+
+Quality Control (QC) complements Quality Assurance (QA) by concentrating on the implementation of the processes established by QA to guarantee high-quality outcomes. While QA focuses on the overarching procedures that ensure product and service quality, QC carries out those procedures and provides feedback to the QA team to refine and enhance quality processes.
+
+### Subject Matter Expert (SME)
+
+An individual with deep knowledge and expertise in a specific area or subject. SMEs are often consulted for their insights and guidance in the development and implementation of policies, procedures, and processes. They play a crucial role in ensuring that the information and practices within their domain are accurate, relevant, and compliant with industry standards and regulations.
+
+### Separation of Concerns
+
+Separation of concerns is a design principle that entails breaking down a system, process, or set of responsibilities into an assigned role that is focused on a specific aspect or concern. Within a Quality Management System (QMS), this principle ensures that various processes, roles, and responsibilities are clearly defined and managed independently, thereby enhancing the overall quality of the system. Or to quote Sidney Sheldon:
+
+> Never let a friendly fox into your hen-house. One day he's going to get hungry.
+
+
 ### Policy (POL)
 
 > A deliberate system of guidelines to guide decisions and achieve rational outcomes. A policy is a statement of intent and is implemented as a procedure or protocol. A rule created by an organization to achieve their goals. [^pol]
@@ -185,6 +206,18 @@ This section of the glossary is for terms used in the context of providing clien
 ### Software as a Service (SaaS)
 
 A software distribution model in which applications are hosted by a service provider or vendor and made available to users over the internet. SaaS eliminates the need for organizations to install and run applications on their own computers or in their own data centers, reducing the cost of hardware, maintenance, and support.
+
+### User Experience (UX)
+
+The overall experience a user has when interacting with a product or service, encompassing all aspects of the user's interaction, including usability, accessibility, and satisfaction. UX focuses on the user's journey and how they feel while using the product.
+
+### User Interface (UI)
+
+The means by which a user interacts with a computer system, software application, or website. UI includes the design of buttons, icons, spacing, and layout, and is concerned with the look and feel of the product.
+
+### UX vs. UI
+
+While UX and UI are often used interchangeably, they are distinct concepts. UX refers to the overall experience and satisfaction a user derives from using a product, while UI focuses specifically on the visual and interactive elements that facilitate that experience. In essence, UI is a component of UX.
 
 
 ### Terms Specific to Neosofia Services

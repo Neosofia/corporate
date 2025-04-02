@@ -1,3 +1,7 @@
+---
+status: "Working Copy"
+---
+
 <!--- Internal Links --->
 [rpo]:  /website/qms/glossary.md#recovery-point-objective-rpo
 [rto]:  /website/qms/glossary.md#recovery-time-objective-rto
