@@ -39,7 +39,7 @@ jobs:
 
       # TBD: Build this into a well defined GHA/container for many reasons
       - name: Install LaTeX Tools and Inter font
-        run: apt-get install -y texlive-latex-extra
+        run: sudo apt-get install -y texlive-latex-extra
 
       - name: Setup Node
         uses: actions/setup-node@v4
