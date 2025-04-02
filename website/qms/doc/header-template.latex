@@ -57,8 +57,10 @@
         \thispagestyle{title}
         \vspace*{2cm}
         \begin{center}
-            \includegraphics[width=0.8\textwidth]{../../public/shared/images/Neosofia.png}\par
-            \vspace{2cm}
+            \IfFileExists{logo.png}{%
+                \includegraphics[width=0.8\textwidth]{logo.png}\par
+                \vspace{2cm}
+            }{}
             {\huge \UseName{@title}\par}
             \vspace{1cm}
             {\Large \UseName{@author}\par}

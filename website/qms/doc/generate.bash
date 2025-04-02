@@ -17,11 +17,11 @@ for md_file in "$DIRECTORY"/*.md; do
 
         pandoc -o "$pdf_file" "$md_file" -f gfm \
             --pdf-engine=xelatex \
-            --include-in-header=header-template.latex \
+            --include-in-header="$(dirname "$0")/header-template.latex" \
             --variable=title:"$title" \
             --variable=subtitle:"$document_id" \
             --variable=author:"Neosofia, LLC" \
-            --metadata-file=metadata.yaml \
+            --metadata-file="$(dirname "$0")/metadata.yaml" \
             --metadata=docid="$document_id"
     fi
 done
