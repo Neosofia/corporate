@@ -3,18 +3,32 @@
 \usepackage{titlesec}
 \usepackage{graphicx}
 \usepackage{advdate}
+\usepackage{xcolor}
+\usepackage{catchfile}
 
 
+% Helper functions
+\newcommand{\getenv}[2][]{%
+ \CatchFileEdef{\temp}{"|kpsewhich --var-value #2"}{\endlinechar=-1\relax}%
+ \if\relax\detokenize{#1}\relax\temp\else\edef#1{\temp}\fi%
+}%
 \newcommand\twodigits[1]{\ifnum#1<10 0#1\else #1\fi}
+
+% Customization variables
 \newcommand{\docversion}{\the\year.\twodigits{\the\month}.\twodigits{\the\day}}
+\getenv[\disclaimer]{DISCLAIMER}
+\getenv[\watermark]{WATERMARK}
+\definecolor{brand-color}{RGB}{13, 72, 132}
+
+
 % Default fancy header style and formatting
 \pagestyle{fancy}
-
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
 \fancyhead[L]{\leftmark}
 \fancyhead[R]{\thepage\ of \pageref*{LastPage}}
 
-\fancyfoot[L]{FINAL}
-\fancyfoot[C]{\copyright\the\year \quad \UseName{@author}}
+\fancyfoot[L]{\watermark}
+\fancyfoot[C]{Copyright\copyright\the\year \enspace \UseName{@author}}
 \fancyfoot[R]{\docversion}
 
 
@@ -28,6 +42,9 @@
 % Reduce chapter size and margins so it is hidden on the first page
 \titleformat{\chapter}[block]{\normalfont\tiny\bfseries}{}{0pt}{\color{white}}
 \titlespacing*{\chapter}{0pt}{-40pt}{0pt}
+
+% Don't show chapter numbers in section numbering or in the toc
+\renewcommand{\thesection}{\arabic{section}}
 
 
 % Remove header and footer from title page and TOC
@@ -43,7 +60,7 @@
 \renewcommand{\tableofcontents}{%
     \begin{titlepage}
         \thispagestyle{title}
-        \vspace*{2cm}
+        \vspace*{1cm}
         \begin{center}
             {\huge \textbf{Table of Contents}\par}
             \vspace{1cm}
@@ -68,7 +85,7 @@
             {\Large Version: \docversion\par}
             {\Large Effective: \AdvanceDate[30]\the\year-\two@digits\month-\two@digits\day\par}
             \vspace{2cm}
-            {Disclaimer: This document is for informational purposes only. It comes with no warranties, express or implied. }
+            {\disclaimer}
         \end{center}
     \end{titlepage}
 }
