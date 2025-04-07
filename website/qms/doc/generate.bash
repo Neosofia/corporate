@@ -16,11 +16,7 @@ export WEBSITE_BASE_DIR="${WEBSITE_BASE_DIR:-/}"
 
 DIRECTORY="$1"
 
-<<<<<<< Updated upstream
 # Rhetorical Question: Why is 0 true and 1 false in bash? 🤦‍♂️
-=======
-# Retorical Question: Why is 0 true and 1 false in bash? 🤦‍♂️
->>>>>>> Stashed changes
 function check_git() {
     if ! command -v git &>/dev/null; then
         echo "Git command not found. WARN: Skipping advanced features."
