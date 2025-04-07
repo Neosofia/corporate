@@ -93,7 +93,7 @@ Rolling OS level backup procedures begin automatically starting at 2AM UTC
 
 ##### Exit Criteria
 
-If the daily OS backup procedure completes without errors, a status report is automatically sent to the evidence portal. If any errors occur, an email is sent to all [IT System Administrators](/website/qms/roles.md#system-administrator-sa) with details of the error to be remediated.
+If the daily OS backup procedure completes without errors, a status report is automatically sent to the evidence portal. If any errors occur, an email is sent to all [IT System Administrators][sa] with details of the error to be remediated.
 
 ##### SLOs
 * automated backup and system restoration should take no more than 15 minutes 99% of the time
@@ -113,67 +113,24 @@ Upon notification of a system failure or data loss.
 
 ##### Exit Criteria
 
-if the automated restoration process fails an error email will be sent to all [IT System Administrators](/website/qms/roles.md#system-administrator-sa)
+if the automated restoration process fails an error email will be sent to all [IT System Administrators][sa]
 
 ### VM Procedures
 
-#### VM Backup Procedure
-
-TBD
-
-#### VM Restoration Procedure
-
-TBD
+[TBD][tbd]
 
 ### Networking Procedures
 
-#### Networking Backup Procedure
-
-TBD
-
-#### Networking Restoration Procedure
-
-TBD
+[TBD][tbd]
 
 ### Source Code Procedures
 
-
-#### SC Backup Procedure
-
-TBD
-
-#### SC Restoration Procedure
-
-TBD
+[TBD][tbd]
 
 ### Log File Procedures
 
-
-#### Log Backup Procedure
-
-TBD
-
-#### Log Restoration Procedure
-
-TBD
+[TBD][tbd]
 
 ### Credential Procedures
 
-
-#### Credential Backup Procedure
-
-TBD
-
-#### Credential Restoration Procedure
-
-TBD
-
-
-## Policies Supported
-
-* [Neosofia System Backup and Recovery][pol-sbr]
-
-## Regulations Supported 
- * GDPR Article 32
- * NIST SP 800-53 Section 3.6 Contingency Planning
- * Many more to be documented in the validation service
+[TBD][tbd]

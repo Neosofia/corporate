@@ -1,3 +1,27 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:643476e952eb30e534fe678f5207529021be2c9ed99ee437069b8c22f5d072de
-size 682
+{
+    "include": [
+      "**/*",
+      "**/.server/**/*",
+      "**/.client/**/*",
+      ".react-router/types/**/*"
+    ],
+    "compilerOptions": {
+      "lib": ["DOM", "DOM.Iterable", "ES2022"],
+      "types": ["node", "vite/client"],
+      "target": "ES2022",
+      "module": "ES2022",
+      "moduleResolution": "bundler",
+      "jsx": "react-jsx",
+      "rootDirs": [".", "./.react-router/types"],
+      "baseUrl": ".",
+      "paths": {
+        "~/*": ["./app/*"]
+      },
+      "esModuleInterop": true,
+      "verbatimModuleSyntax": true,
+      "noEmit": true,
+      "resolveJsonModule": true,
+      "skipLibCheck": true,
+      "strict": true
+    }
+  }
