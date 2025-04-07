@@ -4,7 +4,7 @@
   "scripts": {
     "start": "DEBUG=vite:time* vite serve ./build/client/ --host",
     "dev": "DEBUG=vite:time* react-router dev",
-    "build": "./qms/doc/generate.bash qms && DEBUG=vite:time* react-router build"
+    "build": "bash qms/doc/generate.bash qms && DEBUG=vite:time* react-router build"
   },
   "dependencies": {
     "@react-router/node": "^7.4.0",
