@@ -54,6 +54,7 @@ jobs:
           COMPANY: ${{ vars.COMPANY }}
           SCCS_BASE_URL: ${{ vars.SCCS_BASE_URL }}
           WEBSITE_BASE_DIR: ${{ vars.WEBSITE_BASE_DIR }}
+          WEBSITE_BASE_URL: ${{ vars.WEBSITE_BASE_URL }} 
         run: cd website && pnpm run build
 
       - name: Upload production-ready build files
