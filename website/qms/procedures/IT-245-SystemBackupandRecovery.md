@@ -117,63 +117,20 @@ if the automated restoration process fails an error email will be sent to all [I
 
 ### VM Procedures
 
-#### VM Backup Procedure
-
-TBD
-
-#### VM Restoration Procedure
-
-TBD
+[TBD][tbd]
 
 ### Networking Procedures
 
-#### Networking Backup Procedure
-
-TBD
-
-#### Networking Restoration Procedure
-
-TBD
+[TBD][tbd]
 
 ### Source Code Procedures
 
-
-#### SC Backup Procedure
-
-TBD
-
-#### SC Restoration Procedure
-
-TBD
+[TBD][tbd]
 
 ### Log File Procedures
 
-
-#### Log Backup Procedure
-
-TBD
-
-#### Log Restoration Procedure
-
-TBD
+[TBD][tbd]
 
 ### Credential Procedures
 
-
-#### Credential Backup Procedure
-
-TBD
-
-#### Credential Restoration Procedure
-
-TBD
-
-
-## Policies Supported
-
-* [Neosofia System Backup and Recovery][pol-sbr]
-
-## Regulations Supported 
- * GDPR Article 32
- * NIST SP 800-53 Section 3.6 Contingency Planning
- * Many more to be documented in the validation service
+[TBD][tbd]

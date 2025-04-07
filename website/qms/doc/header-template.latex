@@ -15,21 +15,26 @@
 \newcommand\twodigits[1]{\ifnum#1<10 0#1\else #1\fi}
 
 % Customization variables
-\newcommand{\docversion}{\the\year.\twodigits{\the\month}.\twodigits{\the\day}}
 \getenv[\disclaimer]{DISCLAIMER}
 \getenv[\watermark]{WATERMARK}
+\getenv[\version]{VERSION}
 \definecolor{brand-color}{RGB}{13, 72, 132}
 
+\ifx\version\empty
+    \edef\version{\the\year.\twodigits{\the\month}.\twodigits{\the\day}}
+\fi
 
 % Default fancy header style and formatting
 \pagestyle{fancy}
 \renewcommand{\chaptermark}[1]{\markboth{#1}{}}
-\fancyhead[L]{\leftmark}
-\fancyhead[R]{\thepage\ of \pageref*{LastPage}}
+\renewcommand{\sectionmark}[1]{\markright{#1}}
+\fancyhead[L]{\leftmark \enspace (\version)}
+\fancyhead[C]{}
+\fancyhead[R]{\rightmark}
 
 \fancyfoot[L]{\watermark}
 \fancyfoot[C]{Copyright\copyright\the\year \enspace \UseName{@author}}
-\fancyfoot[R]{\docversion}
+\fancyfoot[R]{\thepage\ of \pageref*{LastPage}}
 
 
 % Ensure chapters use fancy header and footer style
@@ -45,6 +50,9 @@
 
 % Don't show chapter numbers in section numbering or in the toc
 \renewcommand{\thesection}{\arabic{section}}
+
+% New page after each section
+\newcommand{\sectionbreak}{\clearpage}
 
 
 % Remove header and footer from title page and TOC
@@ -82,7 +90,7 @@
             \vspace{1cm}
             {\Large \UseName{@author}\par}
             \vspace{2cm}
-            {\Large Version: \docversion\par}
+            {\Large Version: \version\par}
             {\Large Effective: \AdvanceDate[30]\the\year-\two@digits\month-\two@digits\day\par}
             \vspace{2cm}
             {\disclaimer}
