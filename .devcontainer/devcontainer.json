@@ -1,3 +1,40 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9170cc2d0de9e0d3857b0be0fa68773c792e70bc244e08710ba7b7ec1e4d1912
-size 1943
+{
+    "name": "React Dev Container",
+    "image": "mcr.microsoft.com/devcontainers/typescript-node:dev-22-bookworm",
+    "features": {
+        "ghcr.io/devcontainers/features/git-lfs:1": {},
+        "ghcr.io/rocker-org/devcontainer-features/pandoc:1": {}
+    },
+    // WSL + GPG + Dev Container == 🤦‍♂️
+    // https://github.com/microsoft/vscode-remote-release/issues/9217
+    // Run these commands in the local machine to fix gpg 2.4 vs 2.2 mbox issues
+    // gpg --export --export-options backup  > allkeys-in-memory-buffer
+    // gpgsm --export --armor                > allcerts-in-memory-buffer
+    // gpg --export-ownertrust               > ownertrust-in-memory-buffer
+
+    "mounts": [
+        "type=volume,target=${containerWorkspaceFolder}/website/node_modules",
+        "type=volume,target=${containerWorkspaceFolder}/website/.pnpm-store",
+        "source=${localEnv:HOME}${localEnv:USERPROFILE}/.gnupg,target=/home/node/.gnupg,type=bind,consistency=cached"
+    ],
+    "postCreateCommand": "sudo apt-get update && sudo apt-get install -y texlive-xetex texlive-latex-extra fonts-inter  && sudo chown -R node:node * && cd website && pnpm install && echo 'export GPG_TTY=$(tty)' >> ~/.bashrc",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "streetsidesoftware.code-spell-checker",
+                "SimonSiefke.svg-preview",
+                "ciarant.vscode-structurizr",
+                "github.vscode-github-actions",
+                "bierner.github-markdown-preview",
+                "bierner.markdown-footnotes",
+                "bierner.markdown-emoji",
+                "bierner.markdown-checkbox",
+                "bierner.markdown-preview-github-styles",
+                "bierner.markdown-yaml-preamble",
+                "darkriszty.markdown-table-prettify",
+                "msjsdiag.vscode-react-native",
+                "bradlc.vscode-tailwindcss"
+            ]
+        }
+    }
+}
