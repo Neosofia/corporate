@@ -34,7 +34,7 @@ jobs:
           fetch-depth: 0
 
       - name: Pull LFS files
-        run: git lfs pull; env
+        run: git lfs pull
 
       - name: Install pandoc
         uses: pandoc/actions/setup@v1
@@ -50,6 +50,10 @@ jobs:
         run: cd website && npm install -g pnpm && pnpm i
 
       - name: Build project
+        env:
+          COMPANY: ${{ vars.COMPANY }}
+          SCCS_BASE_URL: ${{ vars.SCCS_BASE_URL }}
+          WEBSITE_BASE_DIR: ${{ vars.WEBSITE_BASE_DIR }}
         run: cd website && pnpm run build
 
       - name: Upload production-ready build files
