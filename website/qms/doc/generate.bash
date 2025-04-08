@@ -31,8 +31,8 @@ function check_git() {
     return 0
 }
 
-# if we don't have git, we can't generate a changelog and return an empty string
 function generate_changelog() {
+    # if we don't have git, we can't generate a changelog so return an empty string
     if ! check_git; then
         return
     fi
@@ -40,14 +40,16 @@ function generate_changelog() {
     local md_file="$1"
     local changelog="## Changelog\n"
     changelog+="|Version|Date|Author|Message|\n"
-    changelog+="|--|---|----|------|\n"
-    changelog+="$(git log --merges -m --follow --pretty=tformat:"|%(describe:tags,abbrev=0) [%h]($SCCS_BASE_URL%h)|%as|%an|%s|" "$md_file")"
+    changelog+="|---|---|---|---------|\n"
+    changelog+="$(git log --merges -m \
+        --pretty=tformat:"|[%(describe:tags,abbrev=0)]($SCCS_BASE_URL%h)|%as|%an|%s|" \
+        "$md_file")"
 
     echo -e "$changelog"
 }
 
-# if we don't have git, we can't generate a signature log and return an empty string    
 function generate_signature_log() {
+    # if we don't have git, we can't generate a signature log so return an empty string    
     if ! check_git; then
         return
     fi
@@ -71,9 +73,14 @@ function generate_signature_log() {
         signature_log+="|---|------|---|---|"
 
         commit_range="${second_most_recent_merge_commit}..${most_recent_merge_commit}"
-        signature_log+="\n$(git log --pretty=tformat:"|%ai|%GK %GS|%an|Author Change %h|" $commit_range "$md_file")"
 
-        signature_log+="\n$(git show --pretty=tformat:"|%ai|%GK %GS|%an|Approval|" $most_recent_merge_commit)"
+        signature_log+="\n$(git log \
+            --pretty=tformat:"|%ai|%GK %GS|%an|Author Change [%h]($SCCS_BASE_URL%h)|" \
+            $commit_range "$md_file")"
+
+        signature_log+="\n$(git show \
+            --pretty=tformat:"|%ai|%GK %GS|%an|Approval|" \
+            $most_recent_merge_commit)"
 
         # TBD: Add the ability to capture a reviewer based on the reviews done on GitHub/GitLab.
         # I don't like the idea of reviewers making meta commits to indicate reviews in git
@@ -89,7 +96,9 @@ function generate_signature_log() {
 find "$DIRECTORY" -type f -name "*.md" | while read -r md_file; do
     pdf_file="${md_file%.md}.pdf"
     document_id=$(basename "$md_file" | cut -d'-' -f1-2)
-    title=$(basename "$md_file" | cut -d'-' -f3- | sed -E 's/([A-Z])/\ \1/g; s/and/ and/g; s/\.md$//; s/^\s+|\s+$//g')
+    title=$(basename "$md_file" | 
+        cut -d'-' -f3- | 
+        sed -E 's/([A-Z])/\ \1/g; s/and/ and/g; s/\.md$//; s/^\s+|\s+$//g')
 
     echo "Processing title: $title, subtitle: $document_id"
 
@@ -103,7 +112,7 @@ find "$DIRECTORY" -type f -name "*.md" | while read -r md_file; do
     signature_log=$(generate_signature_log "$md_file")
     combined_content+="\n\n$signature_log"
 
-    # TBD: add auto incrementing git tag version number here
+    # TBD: add auto incrementing git tag version number here on a per document basis
     # The template will use YYYY.MM.DD for the version number if we don't have git tags
     recent_tag=$(git describe --abbrev=0 --tags $(git log -m --merges --pretty=%H -1 "$md_file"))
     export VERSION="$recent_tag"
@@ -111,14 +120,17 @@ find "$DIRECTORY" -type f -name "*.md" | while read -r md_file; do
     # Had to downgrade to markdown_github to make pipe tables work as they should.
     # TBD: go back to gfm or commonmark_x when pipe tables are fixed.
     echo -e "$combined_content" | pandoc -o "$pdf_file" -f markdown_github \
-        --number-sections --quiet \
+        --number-sections --quiet --toc \
         --pdf-engine=xelatex \
         --include-in-header="$(dirname "$0")/header-template.latex" \
-        --metadata-file="$(dirname "$0")/metadata.yaml" \
         -V title="$title ($recent_tag)" \
         -V subtitle="$document_id" \
         -V author="$COMPANY" \
-        -V linkcolor="brand-color" \
+        -V linkcolor="url-color" \
         -V filecolor="black" \
-        -V urlcolor="brand-color"
+        -V urlcolor="url-color" \
+        -V documentclass="report" \
+        -V geometry:"margin=1in" \
+        -V mainfont="Inter" \
+        -V fontsize="11pt"
 done

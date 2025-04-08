@@ -18,7 +18,7 @@
 \getenv[\disclaimer]{DISCLAIMER}
 \getenv[\watermark]{WATERMARK}
 \getenv[\version]{VERSION}
-\definecolor{brand-color}{RGB}{13, 72, 132}
+\definecolor{url-color}{RGB}{13, 72, 132}
 
 \ifx\version\empty
     \edef\version{\the\year.\twodigits{\the\month}.\twodigits{\the\day}}
