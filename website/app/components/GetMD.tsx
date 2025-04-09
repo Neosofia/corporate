@@ -77,7 +77,7 @@ export const RenderMD = (props: any) => {
 
             return (
                 <div className="">
-                    <InformationCircleIcon className={'w-4 h-4 m-1 ml-0 float-left align-top ' + style} />
+                    <InformationCircleIcon className={'w-5 h-5 m-1 ml-0 float-left align-top ' + style} />
                     <p className="" {...props}>{children}</p>
                 </div>
             );
