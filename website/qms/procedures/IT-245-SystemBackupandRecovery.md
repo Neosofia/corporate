@@ -35,6 +35,8 @@ Establish a systematic approach to data backup and recovery to prevent loss, ena
 
 This SOP applies to any IT system that manages Neosofia client or corporate data.
 
+## Scope 2 Section
+
 ### Assets in Scope
 
 Each of the assets below will have an entry in this SOP that outlines the backup and recovery procedures Neosofia employs to protect client and corporate data.
