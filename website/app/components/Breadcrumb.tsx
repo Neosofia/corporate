@@ -43,7 +43,7 @@ export const Breadcrumb = ({ showPDF = false }: { showPDF?: boolean }) => {
             .split(' ')
             .filter((word) => isNaN(Number(word)))
             .map((word) =>
-              /* TBD: Cheap hack until we scrape the glossary for abbreviators. */
+              /* TBD: Cheap hack until we scrape the glossary for abbreviations. */
               ["qms", "mvc"].includes(word) ?
                 word.toUpperCase() :
                 word.charAt(0).toUpperCase() + word.slice(1)
