@@ -118,9 +118,13 @@
       margin-bottom: calc(var(--spacing) * 2);
     }
     /* Add a margin to the top of headings to account for the fixed header. */
-    h1, h2, h3, h4, h5, h6, a {
+    h1, h2, h3, h4, h5, h6 {
       scroll-margin-top: calc(var(--spacing) * 16);
       margin: calc(var(--spacing) * 7) 0;
+    }
+    
+    a {
+      scroll-margin-top: calc(var(--spacing) * 16);
     }
   }
 

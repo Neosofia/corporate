@@ -31,6 +31,10 @@ export default defineConfig({
   server: {
     host: '0.0.0.0',
     port: 3000,
+    watch: {
+      usePolling: true, // Enables polling for file changes
+      interval: 2500,    // Polling interval in milliseconds
+    }
   }
 });
 

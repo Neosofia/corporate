@@ -12,13 +12,19 @@ export async function LoadMD(
     params: { id?: string, "*"?: string },
     request: { url: string }) {
 
+    // if we're looking for a file extension, it's probably the breadcrumbs looking for a pdf
+    // or some type of recursion we need to break out of
+    if (params.id && params.id.includes('.')) {
+        throw new Error(`File not found: ${params.id}`);
+    }
+
     console.log("REQUEST URL:", request.url)
     const url = new URL(request.url);
     // Strip the trailing slash from a splat route so we don't get into a recursion
     // Default to the readme file if the route is a predefined index route 
     var id = (params.id || params["*"] || 'readme').replace(/\/$/, '')
     var path = url.pathname.substring(1).replace(id, '');
-    
+
     if (process.env.NODE_ENV === "production") {
         /* This should only be used when we generate a static website 
          * TBD: Need to eventually take the branch from an environment variable to build preview envs.
@@ -71,7 +77,7 @@ export const RenderMD = (props: any) => {
 
             return (
                 <div className="">
-                    <InformationCircleIcon className={'w-5 h-5 m-1 ml-0 float-left align-top ' + style} />
+                    <InformationCircleIcon className={'w-4 h-4 m-1 ml-0 float-left align-top ' + style} />
                     <p className="" {...props}>{children}</p>
                 </div>
             );

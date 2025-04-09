@@ -1,9 +1,9 @@
-import {RenderMD, LoadMD } from "../../components/GetMD";
+import { RenderMD, LoadMD } from "../../components/GetMD";
 import type { Route } from "../../+types/root";
-import { useState } from "react";
+import { Breadcrumb } from "../../components/Breadcrumb";
 
-export async function loader( { params, request }: Route.LoaderArgs ) {
-  return LoadMD( params, request )
+export async function loader({ params, request }: Route.LoaderArgs) {
+  return LoadMD(params, request)
 }
 
 export function meta({ matches }: Route.MetaArgs) {
@@ -22,7 +22,8 @@ export function meta({ matches }: Route.MetaArgs) {
 export default function Blog({ loaderData }: Route.ComponentProps) {
   return (
     <section id="blog" className="min-h-screen flex justify-center items-center">
-      <div className="max-w-5xl z-10 m-4 md:m-16 prose-base md:prose-lg overflow-x-auto">
+      <div className="w-5xl z-10 mt-8 md:mt-18 prose-base md:prose-lg overflow-x-auto">
+        <Breadcrumb />
         <RenderMD content={loaderData} />
       </div>
     </section>
