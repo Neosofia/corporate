@@ -1,8 +1,9 @@
-import {RenderMD, LoadMD } from "../../components/GetMD";
+import { RenderMD, LoadMD } from "../../components/GetMD";
 import type { Route } from "../../+types/root";
+import { Breadcrumb } from "../../components/Breadcrumb";
 
-export async function loader( { params, request }: Route.LoaderArgs ) {
-  return LoadMD( params, request )
+export async function loader({ params, request }: Route.LoaderArgs) {
+  return LoadMD(params, request)
 }
 
 export function meta() {
@@ -12,11 +13,12 @@ export function meta() {
   ]
 }
 
-export default function QMS( { loaderData }: Route.ComponentProps) {
+export default function QMS({ loaderData }: Route.ComponentProps) {
   return (
-    <section id="qms" className="min-h-screen flex justify-center items-center">
-      <div className="max-w-5xl z-10 m-4 md:m-16 prose-base md:prose-lg overflow-x-auto">
-      <RenderMD content={loaderData}/>
+    <section id="qms" className="min-h-screen flex justify-center">
+      <div className="w-5xl z-10 mt-8 md:mt-18 prose-base md:prose-lg overflow-x-auto">
+        <Breadcrumb showPDF={true} />
+        <RenderMD content={loaderData} />
       </div>
     </section>
   );
