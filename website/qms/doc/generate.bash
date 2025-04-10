@@ -49,7 +49,7 @@ function generate_changelog() {
 }
 
 function generate_signature_log() {
-    # if we don't have git, we can't generate a signature log so return an empty string    
+    # if we don't have git, we can't generate a signature log so return an empty string
     if ! check_git; then
         return
     fi
@@ -93,29 +93,48 @@ function generate_signature_log() {
     fi
 }
 
-find "$DIRECTORY" -type f -name "*.md" | while read -r md_file; do
-    pdf_file="${md_file%.md}.pdf"
-    document_id=$(basename "$md_file" | cut -d'-' -f1-2)
-    title=$(basename "$md_file" | 
-        cut -d'-' -f3- | 
-        sed -E 's/([A-Z])/\ \1/g; s/and/ and/g; s/\.md$//; s/^\s+|\s+$//g')
+function generate_version_tags() {
+    # if we don't have git, we can't generate version tags so return an empty string
+    if ! check_git; then
+        return
+    fi
+    local md_file="$1"
 
-    echo "Processing title: $title, subtitle: $document_id"
+    # Before we generate a document, generate a local set of tags that are based on the 
+    # merge history of the file being passed in
+    #
+    # TBD: in the future we should consider remote tags and conditionally use them if they exist.
+    git tag -d $(git tag)
+
+    git log --reverse --merges -m --pretty=format:"git tag VXXX %h ;" "$md_file" |
+        nl -w3 -n rz | awk '{sub(/XXX/,$1); $1=""; print}' | tr -d '\n' | bash
+
+    recent_tag=$(git describe --abbrev=0 --tags $(git log -m --merges --pretty=%H -1 "$md_file"))
+    export VERSION="$recent_tag"
 
     # TBD: we assume that all mds are being converted to pdfs
     combined_content=$(cat "$md_file" |
         sed "s|]:[[:space:]]*$WEBSITE_BASE_DIR|]:$WEBSITE_BASE_URL|g; s|\.md|\.pdf|g")
+}
 
+find "$DIRECTORY" -type f -name "*.md" | while read -r md_file; do
+    pdf_file="${md_file%.md}.pdf"
+
+    TITLE=$(grep -m 1 '^# ' "$md_file" | sed 's/^# //')
+    SUBTITLE=$(basename "$md_file" .md)
+
+    echo "Processing title: $TITLE, subtitle: $SUBTITLE"
+
+    ### VERSIONS ###
+    generate_version_tags "$md_file"
+
+    ### CHANGELOG ##
     change_log=$(generate_changelog "$md_file")
     combined_content+="\n\n$change_log"
 
+    ### ELECTRONIC SIGNATURES ###
     signature_log=$(generate_signature_log "$md_file")
     combined_content+="\n\n$signature_log"
-
-    # TBD: add auto incrementing git tag version number here on a per document basis
-    # The template will use YYYY.MM.DD for the version number if we don't have git tags
-    recent_tag=$(git describe --abbrev=0 --tags $(git log -m --merges --pretty=%H -1 "$md_file"))
-    export VERSION="$recent_tag"
 
     # Had to downgrade to markdown_github to make pipe tables work as they should.
     # TBD: go back to gfm or commonmark_x when pipe tables are fixed.
@@ -123,8 +142,8 @@ find "$DIRECTORY" -type f -name "*.md" | while read -r md_file; do
         --number-sections --quiet --toc \
         --pdf-engine=xelatex \
         --include-in-header="$(dirname "$0")/header-template.latex" \
-        -V title="$title ($recent_tag)" \
-        -V subtitle="$document_id" \
+        -V title="$TITLE" \
+        -V subtitle="$SUBTITLE" \
         -V author="$COMPANY" \
         -V linkcolor="url-color" \
         -V filecolor="black" \
