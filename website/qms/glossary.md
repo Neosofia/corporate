@@ -1,5 +1,7 @@
 # Neosofia Glossary
 
+More edits to the glossary
+
 ## General Terms
 
 ### To Be Determined (TBD)
