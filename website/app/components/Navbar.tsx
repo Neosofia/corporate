@@ -16,10 +16,9 @@ export const Navbar = () => {
       {!isLoaded && <LoadingScreen onComplete={() => setIsLoaded(true)} />}{" "}
       <div className={`bg-slate-900 text-gray-100`}></div>
 
-
       <nav className="fixed top-0 w-full z-40 bg-[rgba(10, 10, 10, 0.8)] backdrop-blur-lg border-b border-white/10 shadow-lg">
-        <div className="max-w-5xl mx-auto px-4 md:px-0">
-          <div className="flex justify-between items-center h-10 md:h-14">
+        <div className="max-w-5xl mx-auto px-2">
+          <div className="flex justify-between items-center h-8 md:h-14">
             <div>
               <a href="/#" className="">
                 <img src={logo} alt="logo" className="mx-auto h-4 md:h-8 md:min-w-[204px]" />
@@ -27,7 +26,7 @@ export const Navbar = () => {
             </div>
 
             { /* Mobile Hamburger Menu */}
-            <div className={`h-5 relative cursor-pointer z-40 md:hidden ${menuOpen ? "opacity-0 pointer-events-none" : "opacity-100 pointer-events-auto"}`} onClick={() => setMenuOpen((prev) => !prev)}>
+            <div className={`h-6 relative cursor-pointer z-40 md:hidden ${menuOpen ? "opacity-0 pointer-events-none" : "opacity-100 pointer-events-auto"}`} onClick={() => setMenuOpen((prev) => !prev)}>
               &#9776;
             </div>
 
@@ -40,7 +39,7 @@ export const Navbar = () => {
             >
               <button
                 onClick={() => setMenuOpen((prev) => !prev)}
-                className="absolute top-0 right-3 text-white text-3xl focus:outline-none cursor-pointer"
+                className="absolute top-0 right-2 text-white text-2xl focus:outline-none cursor-pointer"
                 aria-label="Close Menu"
               >
                 &times;

@@ -13,11 +13,13 @@ import "./index.css"
 
 import { Navbar } from "./components/Navbar";
 import { Footer } from './components/Footer';
+import { Breadcrumb } from "./components/Breadcrumb";
 
-export const links: Route.LinksFunction = () =>  [
-  { 
-    rel: "preconnect", 
-    href: "https://fonts.googleapis.com" },
+export const links: Route.LinksFunction = () => [
+  {
+    rel: "preconnect",
+    href: "https://fonts.googleapis.com"
+  },
   {
     rel: "preconnect",
     href: "https://fonts.gstatic.com",
@@ -76,7 +78,10 @@ export default function App() {
   return (
     <main className="bg-slate-900 text-gray-100">
       <Navbar />
-      <Outlet />
+      <div className="px-2 pt-10 md:pt-18 mx-auto max-w-5xl min-h-screen overflow-x-auto">
+        <Breadcrumb />
+        <Outlet />
+      </div>
       <Footer />
     </main>
   );
