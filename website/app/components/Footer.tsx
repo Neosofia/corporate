@@ -31,9 +31,9 @@ export const Footer = () => {
             <p className="tracking-wide text-gray-400">Company</p>
             <ul className="mt-2 space-y-2">
               <li><a href="/blog/">Blog</a></li>
-              <li><a href="/resources/privacy">Privacy Policy</a></li>
+              <li><a href="/qms/">QMS</a></li>
+              <li><a href="/resources/privacy/">Privacy Policy</a></li>
               <li><a href="/qms/glossary/">Glossary</a></li>
-              <li><a href="/qms/procedures/">Procedures (SOPs)</a></li>
               <li><a href="/qms/policies/">Policies</a></li>
             </ul>
           </div>
@@ -70,7 +70,7 @@ export const Footer = () => {
 
       <div className="flex justify-between pt-4 pb-10 border-t">
         <p className="text-sm/6 text-gray-400">
-          © Copyright 2025 Neosofia Inc. All rights reserved.
+        Copyright © 2025 Neosofia Inc. All rights reserved.
         </p>
         { /* External Link Icons */}
         <div className="flex items-center space-x-4">

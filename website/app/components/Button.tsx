@@ -14,7 +14,7 @@ export default function Button({
   className = '',
   onClick,
 }: ButtonProps) {
-  const baseStyles = 'font-medium transition relative overflow-hidden rounded bg-slate-700 text-white py-3 px-6 hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59,130,246,0.4)]';
+  const baseStyles = 'text-base md:text-xl transition relative overflow-hidden rounded bg-slate-700 text-white py-3 px-6 hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59,130,246,0.4)]';
 
   const buttonClasses = `${baseStyles} ${className}`;
 

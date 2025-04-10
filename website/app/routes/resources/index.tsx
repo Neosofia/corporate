@@ -14,8 +14,8 @@ export function meta() {
 
 export default function Blog( { loaderData }: Route.ComponentProps ) {
   return (
-    <section id="resources" className="min-h-screen flex justify-center items-center">
-      <div className="max-w-5xl z-10 m-4 md:m-16 prose-base md:prose-lg overflow-x-auto">        
+    <section id="resources" className="">
+      <div className="prose-base md:prose-lg">        
       <RenderMD content={loaderData}/>
       </div>
     </section>

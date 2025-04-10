@@ -3,8 +3,16 @@ import { useEffect, useState } from 'react';
 
 import { DocumentIcon } from '@heroicons/react/24/outline';
 
-export const Breadcrumb = ({ showPDF = false }: { showPDF?: boolean }) => {
+export const Breadcrumb = () => {
   const location = useLocation();
+
+  // TBD: The caller should be in control of showing the PDF icon
+  // or the breadcrumb in general.
+  const showPDF = location.pathname.includes('/qms/procedures/');
+
+  if (location.pathname === '/') {
+    return null;
+  }
   const pathnames = location.pathname.split('/').filter((x) => x);
   const pdf = `${location.pathname.replace(/\/$/, '')}.pdf`;
 
@@ -27,7 +35,7 @@ export const Breadcrumb = ({ showPDF = false }: { showPDF?: boolean }) => {
 
   return (
     <nav
-      className="grid grid-flow-col-dense spacing-2 mt-18 p-0 text-gray-500 max-w-5xl mx-auto"
+      className="grid grid-flow-col-dense text-xs md:text-base h-4 md:h-8 text-gray-500"
       aria-label="Breadcrumb">
 
       <span className="w-fit">
@@ -63,9 +71,9 @@ export const Breadcrumb = ({ showPDF = false }: { showPDF?: boolean }) => {
       </span>
 
       {showPDF && pdfExists && (
-        <span className="justify-self-end m-0 p-0 mt-1">
-          <a href={pdf} className="inline-block items-center">
-            <DocumentIcon className="h-4 w-4 md:h-5 md:w-5 mr-1" />
+        <span className="justify-self-end">
+          <a href={pdf} className="inline-block align-middle">
+            <DocumentIcon className="h-3 w-3 md:h-6 md:w-6" />
           </a>
         </span>
       )}
