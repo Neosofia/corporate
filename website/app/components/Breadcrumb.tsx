@@ -8,7 +8,8 @@ export const Breadcrumb = () => {
 
   // TBD: The caller should be in control of showing the PDF icon
   // or the breadcrumb in general.
-  const showPDF = location.pathname.includes('/qms/procedures/');
+  const allowedPaths = ['/qms/procedures/', '/qms/roles/', '/qms/glossary/'];
+  const showPDF = allowedPaths.includes(location.pathname);
 
   if (location.pathname === '/') {
     return null;
