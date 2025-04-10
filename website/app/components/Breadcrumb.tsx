@@ -2,20 +2,28 @@ import { useLocation, Link } from 'react-router';
 import { useEffect, useState } from 'react';
 
 import { DocumentIcon } from '@heroicons/react/24/outline';
+import { PencilIcon } from '@heroicons/react/24/outline';
 
 export const Breadcrumb = () => {
   const location = useLocation();
 
   // TBD: The caller should be in control of showing the PDF icon
   // or the breadcrumb in general.
-  const allowedPaths = ['/qms/procedures/', '/qms/roles/', '/qms/glossary/'];
-  const showPDF = allowedPaths.includes(location.pathname);
+  const allowedPaths = ['/qms/procedures/.*', '/qms/roles/', '/qms/glossary/'];
+  const showPDF = allowedPaths.some((path) => {
+    const regex = new RegExp(`^${path}$`);
+    return regex.test(location.pathname);
+  });
 
   if (location.pathname === '/') {
     return null;
   }
   const pathnames = location.pathname.split('/').filter((x) => x);
-  const pdf = `${location.pathname.replace(/\/$/, '')}.pdf`;
+  const pdfURL = `${location.pathname.replace(/\/$/, '')}.pdf`;
+  // TBD: pull this base url from the environment or client specific config file
+  // Once we support GitHub/GitLab/etc. authentication we can conditionally show the edit link
+  const mdEditURL = "https://github.com/Neosofia/corporate/edit/main/website/" +
+    location.pathname.replace(/\/$/, '') + ".md";
 
   const [pdfExists, setPdfExists] = useState(false);
 
@@ -23,7 +31,7 @@ export const Breadcrumb = () => {
     if (showPDF) {
       const checkPdfExists = async () => {
         try {
-          const response = await fetch(pdf, { method: 'HEAD' });
+          const response = await fetch(pdfURL, { method: 'HEAD' });
           setPdfExists(response.ok);
         } catch (error) {
           setPdfExists(false);
@@ -32,7 +40,7 @@ export const Breadcrumb = () => {
 
       checkPdfExists();
     }
-  }, [pdf, showPDF]);
+  }, [pdfURL, showPDF]);
 
   return (
     <nav
@@ -73,7 +81,10 @@ export const Breadcrumb = () => {
 
       {showPDF && pdfExists && (
         <span className="justify-self-end">
-          <a href={pdf} className="inline-block align-middle">
+          <a href={mdEditURL} target="_blank" rel="noopener noreferrer" className="inline-block align-middle mr-2">
+            <PencilIcon className="h-3 w-3 md:h-6 md:w-6" />
+          </a>
+          <a href={pdfURL} className="inline-block align-middle">
             <DocumentIcon className="h-3 w-3 md:h-6 md:w-6" />
           </a>
         </span>
