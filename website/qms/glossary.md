@@ -1,22 +1,17 @@
 # Neosofia Glossary
 
+<!---
+GEN
+--->
 ## General Terms
 
 ### To Be Determined (TBD)
 
 TBD is used to introduce an idea that is intended to be proven or confirmed as true, indicating that further evidence or proof is needed. For Neosofia it is a placeholder to indicate that upon request, evidence for the supported policy or procedure can be demonstrated. Also, an alias for to be demonstrated or to be done. 
 
-### Keep it Simple Stupid (KISS)
-
-A design principle that emphasizes simplicity and clarity in design and systems.
-
-### Do Not Repeat Yourself (DRY)
-
-> Every piece of knowledge must have a single, unambiguous, authoritative representation within a system. [^dry]
-
 ### Work in Progress (WIP)
 
-A task, project, or deliverable that is currently being worked on but has not yet been completed. WIP is often used to track ongoing efforts and ensure visibility into the status of work within a team or organization.
+A task, project, or deliverable that is currently being worked on but has not yet been completed. WIP is used to indicate that a piece of work requires more effort before formal review begins, but informal thoughts and comments may be requested.
 
 ### Enterprise Application Software (EAS)
 
@@ -37,20 +32,10 @@ A task, project, or deliverable that is currently being worked on but has not ye
  * Intrusion Detection Prevention (IDS) - and by extension Intrusion Prevention System (IPS)
  * Security Information Event Management (SIEM)
 
-
+<!---
+QM / Compliance
+--->
 ## Compliance Terms
-
-### Minimal Viable Compliance (MVC)
-
-The smallest set of policies any organization of any size in any industry should consider implementing for their organization. This is also known as level 1 compliance.
-
-#### Compliance Levels
-
-The classification of policies and procedures into three compliance levels to simplify the policy/regulation/industry matrix. The levels are
-
-* Level 1: The policies and procedures any organization should adopt if they're collecting non-public data of any kind.
-* Level 2: The policies and procedures any organization that deals with PII should adopt. For example, collecting data for the purpose of marketing on your website (PII), technology (SaaS) providers operating in lightly regulated industries, or any small business with employees beyond the owners.
-* Level 3: Specialized organizations operating in heavily regulated industries. Healthcare, banking, transportation, and power are some sectors that typically fall into level 3 compliance as they often have the most number of regulations governing them. [^regsbysector]
 
 ### Quality Management System (QMS)
 
@@ -68,7 +53,6 @@ An iterative four-step management method used in business for the control and co
 PDCA is a simple yet powerful tool for driving continuous improvement in organizations.
 
 Neosofia may also use the acronym PIE-ME (Plan, rapid Implementation, Experiment, Measure, Evaluate) to separate the rapid and highly iterative nature of the PIE phase from the longer term ME phase of measurement and evaluation. This fail-fast approach for the PIE phase may lead to several failed experiments, but those that do pass also benefit from the rigor of the more traditional PDCA cycle. Also, it's :pie:
-
 
 #### Elements of a QMS
 
@@ -171,6 +155,9 @@ Instances where a process, product, or service does not meet specified requireme
 
 Actions taken to eliminate the causes of existing nonconformities (corrective) and to prevent the occurrence of potential nonconformities (preventative). CAPAs are essential for continuous improvement and compliance in quality management systems.
 
+<!---
+CS
+--->
 ## Customer Service Terms
 
 This section of the glossary is for terms used in the context of providing clients with a measurable level of quality.
@@ -182,7 +169,6 @@ This section of the glossary is for terms used in the context of providing clien
 #### SLI Examples
  * Web page response time
  * Customer support ticket response time
-
 
 ### Service Level Objective (SLO)
 
@@ -200,7 +186,9 @@ This section of the glossary is for terms used in the context of providing clien
 * If the service provider does not meet their web page response time for one calendar month, the client will be refunded 5% of their monthly application support fee.
 * If the service provider does not meet their customer support ticket handling time for one calendar month, the client will be refunded 5% of their monthly professional service support fee.
 
-
+<!--- 
+IT
+--->
 ## Information Technology Terms 
 
 ### Software as a Service (SaaS)
@@ -219,63 +207,72 @@ The means by which a user interacts with a computer system, software application
 
 While UX and UI are often used interchangeably, they are distinct concepts. UX refers to the overall experience and satisfaction a user derives from using a product, while UI focuses specifically on the visual and interactive elements that facilitate that experience. In essence, UI is a component of UX.
 
+### Keep it Simple Stupid (KISS)
 
-### Terms Specific to Neosofia Services
+A design principle that emphasizes simplicity and clarity in design and systems.
 
-#### Industry
+### Do Not Repeat Yourself (DRY)
 
-The sector of an economy made up of manufacturing enterprises. Examples include:
- * finance
- * healthcare
- * textile
+> Every piece of knowledge must have a single, unambiguous, authoritative representation within a system. [^dry]
 
-#### Sub-sector
+### Application Programming Interface (API)
 
-An area of economic activity that forms part of one of the larger areas into which the economic activity is divided. Examples include:
-  * healthcare - pharma, medical devices, provider, payer, etc.
-  * finance - retail banking, business banking, investment banking, etc.
+A set of rules and definitions that allows software programs to communicate with each other. APIs are used to enable the integration of different systems and to allow third-party developers to create applications that can interact with other software.
 
-#### Business Operations
+### Simple Messaging Service (SMS)
 
-Activities that businesses engage in on a daily basis to increase the value of the enterprise and earn a profit. Subcategories include regions where:
-* your employees work
-* you provide services
-* you provide goods
-* you manufacture goods
-* you source materials
-* you do R&D
-* you're publicly traded
+A text messaging service component of most telephone, Internet, and mobile device systems. It uses standardized communication protocols to enable mobile devices to exchange short text messages.
 
-
-#### Hard/Soft Validation
-
-A hard validation is one that can be proven true based on the evidence. For example, if a policy implies TLS version 1.1 and the evidence service gathers the TLS version, the version that the given URL provides can be directly compared to the policy. Soft policies cannot be proven true and must be validated by a human. For example, policies requiring SOPs can be a soft validation with a link to the SOP.
-
-#### Internal/External Validation
-
-An external validation is one that can be performed from the public internet. For example, testing that the company's public-facing website conforms to a set of policies vs internal validations like testing disk encryption inside a company's cloud provider or data center.
-
-#### Push/Pull Validation
-
-A pull validation is one that is initiated by the validation service. For example, getting the TLS version from a company's public-facing website is a pull validation. An example of push validation would be a system backup and recovery execution log being pushed into the evidence service.
-
-
-### Role Based Access Control (RBAC)
-
-A method of regulating access to computer or network resources based on the roles of individual users within an enterprise. Users are assigned roles, and roles are assigned permissions to perform certain operations.
+<!---
+SDLC
+--->
+## Software Development Terms
 
 ### Software Development Lifecycle (SDLC)
 
-A process used by the software industry to design, develop, and test high-quality software. The SDLC aims to produce high-quality software that meets or exceeds customer expectations, reaches completion within times and cost estimates.
+A structured process used for planning, creating, testing, and deploying software applications. It provides a framework to ensure that software meets customer requirements, is delivered on time, and is of high quality.
 
 ### Computer Systems Validation (CSV)
 
 The process of ensuring (and documenting) that a computer-based system will produce information or data that meets a set of defined requirements. It is commonly used in regulated industries to ensure compliance with regulations.
 
+### Source Control System (SCS)
+
+The practice of tracking and managing changes to software systems. Source code control systems are used to keep track of modifications to code and content, allowing multiple developers to collaborate on a project without overwriting each other's work. Also known by the acronym SCCS for source code control system.
+
+### Pull Request (PR)
+
+A method of submitting contributions to a [SCS](#source-control-system-scs). PRs facilitate review, discussion, and collaboration before merging the changes into an authoritative version of a system (protected branch). 
+
+Known as:
+* **Pull Request (PR)** in GitHub
+* **Merge Request (MR)** in GitLab
+* **Request Pull** in Git
+
+### Protected Branch
+
+A branch in a [SCS](#source-code-control-scc) that has restrictions to prevent direct changes without review or approval. Protected branches are typically used to safeguard persistent branches like `main` or `develop` by enforcing rules such as requiring pull requests, code reviews, or passing automated tests before changes can be merged. These restrictions help maintain code quality and prevent accidental or unauthorized modifications.
+
+### Trunk-Based Development
+
+A software development practice where all contributors work on a single branch, often referred to as the "trunk" or "main" branch. Changes are integrated frequently, reducing the complexity of merging and encouraging collaboration. This approach emphasizes short-lived feature branches or direct commits to the trunk, ensuring that the codebase remains stable and up-to-date.
+
+### Continuous Integration and Continuous Delivery (CI/CD)
+
+A method to frequently deliver apps to customers by introducing automation into the stages of app development. The main concepts attributed to CI/CD are continuous integration, continuous delivery, and continuous deployment.
+
+<!---
+DIP
+--->
+## Data Integrity and Privacy Terms (DIP)
+
 ### Data Integrity
 
 The accuracy and consistency of data stored in a database, data warehouse, or other construct. It is a critical aspect of the design, implementation, and usage of any system that stores, processes, or retrieves data.
 
+### Role Based Access Control (RBAC)
+
+A method of regulating access to computer or network resources based on the roles of individual users within an enterprise. Users are assigned roles, and roles are assigned permissions to perform certain operations.
 
 #### Data Loss Prevention (DLP)
 
@@ -299,22 +296,6 @@ The protection of data that is being transmitted over a network. It ensures that
 
 A method of data transmission where only the communicating users can read the messages. In principle, it prevents potential eavesdroppers – including telecom providers, Internet providers, and even the provider of the communication service – from being able to access the cryptographic keys needed to decrypt the conversation.
 
-### Application Programming Interface (API)
-
-A set of rules and definitions that allows software programs to communicate with each other. APIs are used to enable the integration of different systems and to allow third-party developers to create applications that can interact with other software.
-
-### Simple Messaging Service (SMS)
-
-A text messaging service component of most telephone, Internet, and mobile device systems. It uses standardized communication protocols to enable mobile devices to exchange short text messages.
-
-### Source Code Control (SCC)
-
-The practice of tracking and managing changes to software code. Source code control systems are used to keep track of modifications to code, allowing multiple developers to collaborate on a project without overwriting each other's work.
-
-### Continuous Integration and Continuous Delivery (CI/CD)
-
-A method to frequently deliver apps to customers by introducing automation into the stages of app development. The main concepts attributed to CI/CD are continuous integration, continuous delivery, and continuous deployment.
-
 ### Single Sign On (SSO)
 
 An authentication process that allows a user to access multiple applications with one set of login credentials. SSO is a common feature in enterprise environments, where users may need to access a variety of different systems and applications.
@@ -323,10 +304,14 @@ An authentication process that allows a user to access multiple applications wit
 
 A security system that requires more than one method of authentication from independent categories of credentials to verify the user’s identity for a login or other transaction. MFA combines two or more independent credentials: what the user knows (password), what the user has (security token), and what the user is (biometric verification).
 
+<!---
+SA
+--->
+## System Administration (SA) Terms
+
 ### System Backup and Recovery
 
 The process of creating and storing copies of data that can be used to protect organizations against data loss. Recovery involves restoring the data from the backup to its original or a new location in the event of data loss.
-
 
 #### Retention Period
 
@@ -363,6 +348,35 @@ A real time copy of live data. This most common example is two hard drives in a 
 #### Continuous Data Protection (CDP)
 
 > A backup that instantly saves a copy of every change made to the data. This allows restoration of data to any point in time and is the most comprehensive and advanced data protection. Near-CDP backup applications—often marketed as "CDP"—automatically take incremental backups at a specific interval, for example every 15 minutes, one hour, or 24 hours. They can therefore only allow restores to an interval boundary. [^backup]
+
+<!---
+NS
+--->
+### Neosofia Terms
+
+### Minimal Viable Compliance (MVC)
+
+The smallest set of policies any organization of any size in any industry should consider implementing. This is also known as level 1 compliance.
+
+#### Compliance Levels
+
+The classification of policies and procedures into three compliance levels to simplify the policy/regulation/industry matrix. The levels are
+
+* Level 1: The policies and procedures any organization should adopt if they're collecting non-public data of any kind.
+* Level 2: The policies and procedures any organization that deals with PII should adopt. For example, collecting data for the purpose of marketing on your website (PII), technology (SaaS) providers operating in lightly regulated industries, or any small business with employees beyond the owners.
+* Level 3: Specialized organizations operating in heavily regulated industries. Healthcare, banking, transportation, and power are some sectors that typically fall into level 3 compliance as they often have the most number of regulations governing them. [^regsbysector]
+
+#### Hard/Soft Validation
+
+A hard validation is one that can be proven true based on the evidence. For example, if a policy implies TLS version 1.1 and the evidence service gathers the TLS version, the version that the given URL provides can be directly compared to the policy. Soft policies cannot be proven true and must be validated by a human. For example, policies requiring SOPs can be a soft validation with a link to the SOP.
+
+#### Internal/External Validation
+
+An external validation is one that can be performed from the public internet. For example, testing that the company's public-facing website conforms to a set of policies vs internal validations like testing disk encryption inside a company's cloud provider or data center.
+
+#### Push/Pull Validation
+
+A pull validation is one that is initiated by the validation service. For example, getting the TLS version from a company's public-facing website is a pull validation. An example of push validation would be a system backup and recovery execution log being pushed into the evidence service.
 
 
 
