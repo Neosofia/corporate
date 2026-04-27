@@ -6,7 +6,7 @@
 
 <!--- External References -->
 [ther]: https://en.wikipedia.org/wiki/Theranos#Exposure_and_downfall
-[mit]:  https://en.wikipedia.org/wiki/MIT_License
+[mit]:  https://www.apache.org/licenses/LICENSE-2.0
 [ns]:   https://neosofia.tech
 [contrib]: https://github.com/Neosofia/corporate/blob/main/CONTRIBUTING.md
 
@@ -60,6 +60,6 @@ The [next post](/website/blog/0004_mvc.md) will explore the policies and procedu
 
 ## One More Thing
 
-As an organization, we're on a mission to help any company of any size improve their compliance, and this is why we've elected to make all of our policies, procedures, roles, glossary, evidence, design, and implementation open source. Most organizations today store this information in a private corporate data store and make evidence available for "on-site" review to protect their IP (which makes a lot of sense). As this repository is open source, you're free to use any content as you like under the terms of the [MIT license][mit]. Our only (legally non-binding) request is that you cite [Neosofia][ns] in any public-facing "thanks" or "powered by" section of your website should you use any of the content here. For other ways of supporting us, please check out our [contributing][contrib] page.
+As an organization, we're on a mission to help any company of any size improve their compliance, and this is why we've elected to make all of our policies, procedures, roles, glossary, evidence, design, and implementation open source. Most organizations today store this information in a private corporate data store and make evidence available for "on-site" review to protect their IP (which makes a lot of sense). As this repository is open source, you're free to use any content as you like under the terms of the [Apache 2.0 license][mit]. Our only (legally non-binding) request is that you cite [Neosofia][ns] in any public-facing "thanks" or "powered by" section of your website should you use any of the content here. For other ways of supporting us, please check out our [contributing][contrib] page.
 
 [^credit]: created using "DALL•E 3 XL v2" on Huggingface with the prompt "flintstones car driven by a frantic looking person" seed: 1059621461 no negative prompts
