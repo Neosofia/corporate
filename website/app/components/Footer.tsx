@@ -39,14 +39,14 @@ export const Footer = () => {
           </div>
           <div>
             <p className="font-semibold tracking-wide text-gray-400">Resources</p>
-            <ul className="mt-2 space-y-2text-gray-400">
+            <ul className="mt-2 space-y-2 text-gray-400">
               <li><a href="/resources/">Getting Started</a></li>
               <li><a href="/resources/brand/">Brand Standards</a></li>
             </ul>
           </div>
           <div>
             <p className="font-semibold tracking-wide text-gray-400">Product</p>
-            <ul className="mt-2 space-y-2text-gray-400 hidden">
+            <ul className="mt-2 space-y-2 text-gray-400 hidden">
               <li><a href="/qms/glossary#tbd">Pricing</a></li>
               <li><a href="/qms/glossary#tbd">Support</a></li>
               <li><a href="/qms/glossary#tbd">Operational Status</a></li>
@@ -56,7 +56,7 @@ export const Footer = () => {
           </div>
           <div>
             <p className="font-semibold tracking-wide text-gray-400">Engage</p>
-            <ul className="mt-2 space-y-2text-gray-400 hidden">
+            <ul className="mt-2 space-y-2 text-gray-400 hidden">
               <li><a href="/resources/brand/">Brand</a></li>
               <li><a href="/qms/glossary#tbd">News & Press</a></li>
               <li><a href="/qms/glossary#tbd">Careers</a></li>
