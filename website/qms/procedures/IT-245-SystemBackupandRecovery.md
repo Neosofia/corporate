@@ -13,7 +13,7 @@
 [sa-lvl]:  /website/qms/roles.md#sa-levels
 
 <!--- External Links --->
-[os-setup]: https://github.com/Neosofia/corporate/blob/main/os/proxmox/rearSetup.sh
+[os-setup]: https://github.com/Neosofia/infrastructure/blob/main/os/proxmox/9/rearSetup.sh
 
 # System Backup and Recovery SOP
 
