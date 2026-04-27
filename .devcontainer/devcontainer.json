@@ -17,13 +17,14 @@
         "type=volume,target=${containerWorkspaceFolder}/website/.pnpm-store",
         "source=${localEnv:HOME}${localEnv:USERPROFILE}/.gnupg,target=/home/node/.gnupg,type=bind,consistency=cached"
     ],
-    "postCreateCommand": "sudo apt-get update && sudo apt-get install -y texlive-xetex texlive-latex-extra fonts-inter  && sudo chown -R node:node * && cd website && pnpm install && echo 'export GPG_TTY=$(tty)' >> ~/.bashrc",
+    "postCreateCommand": "git lfs install && git lfs pull && sudo apt-get update && sudo apt-get install -y texlive-xetex texlive-latex-extra fonts-inter  && sudo chown -R node:node * && cd website && pnpm install && echo 'export GPG_TTY=$(tty)' >> ~/.bashrc",
     "customizations": {
         "vscode": {
             "extensions": [
                 "streetsidesoftware.code-spell-checker",
                 "SimonSiefke.svg-preview",
                 "ciarant.vscode-structurizr",
+                "tomoki1207.pdf",
                 "github.vscode-github-actions",
                 "bierner.github-markdown-preview",
                 "bierner.markdown-footnotes",
