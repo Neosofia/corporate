@@ -11,7 +11,7 @@
 <!--- External Links --->
 [c4]:   https://c4model.com/
 [str]:  https://structurizr.com/
-[hw]:   https://github.com/Neosofia/corporate/tree/main/hardware/readme.md
+[hw]:   https://github.com/Neosofia/infrastructure
 [arch]: https://github.com/Neosofia/corporate/tree/main/architecture/README.md
 [pci]:  https://en.wikipedia.org/wiki/Payment_Card_Industry_Data_Security_Standard
 [psd2]: https://en.wikipedia.org/wiki/Payment_Services_Directive

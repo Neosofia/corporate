@@ -48,7 +48,7 @@ Neosofia *must* adopt the following level one [DIP][dip] policies:
 
 <!--- Proton Links --->
 [psfg]: https://proton.me/support/sieve-advanced-custom-filters
-[efe]: https://github.com/Neosofia/corporate/blob/main/email/expire_after_90_days.sieve
+[efe]: https://github.com/Neosofia/infrastructure
 [pf]: https://account.proton.me/u/4/mail/filters
 [eec]: /website/public/shared/images/evidence/ProtonEmail90DayFilter.png
 [eet]: /website/public/shared/images/evidence/ProtonEmail90DayTest.png
@@ -78,7 +78,7 @@ Neosofia *must* adopt the following level one [DIP][dip] policies:
 [macfve]: /website/public/shared/images/evidence/MacDesktopFileVault.png
 [lukse]: /website/public/shared/images/evidence/PVE0001LUKS.png
 
-[pveluksi]: https://github.com/Neosofia/corporate/blob/main/os/proxmox/pveSetup.sh
+[pveluksi]: https://github.com/Neosofia/infrastructure/blob/main/os/proxmox/9/pveSetup.sh
 
 <!--- Neosofia Links --->
 [sopsbr]: /website/qms/procedures/IT-245-SystemBackupandRecovery.md
