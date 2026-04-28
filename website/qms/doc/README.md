@@ -31,6 +31,7 @@ The script will normalize:
 * `https://github.com/Neosofia/corporate/commit` → `https://github.com/Neosofia/corporate/commit/`
 * `https://github.com/Neosofia/corporate/commit/` → unchanged
 
-Both `WEBSITE_BASE_URL` and `SCCS_BASE_URL` may be provided with or without a trailing slash; the script normalizes them automatically.
+`SCCS_BASE_URL` may be provided with or without a trailing slash; the script normalizes it automatically.
+`WEBSITE_BASE_URL` should be configured in the exact form you want used for rewritten links.
 
 The script already has defaults for `COMPANY`, `DISCLAIMER`, `WATERMARK`, and `WEBSITE_BASE_DIR`, but `WEBSITE_BASE_URL` and `SCCS_BASE_URL` should be configured for correct generated links.
