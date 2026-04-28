@@ -2,9 +2,9 @@
 
 This directory contains the local QMS document generation tooling.
 
-The `generate.bash` script sources `qms/doc/.env` for local document generation settings.
+The `generate.bash` script sources `website/qms/doc/.env` for local document generation settings.
 
-Create or update `qms/doc/.env` with values like:
+Create or update `website/qms/doc/.env` with values like:
 
 ```env
 COMPANY="Neosofia"
