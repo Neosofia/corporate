@@ -14,6 +14,15 @@ export DISCLAIMER="${DISCLAIMER:-This document is for internal use only.}"
 export WATERMARK="${WATERMARK:-Official Copy}"
 export WEBSITE_BASE_DIR="${WEBSITE_BASE_DIR:-/}"
 
+if [ -n "$SCCS_BASE_URL" ]; then
+    SCCS_BASE_URL="${SCCS_BASE_URL%/}/"
+    case "$SCCS_BASE_URL" in
+        */commit/) ;;
+        */commit/*) ;;
+        *) SCCS_BASE_URL="${SCCS_BASE_URL}commit/" ;;
+    esac
+fi
+
 DIRECTORY="$1"
 
 # Rhetorical Question: Why is 0 true and 1 false in bash? 🤦‍♂️
@@ -31,6 +40,17 @@ function check_git() {
     return 0
 }
 
+function utc_date_from_epoch() {
+    local epoch="$1"
+    if date -u -r "$epoch" +"%Y-%m-%d %H:%M:%S" >/dev/null 2>&1; then
+        date -u -r "$epoch" +"%Y-%m-%d %H:%M:%S"
+    elif date -u -d "@${epoch}" +"%Y-%m-%d %H:%M:%S" >/dev/null 2>&1; then
+        date -u -d "@${epoch}" +"%Y-%m-%d %H:%M:%S"
+    else
+        echo "$epoch"
+    fi
+}
+
 function generate_changelog() {
     # if we don't have git, we can't generate a changelog so return an empty string
     if ! check_git; then
@@ -41,7 +61,7 @@ function generate_changelog() {
     local changelog="## Changelog\n"
     changelog+="|Version|Date|Author|Message|\n"
     changelog+="|---|---|---|---------|\n"
-    changelog+="$(git log --merges -m \
+    changelog+="$(git log --first-parent --merges -m \
         --pretty=tformat:"|[%(describe:tags,abbrev=0)]($SCCS_BASE_URL%h)|%as|%an|%s|" \
         "$md_file")"
 
@@ -56,31 +76,49 @@ function generate_signature_log() {
 
     local md_file="$1"
 
-    # Generate the signature log
+    # Generate the signature log.
     #
-    # TBD: consider allowing users to configure inclusion of a full electronic signature log.
+    # We want two rows for each merge commit affecting this file:
+    #   1) Author Change  — the actual branch commit that changed the file content
+    #   2) Approval       — the merge commit author/timestamp for the PR merge
     #
-    # We only include the most recent set of changes between the two most recent merge commits.
-    # Squash and rebase commits are too lossy to generate a signature log and can be manipulated
-    # to show false information. I don't think they'll ever be supported, but never say never.
-    merge_history=$(git log --follow --merges -m --pretty=format:"%h" "$md_file")
-    most_recent_merge_commit=$(echo "$merge_history" | sed -n '1p')
-    second_most_recent_merge_commit=$(echo "$merge_history" | sed -n '2p')
+    # We use first-parent merge history to follow the mainline changelog order,
+    # then locate the earliest non-merge commit on that merge's ancestry path for
+    # the file change itself.
+    #
+    # If we cannot find a distinct change commit, fall back to the merge commit.
+    merge_history=$(git log --first-parent --merges -m --pretty=format:"%h" -- "$md_file")
 
-    if [ -n "$most_recent_merge_commit" ]; then
+    if [ -n "$merge_history" ]; then
         signature_log="## Electronic Signatures\n"
-        signature_log+="|Date|Signature ID/Owner|Actor|Reason|\n"
-        signature_log+="|---|------|---|---|"
+        signature_log+="|Time (UTC)|Signature ID|Actor|Reason|\n"
+        signature_log+="|----|-----|---|---|"
 
-        commit_range="${second_most_recent_merge_commit}..${most_recent_merge_commit}"
+        for merge_commit in $merge_history; do
+            change_commit=$(git log --pretty=format:'%h' --no-merges "${merge_commit}^2" -- "$md_file" | head -n 1)
+            if [ -z "$change_commit" ]; then
+                change_commit="$merge_commit"
+            fi
 
-        signature_log+="\n$(git log \
-            --pretty=tformat:"|%ai|%GK %GS|%an|Author Change [%h]($SCCS_BASE_URL%h)|" \
-            $commit_range "$md_file")"
+            local author_date
+            author_date="\`$(utc_date_from_epoch "$(git show -s --format=%at "$change_commit")")\`"
+            local approval_date
+            approval_date="\`$(utc_date_from_epoch "$(git show -s --format=%ct "$merge_commit")")\`"
 
-        signature_log+="\n$(git show \
-            --pretty=tformat:"|%ai|%GK %GS|%an|Approval|" \
-            $most_recent_merge_commit)"
+            local tag_name
+            tag_name=$(git tag --points-at "$merge_commit" | sort | head -n 1)
+            if [ -z "$tag_name" ]; then
+                tag_name="UNKNOWN"
+            fi
+
+            local author_line
+            author_line=$(git show --no-patch --format="|%GK %GS|%an|Author ${tag_name}|" "$change_commit")
+            local approval_line
+            approval_line=$(git show --no-patch --format="|%GK %GS|%an|Approval ${tag_name}|" "$merge_commit")
+
+            signature_log+="\n|${approval_date}${approval_line}"
+            signature_log+="\n|${author_date}${author_line}"
+        done
 
         # TBD: Add the ability to capture a reviewer based on the reviews done on GitHub/GitLab.
         # I don't like the idea of reviewers making meta commits to indicate reviews in git
@@ -100,13 +138,18 @@ function generate_version_tags() {
     fi
     local md_file="$1"
 
-    # Before we generate a document, generate a local set of tags that are based on the 
-    # merge history of the file being passed in
+    # Before we generate a document, generate a local set of tags based on the
+    # merge history of the file being passed in.
     #
-    # TBD: in the future we should consider remote tags and conditionally use them if they exist.
-    git tag -d $(git tag)
+    # Use annotated tags so the tag is self-describing and Git does not prompt for
+    # a comment editor when tag signing is enabled.
+    local existing_tags
+    existing_tags=$(git tag)
+    if [ -n "$existing_tags" ]; then
+        git tag -d $existing_tags
+    fi
 
-    git log --reverse --merges -m --pretty=format:"git tag VXXX %h ;" "$md_file" |
+    git log --reverse --merges -m --date=short --pretty=format:"git tag -a VXXX -m 'Automated version tag for %f on %ad (%h)' %h ;" "$md_file" |
         nl -w3 -n rz | awk '{sub(/XXX/,$1); $1=""; print}' | tr -d '\n' | bash
 
     recent_tag=$(git describe --abbrev=0 --tags $(git log -m --merges --pretty=%H -1 "$md_file"))
