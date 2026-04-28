@@ -1,7 +1,6 @@
 import { defineConfig } from 'vite';
 import { reactRouter } from "@react-router/dev/vite";
 import tailwindcss from "@tailwindcss/vite";
-import tsconfigPaths from "vite-tsconfig-paths";
 import { DynamicPublicDirectory } from "vite-multiple-assets";
 
 
@@ -9,7 +8,6 @@ export default defineConfig({
   plugins: [
     tailwindcss(),
     reactRouter(),
-    tsconfigPaths(),
     DynamicPublicDirectory([
       { 
         input: "blog/**",

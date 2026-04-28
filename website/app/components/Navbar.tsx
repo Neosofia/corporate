@@ -21,7 +21,7 @@ export const Navbar = () => {
           <div className="flex justify-between items-center h-8 md:h-14">
             <div>
               <a href="/#" className="">
-                <img src={logo} alt="logo" className="mx-auto h-4 md:h-8 md:min-w-[204px]" />
+                <img src={logo} alt="logo" className="mx-auto h-4 md:h-8 md:min-w-51" />
               </a>
             </div>
 
