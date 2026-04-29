@@ -4,10 +4,14 @@
   "scripts": {
     "prod": "pnpm run build && pnpm run serve",
     "dev": "DEBUG=vite:time* react-router dev",
-    "build": "bash qms/doc/generate.bash qms && DEBUG=vite:time* react-router build",
+    "docs:generate": "LOGO_PATH=app/assets/Neosofia.png pnpm exec neosofia-docs qms",
+    "docs:generate:local": "LOGO_PATH=app/assets/Neosofia.png pnpm exec neosofia-docs --local qms",
+    "build:client": "DEBUG=vite:time* react-router build",
+    "build": "pnpm run docs:generate && pnpm run build:client",
     "serve": "DEBUG=vite:time* vite serve build/client --host 0.0.0.0 --port 4173"
   },
   "dependencies": {
+    "@neosofia/docs-generator": "file:../docs",
     "@react-router/node": "^7.14.2",
     "isbot": "^5.1.39",
     "react": "^19.2.5",
