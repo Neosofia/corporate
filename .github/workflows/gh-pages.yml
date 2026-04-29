@@ -36,12 +36,17 @@ jobs:
       - name: Pull LFS files
         run: git lfs pull
 
-      - name: Install pandoc
-        uses: pandoc/actions/setup@v1
-
-      # TBD: Build this into a well defined GHA/container for many reasons
-      - name: Install LaTeX Tools and Inter font
-        run: sudo apt-get install -y texlive-latex-extra texlive-xetex fonts-inter
+      - name: Generate QMS PDFs
+        uses: Neosofia/docs@main
+        with:
+          directory: qms
+          company: ${{ vars.COMPANY }}
+          disclaimer: ${{ vars.DISCLAIMER }}
+          watermark: ${{ vars.WATERMARK }}
+          website-base-dir: ${{ vars.WEBSITE_BASE_DIR }}
+          website-base-url: ${{ vars.WEBSITE_BASE_URL }}
+          sccs-base-url: ${{ vars.SCCS_BASE_URL }}
+          logo-path: app/assets/Neosofia.png
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -54,8 +59,8 @@ jobs:
           COMPANY: ${{ vars.COMPANY }}
           SCCS_BASE_URL: ${{ vars.SCCS_BASE_URL }}
           WEBSITE_BASE_DIR: ${{ vars.WEBSITE_BASE_DIR }}
-          WEBSITE_BASE_URL: ${{ vars.WEBSITE_BASE_URL }} 
-        run: pnpm run build
+          WEBSITE_BASE_URL: ${{ vars.WEBSITE_BASE_URL }}
+        run: pnpm run build:client
 
       - name: Upload production-ready build files
         uses: actions/upload-pages-artifact@v3
