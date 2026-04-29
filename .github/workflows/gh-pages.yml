@@ -44,7 +44,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Generate QMS PDFs
-        uses: docker://ghcr.io/Neosofia/docs:latest
+        uses: docker://ghcr.io/neosofia/docs:latest
         with:
           args: qms "${{ vars.COMPANY }}" "${{ vars.DISCLAIMER }}" "${{ vars.WATERMARK }}" "${{ vars.WEBSITE_BASE_DIR }}" "${{ vars.WEBSITE_BASE_URL }}" "${{ vars.SCCS_BASE_URL }}" app/assets/Neosofia.png
 
