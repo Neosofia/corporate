@@ -47,7 +47,7 @@ jobs:
         uses: actions/setup-node@v4
 
       - name: Install dependencies
-        run: cd website && npm install -g pnpm && pnpm i
+        run: npm install -g pnpm && pnpm i
 
       - name: Build project
         env:
@@ -55,13 +55,13 @@ jobs:
           SCCS_BASE_URL: ${{ vars.SCCS_BASE_URL }}
           WEBSITE_BASE_DIR: ${{ vars.WEBSITE_BASE_DIR }}
           WEBSITE_BASE_URL: ${{ vars.WEBSITE_BASE_URL }} 
-        run: cd website && pnpm run build
+        run: pnpm run build
 
       - name: Upload production-ready build files
         uses: actions/upload-pages-artifact@v3
         with:
           name: github-pages
-          path: website/build/client
+          path: build/client
           
   deploy:
     environment:
