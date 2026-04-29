@@ -36,17 +36,17 @@ jobs:
       - name: Pull LFS files
         run: git lfs pull
 
-      - name: Generate QMS PDFs
-        uses: Neosofia/docs@main
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v2
         with:
-          directory: qms
-          company: ${{ vars.COMPANY }}
-          disclaimer: ${{ vars.DISCLAIMER }}
-          watermark: ${{ vars.WATERMARK }}
-          website-base-dir: ${{ vars.WEBSITE_BASE_DIR }}
-          website-base-url: ${{ vars.WEBSITE_BASE_URL }}
-          sccs-base-url: ${{ vars.SCCS_BASE_URL }}
-          logo-path: app/assets/Neosofia.png
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Generate QMS PDFs
+        uses: docker://ghcr.io/Neosofia/docs:latest
+        with:
+          args: qms "${{ vars.COMPANY }}" "${{ vars.DISCLAIMER }}" "${{ vars.WATERMARK }}" "${{ vars.WEBSITE_BASE_DIR }}" "${{ vars.WEBSITE_BASE_URL }}" "${{ vars.SCCS_BASE_URL }}" app/assets/Neosofia.png
 
       - name: Setup Node
         uses: actions/setup-node@v4
