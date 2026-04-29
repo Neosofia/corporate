@@ -11,7 +11,6 @@
 <!--- External Links --->
 [c4]:   https://c4model.com/
 [str]:  https://structurizr.com/
-[hw]:   https://github.com/Neosofia/corporate/tree/main/hardware/readme.md
 [arch]: https://github.com/Neosofia/corporate/tree/main/architecture/README.md
 [pci]:  https://en.wikipedia.org/wiki/Payment_Card_Industry_Data_Security_Standard
 [psd2]: https://en.wikipedia.org/wiki/Payment_Services_Directive
@@ -37,7 +36,7 @@ Our introductory posts to compliance have been focused on manually curating poli
 
 At the foundation of any compliant [EAS][eas] lies a set of system architecture diagrams that define how technology systems and system users interact with each other. To express these relationships, Neosofia has elected to adopt the [C4 model][c4] and more specifically [Structurizr][str] to generate all architecture diagrams.
 
-The initial set of [EASs][eas] documented will include all the hardware and third-party services needed to operate a *minimally* compliant technology organization, which can be found in our [hardware readme][hw].
+The initial set of [EASs][eas] documented will include all the hardware and third-party services needed to operate a *minimally* compliant technology organization.
 
 > [!NOTE]
 > The policy validation and evidence aggregation compliance tools are designed to work with any service regardless of the vendor. The choices above are ones Neosofia has elected to make for reasons that will be covered in future posts.
