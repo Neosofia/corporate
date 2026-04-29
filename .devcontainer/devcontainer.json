@@ -13,11 +13,11 @@
     // gpg --export-ownertrust               > ownertrust-in-memory-buffer
 
     "mounts": [
-        "type=volume,target=${containerWorkspaceFolder}/website/node_modules",
-        "type=volume,target=${containerWorkspaceFolder}/website/.pnpm-store",
+        "type=volume,target=${containerWorkspaceFolder}/node_modules",
+        "type=volume,target=${containerWorkspaceFolder}/.pnpm-store",
         "source=${localEnv:HOME}${localEnv:USERPROFILE}/.gnupg,target=/home/node/.gnupg,type=bind,consistency=cached"
     ],
-    "postCreateCommand": "git lfs install && git lfs pull && sudo apt-get update && sudo apt-get install -y texlive-xetex texlive-latex-extra fonts-inter  && sudo chown -R node:node * && cd website && pnpm install && echo 'export GPG_TTY=$(tty)' >> ~/.bashrc",
+    "postCreateCommand": "git lfs install && git lfs pull && sudo apt-get update && sudo apt-get install -y texlive-xetex texlive-latex-extra fonts-inter  && sudo chown -R node:node * && pnpm install && echo 'export GPG_TTY=$(tty)' >> ~/.bashrc",
     "customizations": {
         "vscode": {
             "extensions": [
