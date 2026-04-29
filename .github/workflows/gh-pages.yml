@@ -44,11 +44,11 @@ jobs:
 
       - name: Build project
         env:
-          COMPANY: ${{ vars.COMPANY }}
-          SCCS_BASE_URL: ${{ vars.SCCS_BASE_URL }}
-          WEBSITE_BASE_DIR: ${{ vars.WEBSITE_BASE_DIR }}
-          WEBSITE_BASE_URL: ${{ vars.WEBSITE_BASE_URL }}
-          LOGO_PATH: app/assets/Neosofia.png
+          COMPANY: "Neosofia"
+          SCCS_BASE_URL: "https://github.com/Neosofia/corporate/commit/"
+          WEBSITE_BASE_DIR: "/"
+          WEBSITE_BASE_URL: "https://neosofia.tech/"
+          LOGO_PATH: "app/assets/Neosofia.png"
         run: pnpm run build
 
       - name: Upload production-ready build files
