@@ -58,6 +58,8 @@ export default function Contact() {
       setSubject(subjectOptions[0].value);
       setMessage("");
     } catch (e) {
+      const message = e instanceof Error ? e.message : String(e);
+      console.error("Contact form error:", message, e);
       setError("Unable to send your message right now. Please try again later.");
       setStatus("idle");
     }
