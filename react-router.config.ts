@@ -20,6 +20,7 @@ export default {
   async prerender() {
     return [
       "/",
+      "/tools",
       "/blog",
       "/qms",
       "/qms/procedures",
