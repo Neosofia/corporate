@@ -54,6 +54,7 @@ const navigation: NavCategory[] = [
   {
     label: "Contact",
     items: [
+      { name: "Contact us", href: "/contact" },
       { name: "Consulting", href: "mailto:consulting@neosofia.tech", external: true },
     ],
   },
