@@ -33,7 +33,7 @@ VITE_EMAIL_API_URL=http://localhost:8005
 pnpm dev
 ```
 
-The site is available at `http://localhost:5173`.
+The site is available at `http://localhost:4173`.
 
 ---
 
