@@ -1,85 +1,80 @@
 import { CodeBracketIcon } from '@heroicons/react/24/solid'
+import { Link } from 'react-router'
+
+import { ExternalLinkIcon } from './ExternalLinkIcon'
+
+const FooterColumn = ({ title, children }: { title: string; children: React.ReactNode }) => (
+  <div>
+    <p className="text-xs font-semibold uppercase tracking-wide text-slate-400">{title}</p>
+    <ul className="mt-3 space-y-2">{children}</ul>
+  </div>
+);
+
+const FooterLink = ({ href, children, external }: { href: string; children: React.ReactNode; external?: boolean }) =>
+  external ? (
+    <li><a className="inline-flex items-center gap-1 text-xs text-slate-400 hover:text-white transition" href={href} target="_blank" rel="noopener noreferrer">
+      {children}
+      <ExternalLinkIcon />
+    </a></li>
+  ) : (
+    <li><Link className="text-xs text-slate-400 hover:text-white transition" to={href}>{children}</Link></li>
+  );
 
 export const Footer = () => {
   return (
-    <div className="max-w-5xl mx-auto px-4 md:px-0" id="footer">
-      <div className="grid gap-16 row-gap-10 mb-6 mt-4 lg:grid-cols-6 border-t">
-        <div className="md:max-w-md mt-4 md:col-span-2">
-          <a
-            href="/"
-            aria-label="Go home"
-            title="Company"
-            className="inline-flex items-center"
-          >
+    <footer className="mt-16">
+      <div className="max-w-5xl mx-auto px-4 md:px-6 py-12 border-t border-slate-700/50">
 
-            <span className="text-xl font-bold tracking-wide text-gray-400">
+        <div className="grid gap-10 lg:grid-cols-6">
+
+          {/* Brand blurb */}
+          <div className="lg:col-span-2">
+            <Link to="/" aria-label="Go home" className="text-xl font-bold tracking-wide text-slate-200">
               Neosofia
-            </span>
-          </a>
-          <div className="mt-4 lg:max-w-sm">
-            <p className="text-sm text-gray-400">
-              Giving organizations the tools and knowledge needed to deliver safe and effective services to their clients
-            </p>
-            <p className="mt-4 text-sm text-gray-400">
-              A multinational technology services company on a mission to create new wisdom in the compliance space.
+            </Link>
+            <p className="mt-4 text-xs leading-relaxed text-slate-400">
+              Giving organizations the tools and knowledge needed to deliver safe and effective services to their clients.
             </p>
           </div>
+
+          <FooterColumn title="Neosofia">
+            <FooterLink href="/resources/brand/">Brand Standards</FooterLink>
+          </FooterColumn>
+
+          <FooterColumn title="Legal">
+            <FooterLink href="/resources/privacy/">Privacy Policy</FooterLink>
+          </FooterColumn>
+
+          <FooterColumn title="Open Source">
+            <FooterLink href="https://github.com/Neosofia/corporate" external>Corporate</FooterLink>
+            <FooterLink href="https://github.com/Neosofia/sdk" external>SDK</FooterLink>
+          </FooterColumn>
+
+          <FooterColumn title="Community">
+            <FooterLink href="https://github.com/Neosofia" external>GitHub</FooterLink>
+          </FooterColumn>
+
         </div>
 
-        <div className="grid grid-cols-2 mt-4 gap-5 row-gap-8 lg:col-span-4 md:grid-cols-4">
-          <div>
-            <p className="tracking-wide text-gray-400">Company</p>
-            <ul className="mt-2 space-y-2">
-              <li><a href="/blog/">Blog</a></li>
-              <li><a href="/qms/">QMS</a></li>
-              <li><a href="/resources/privacy/">Privacy Policy</a></li>
-              <li><a href="/qms/glossary/">Glossary</a></li>
-              <li><a href="/qms/policies/">Policies</a></li>
-            </ul>
-          </div>
-          <div>
-            <p className="font-semibold tracking-wide text-gray-400">Resources</p>
-            <ul className="mt-2 space-y-2 text-gray-400">
-              <li><a href="/resources/">Getting Started</a></li>
-              <li><a href="/resources/brand/">Brand Standards</a></li>
-            </ul>
-          </div>
-          <div>
-            <p className="font-semibold tracking-wide text-gray-400">Product</p>
-            <ul className="mt-2 space-y-2 text-gray-400 hidden">
-              <li><a href="/qms/glossary#tbd">Pricing</a></li>
-              <li><a href="/qms/glossary#tbd">Support</a></li>
-              <li><a href="/qms/glossary#tbd">Operational Status</a></li>
-              <li><a href="/qms/glossary#tbd">Docs</a></li>
-              <li><a href="/qms/glossary#tbd">Certifications</a></li>
-            </ul>
-          </div>
-          <div>
-            <p className="font-semibold tracking-wide text-gray-400">Engage</p>
-            <ul className="mt-2 space-y-2 text-gray-400 hidden">
-              <li><a href="/resources/brand/">Brand</a></li>
-              <li><a href="/qms/glossary#tbd">News & Press</a></li>
-              <li><a href="/qms/glossary#tbd">Careers</a></li>
-              <li><a href="/qms/glossary#tbd">Events</a></li>
-              <li><a href="/qms/glossary#tbd">Legal</a></li>
-              <li><a href="/qms/glossary#tbd">Leadership</a></li>
-              <li><a href="/qms/glossary#tbd">Contact Us</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div className="flex justify-between pt-4 pb-10 border-t">
-        <p className="text-sm/6 text-gray-400">
-        Copyright © 2025 Neosofia Inc. All rights reserved.
-        </p>
-        { /* External Link Icons */}
-        <div className="flex items-center space-x-4">
-          <a href="https://github.com/Neosofia/corporate/" aria-label="Neosofia GitHub" className="text-gray-400">
-            <CodeBracketIcon className="size-6" />
+        {/* Bottom bar */}
+        <div className="mt-10 flex items-center justify-between border-t border-slate-700/50 pt-6">
+          <p className="text-xs text-slate-500">
+            © {new Date().getFullYear()} Neosofia Inc. All rights reserved.
+          </p>
+          <a
+            href="https://github.com/Neosofia"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Neosofia on GitHub"
+            className="text-slate-500 hover:text-white transition"
+          >
+            <CodeBracketIcon className="h-5 w-5" />
           </a>
         </div>
+
       </div>
-    </div>
+    </footer>
   );
 };
+
+

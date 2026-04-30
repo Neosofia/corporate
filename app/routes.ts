@@ -14,6 +14,10 @@ export default [
     route("procedures/:id",   "./routes/qms/show.tsx", { id: "procedures" }),
   ]),
 
+  ...prefix("tools", [
+    index("./routes/tools/index.tsx"),
+  ]),
+
   ...prefix("resources", [
     route("*",   "./routes/resources/index.tsx"),
   ]),
