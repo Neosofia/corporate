@@ -25,7 +25,7 @@ export default function Home() {
                   Start Building
                 </a>
                 <a
-                  href="mailto:consulting@neosofia.tech"
+                  href="/contact"
                   className="inline-flex w-full justify-center rounded-full border border-white/10 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition hover:border-sky-300 hover:text-sky-300 sm:w-auto"
                 >
                   Contact us

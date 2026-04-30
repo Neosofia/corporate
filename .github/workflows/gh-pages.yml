@@ -49,6 +49,7 @@ jobs:
           WEBSITE_BASE_DIR: "/"
           WEBSITE_BASE_URL: "https://neosofia.tech/"
           LOGO_PATH: "app/assets/Neosofia.png"
+          VITE_EMAIL_API_URL: ${{ vars.VITE_EMAIL_API_URL }}
         run: pnpm run build
 
       - name: Upload production-ready build files
