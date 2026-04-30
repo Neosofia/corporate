@@ -8,6 +8,10 @@ const subjectOptions = [
   { value: "support", label: "Support question" },
 ];
 
+const isValidEmail = (value: string): boolean => {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+};
+
 const EMAIL_API_URL: string = (() => {
   const url = import.meta.env.VITE_EMAIL_API_URL;
   if (!url) throw new Error("VITE_EMAIL_API_URL is required at build time");
@@ -32,8 +36,8 @@ export default function Contact() {
     event.preventDefault();
     setError(null);
 
-    if (!email || !message) {
-      setError("Please provide both your email address and a message.");
+    if (!isValidEmail(email) || !message.trim()) {
+      setError("Please provide a valid email address and a message.");
       return;
     }
 
@@ -64,6 +68,11 @@ export default function Contact() {
       setStatus("idle");
     }
   };
+
+  const isSubmitDisabled =
+    status === "submitting" ||
+    !isValidEmail(email) ||
+    !message.trim();
 
   return (
     <section className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
@@ -142,7 +151,7 @@ export default function Contact() {
               <button
                 type="submit"
                 className="inline-flex items-center justify-center rounded-full bg-sky-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-sky-400 disabled:cursor-not-allowed disabled:bg-slate-700"
-                disabled={status === "submitting"}
+                disabled={isSubmitDisabled}
               >
                 {status === "submitting" ? "Sending…" : "Send message"}
               </button>
