@@ -155,7 +155,7 @@ export async function LoadMD(
                 async function isDraft(file: string): Promise<boolean> {
                     const c = await readFile(path.join(blogDir, file), 'utf8');
                     const { data } = parseFrontmatter(c);
-                    return data.draft === 'true' || data.draft === true;
+                    return data.draft === 'true';
                 }
 
                 if (idx > 0) {
