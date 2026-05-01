@@ -7,7 +7,7 @@ import remarkGfm from 'remark-gfm'
 import rehypeRaw from 'rehype-raw'
 import rehypeSlug from 'rehype-slug';
 
-import { InformationCircleIcon, CalendarDaysIcon, UserIcon, TagIcon, LightBulbIcon, ExclamationTriangleIcon, ExclamationCircleIcon, FireIcon } from '@heroicons/react/24/outline'
+import { ArrowTopRightOnSquareIcon, InformationCircleIcon, CalendarDaysIcon, UserIcon, TagIcon, LightBulbIcon, ExclamationTriangleIcon, ExclamationCircleIcon, FireIcon } from '@heroicons/react/24/outline'
 import { cn } from '@/lib/utils'
 import { Badge } from '@/components/ui/badge'
 
@@ -113,15 +113,7 @@ export async function LoadMD(
         const { execSync } = await import('node:child_process');
         const path = await import('node:path');
         const filename = path.join(process.cwd(), markdownPath);
-        let raw: string;
-
-        try {
-            raw = await readFile(filename, 'utf8');
-        } catch (error) {
-            const fallbackFilename = path.join(process.cwd(), 'app', markdownPath);
-            raw = await readFile(fallbackFilename, 'utf8');
-        }
-
+        const raw = await readFile(filename, 'utf8');
         const { data: frontmatter, content } = parseFrontmatter(raw);
         const toc = extractTOC(content);
 
@@ -306,19 +298,30 @@ const alertConfig: Record<AlertType, { icon: React.ElementType; border: string; 
 };
 
 export const RenderMD = (props: { content: string; meta?: PostMeta }) => {
-    const linkComponent = ({ href = '', ...props }) => {
+    const linkComponent = ({ href = '', children, className, ...props }: { href?: string; children?: React.ReactNode; className?: string }) => {
+        const combinedClassName = ['inline-flex items-center gap-1', className].filter(Boolean).join(' ');
+
         if (href.startsWith('http')) {
-            return <Link to={href} target="_blank" rel="noreferrer" {...props} />;
+            return (
+                <a href={href} target="_blank" rel="noreferrer" className={combinedClassName} {...props}>
+                    {children}
+                    <ArrowTopRightOnSquareIcon className="h-3 w-3 shrink-0 opacity-70" aria-hidden="true" />
+                </a>
+            );
         }
 
         if (href.startsWith('#')) {
-            return <a href={href} {...props} />;
+            return <a href={href} className={className} {...props}>{children}</a>;
         }
 
         const normalizedHref = normalizeAssetPath(href.replace(/\.md$/, '/'));
 
         // TBD: Figure out why we need to reload the document when navigating between dynamic routes
-        return <Link to={normalizedHref} reloadDocument {...props} />;
+        return (
+            <Link to={normalizedHref} reloadDocument className={combinedClassName} {...props}>
+                {children}
+            </Link>
+        );
     };
 
     const imgComponent = ({ src = '', ...props }) => {

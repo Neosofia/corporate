@@ -38,6 +38,7 @@ export const Footer = () => {
           </div>
 
           <FooterColumn title="Neosofia">
+            <FooterLink href="/resources/website/about-us/">About Us</FooterLink>
             <FooterLink href="/resources/website/brand/">Brand Standards</FooterLink>
             <FooterLink href="/resources/website/thanks/">Thanks</FooterLink>
           </FooterColumn>

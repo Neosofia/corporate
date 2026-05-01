@@ -35,32 +35,30 @@ function TOCSidebar({ toc }: { toc: TOCItem[] }) {
     }, []);
 
     return (
-        <aside className="hidden xl:flex flex-col w-56 shrink-0">
-            <div className="sticky top-24 max-h-[calc(100vh-8rem)] overflow-y-auto">
-                <p className="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-3 px-1">
-                    On this page
-                </p>
-                <ul className="space-y-0.5">
-                    {toc.map(item => (
-                        <li
-                            key={`${item.slug}-${item.level}`}
-                            style={{ paddingLeft: `${(item.level - 1) * 0.75}rem` }}
+        <aside className="toc-aside hidden xl:block fixed top-30 w-52 max-h-[calc(100vh-8rem)] overflow-y-auto rounded-2xl border border-slate-700/50 bg-slate-950/90 p-4 shadow-xl backdrop-blur-xl z-10">
+            <p className="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-3">
+                On this page
+            </p>
+            <ul className="space-y-0.5">
+                {toc.map(item => (
+                    <li
+                        key={`${item.slug}-${item.level}`}
+                        style={{ paddingLeft: `${(item.level - 1) * 0.75}rem` }}
+                    >
+                        <a
+                            href={`#${item.slug}`}
+                            className={cn(
+                                'block text-sm py-1 rounded transition-colors leading-snug',
+                                activeSlug === item.slug
+                                    ? 'text-sky-400 font-medium'
+                                    : 'text-slate-400 hover:text-slate-200'
+                            )}
                         >
-                            <a
-                                href={`#${item.slug}`}
-                                className={cn(
-                                    'block text-sm py-1 px-1 rounded transition-colors leading-snug',
-                                    activeSlug === item.slug
-                                        ? 'text-sky-400 font-medium'
-                                        : 'text-slate-400 hover:text-slate-200'
-                                )}
-                            >
-                                {item.text}
-                            </a>
-                        </li>
-                    ))}
-                </ul>
-            </div>
+                            {item.text}
+                        </a>
+                    </li>
+                ))}
+            </ul>
         </aside>
     );
 }
@@ -69,9 +67,8 @@ export function BlogLayout({ children, toc, meta }: BlogLayoutProps) {
     const showTOC = toc.length > 2;
 
     return (
-        <div className="flex gap-12 items-start">
-            <div className="flex-1 min-w-0">
-                {children}
+        <div className={showTOC ? 'xl:max-w-3xl 2xl:max-w-none' : undefined}>
+            {children}
 
                 {(meta.prevPost || meta.nextPost) && (
                     <nav className="mt-12 flex items-stretch justify-between gap-4">
@@ -108,8 +105,6 @@ export function BlogLayout({ children, toc, meta }: BlogLayoutProps) {
                         ) : <div />}
                     </nav>
                 )}
-            </div>
-
             {showTOC && <TOCSidebar toc={toc} />}
         </div>
     );

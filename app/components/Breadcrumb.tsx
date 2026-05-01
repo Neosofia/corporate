@@ -47,7 +47,7 @@ export const Breadcrumb = () => {
       .join(' ');
 
   return (
-    <BreadcrumbRoot className="mb-6">
+    <BreadcrumbRoot className="pt-3 pb-2 mb-3">
       <BreadcrumbList>
         <BreadcrumbItem>
           <BreadcrumbLink asChild>

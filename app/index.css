@@ -134,7 +134,7 @@
     }
     /* Add a margin to the top of headings to account for the fixed header. */
     h1, h2, h3, h4, h5, h6 {
-      scroll-margin-top: calc(var(--spacing) * 16);
+      scroll-margin-top: 8.5rem;
       margin: calc(var(--spacing) * 7) 0;
       color: var(--color-slate-100);
       font-weight: 600;
@@ -177,6 +177,16 @@
   .scrollbar-none {
     scrollbar-width: none;
     &::-webkit-scrollbar { display: none; }
+  }
+
+  /* TOC sidebar: anchored just right of the centered content container.
+     At xl (1280px) the container is max-w-3xl (48rem, half = 24rem).
+     At 2xl (1536px) the container is max-w-5xl (64rem, half = 32rem). */
+  @media (min-width: 1280px) {
+    .toc-aside { left: calc(50% + 24rem + 1rem); }
+  }
+  @media (min-width: 1536px) {
+    .toc-aside { left: calc(50% + 32rem + 1rem); }
   }
 }
 

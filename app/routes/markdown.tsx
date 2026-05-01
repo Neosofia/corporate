@@ -26,20 +26,26 @@ export default function MarkdownPage({ loaderData }: Route.ComponentProps) {
   const parts = pathname.split('/').filter(Boolean);
   const section = parts[0] ?? 'content';
   const isBlogPost = section === 'blog' && parts.length > 1;
+  const isQmsPage = section === 'qms';
+  const useTocLayout = isBlogPost || isQmsPage;
   const data = loaderData as LoadMDResult | undefined;
 
   if (!data) return null;
 
+  const toc = isQmsPage
+    ? data.toc.filter(item => item.level <= 2)
+    : data.toc;
+
   const article = (
     <div className="prose-base">
-      <RenderMD content={data.content} meta={isBlogPost ? data.meta : undefined} />
+      <RenderMD content={data.content} meta={useTocLayout ? data.meta : undefined} />
     </div>
   );
 
   return (
     <section id={section} className="">
-      {isBlogPost ? (
-        <BlogLayout toc={data.toc} meta={data.meta}>
+      {useTocLayout ? (
+        <BlogLayout toc={toc} meta={data.meta}>
           {article}
         </BlogLayout>
       ) : article}

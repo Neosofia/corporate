@@ -9,14 +9,37 @@
 
 # Quality Management System (QMS)
 
-Per our glossary, a [QMS][qms] is
+The Neosofia QMS is the structured documentation layer for our quality, compliance, and operational controls.
+It is organized around a single policy document, a glossary of terms, and a library of procedures that describe how work is meant to happen.
 
-> A formalized system that documents processes, [procedures][proc], and [responsibilities][roles] for achieving quality [policies][pol] and objectives. It helps coordinate and direct an organization’s activities to meet customer and regulatory requirements and improve its effectiveness and efficiency on a continuous basis.
+It contains:
 
-If you read our blog post regarding our definition of the three [levels of compliance][blog-0005], a [QMS][qms] is typically defined for some [level two][lvl] organizations and most [level three][lvl] organizations. Some [level one][lvl] organizations could benefit from standardizing company procedures like onboarding, accounting, technical system administration, etc. but having a formal [SOP][sop] with formalized training is typically not needed.
+- a single policy document: [Policies][pol]
+- a glossary of defined terms: [Glossary](/qms/glossary/)
+- a collection of procedures: [Procedures](/qms/procedures/)
 
-From the definition of the [elements of a QMS][qms], we'll run an organization through the following checklist(s) to determine what actions need to be taken in order to comply with the regulation that govern them.
+All QMS content is stored as Markdown in git. That gives us:
 
- * [Level 1 Checklist](resources/checklists/level1.md)
- * [Level 2 Checklist](resources/checklists/level2.md)
- * [Level 3 Checklist](resources/checklists/level3.md)
+- version history for every change
+- reviewable pull requests instead of opaque PDFs or word documents
+- a single source of truth for policy, procedure, and glossary updates
+
+When a regulatory or audit-ready package is required, we use [Neosofia Docs](https://github.com/Neosofia/docs) to generate PDF output from the same Markdown source. For more background, see our blog post [Transforming the QMS Document Paradigm for SOPs](../blog/1100_gdp.md).
+This lets us keep the authoring workflow in text while still producing formatted documents with:
+
+- title page, version, and effective date
+- table of contents
+- headers, footers, and page numbering
+- document change history and approvals
+
+## QMS structure
+
+- [Policies][pol]
+- [Glossary](/qms/glossary/)
+- [Procedures](/qms/procedures/)
+
+## Related checklists
+
+* [Level 1 Checklist](../resources/checklists/level1.md)
+* [Level 2 Checklist](../resources/checklists/level2.md)
+* [Level 3 Checklist](../resources/checklists/level3.md)

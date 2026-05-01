@@ -34,18 +34,12 @@ type NavCategory = {
 
 const navigation: NavCategory[] = [
   {
-    label: "For Devs",
+    label: "For Devs and Sys Admins",
     items: [
       { name: "Tool Overview", href: "/tools" },
       { name: "SDKs", href: "https://github.com/Neosofia/sdk", external: true },
       { name: "Authentication", href: "https://github.com/Neosofia/authentication", external: true },
       { name: "Integrations", href: "https://github.com/Neosofia/sdk", external: true },
-    ],
-  },
-  {
-    label: "For Sys Admins",
-    items: [
-      { name: "Tool Overview", href: "/tools" },
       { name: "Private Cloud", href: "https://github.com/Neosofia/infrastructure", external: true },
       { name: "Public Cloud (TBD)", href: "", disabled: true },
     ],
@@ -53,9 +47,10 @@ const navigation: NavCategory[] = [
   {
     label: "For Compliance",
     items: [
-      { name: "QMS library", href: "/qms" },
-      { name: "Checklists", href: "/resources" },
+      { name: "QMS Overview", href: "/qms" },
       { name: "Policies", href: "/qms/policies/" },
+      { name: "Procedures", href: "/qms/procedures/" },
+      { name: "Glossary", href: "/qms/glossary/" },
     ],
   },
   {
@@ -63,7 +58,6 @@ const navigation: NavCategory[] = [
     items: [
       { name: "Blog", href: "/blog" },
       { name: "Resources", href: "/resources" },
-      { name: "Glossary", href: "/qms/glossary/" },
     ],
   },
   {

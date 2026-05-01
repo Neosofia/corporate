@@ -70,10 +70,6 @@ export default function Contact() {
       <div className="mb-12 rounded-4xl border border-white/10 bg-slate-950/90 p-8 shadow-2xl shadow-slate-950/20 sm:p-12">
         <div className="max-w-3xl">
           <h1 className="text-4xl font-semibold tracking-tight text-white sm:text-5xl">Contact Neosofia</h1>
-          <p className="mt-4 text-base leading-8 text-slate-300 sm:text-lg">
-            Send us your email address, select a subject, and write your message.
-          </p>
-
           <form
             className="mt-10 space-y-6"
             onSubmit={(e) => { e.preventDefault(); form.handleSubmit(); }}

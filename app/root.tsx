@@ -79,8 +79,10 @@ export default function App() {
   return (
     <main className="bg-slate-900 text-gray-100">
       <Navbar />
-      <div className="px-4 md:px-6 pt-20 md:pt-24 mx-auto max-w-5xl min-h-screen overflow-x-auto">
-        <Breadcrumb />
+      <div className="px-4 md:px-6 pt-16 md:pt-[4.5rem] mx-auto max-w-5xl min-h-screen">
+        <div className="sticky top-16 md:top-[4.5rem] z-30 bg-slate-900 -mx-4 md:-mx-6 px-4 md:px-6">
+          <Breadcrumb />
+        </div>
         <ResourceQuickPicker />
         <Outlet />
       </div>

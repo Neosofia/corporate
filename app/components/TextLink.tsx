@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
 import { Link } from "react-router";
 
 type TextLinkProps = {
@@ -16,8 +17,9 @@ export function TextLink({ to, children, className = "" }: TextLinkProps) {
 
   if (isExternal) {
     return (
-      <a href={to} target="_blank" rel="noreferrer" className={classes}>
+      <a href={to} target="_blank" rel="noreferrer" className={`${classes} inline-flex items-center gap-1`}>
         {children}
+        <ArrowTopRightOnSquareIcon className="h-3 w-3 shrink-0 opacity-70" aria-hidden="true" />
       </a>
     );
   }
