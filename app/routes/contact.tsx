@@ -80,7 +80,7 @@ export default function Contact() {
           >
             <form.Field name="email">
               {(field) => {
-                const isInvalid = field.state.meta.isTouched && !field.state.meta.isValid;
+                const isInvalid = (field.state.meta.isTouched || form.state.isSubmitted) && field.state.meta.errors.length > 0;
                 return (
                   <Field data-invalid={isInvalid}>
                     <FieldLabel htmlFor={field.name} className={LABEL_CLASS}>Your email address</FieldLabel>
@@ -125,7 +125,7 @@ export default function Contact() {
 
             <form.Field name="message">
               {(field) => {
-                const isInvalid = field.state.meta.isTouched && !field.state.meta.isValid;
+                const isInvalid = (field.state.meta.isTouched || form.state.isSubmitted) && field.state.meta.errors.length > 0;
                 return (
                   <Field data-invalid={isInvalid}>
                     <FieldLabel htmlFor={field.name} className={LABEL_CLASS}>Message</FieldLabel>
