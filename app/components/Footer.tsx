@@ -38,13 +38,13 @@ export const Footer = () => {
           </div>
 
           <FooterColumn title="Neosofia">
-            <FooterLink href="/resources/brand/">Brand Standards</FooterLink>
-            <FooterLink href="/resources/thanks/">Thanks</FooterLink>
+            <FooterLink href="/resources/website/brand/">Brand Standards</FooterLink>
+            <FooterLink href="/resources/website/thanks/">Thanks</FooterLink>
           </FooterColumn>
 
           <FooterColumn title="Legal">
-            <FooterLink href="/resources/privacy/">Privacy Policy</FooterLink>
-            <FooterLink href="/resources/code-of-conduct/">Code of Conduct</FooterLink>
+            <FooterLink href="/resources/website/privacy/">Privacy Policy</FooterLink>
+            <FooterLink href="/resources/website/code-of-conduct/">Code of Conduct</FooterLink>
           </FooterColumn>
 
           <FooterColumn title="Open Source">

@@ -8,7 +8,7 @@ This repository contains the Neosofia corporate website and related company site
 
 ## Contributing
 
-Our [contributing](./app/resources/contributing.md) document explains how contributors can help improve the site, report issues, and follow our internal review process.
+Our [contributing](resources/website/contributing.md) document explains how contributors can help improve the site, report issues, and follow our internal review process.
 
 ## Operations
 
@@ -16,12 +16,12 @@ Our [operations](./app/OPERATIONS.md) guide is for maintainers who run the site,
 
 ## Code of Conduct
 
-Our [code of conduct](resources/code-of-conduct.md) document explains expected behavior and community standards. It is intended for team members, contributors, and visitors who interact with Neosofia.
+Our [code of conduct](resources/website/code-of-conduct.md) document explains expected behavior and community standards. It is intended for team members, contributors, and visitors who interact with Neosofia.
 
 ## Security
 
-Our [security section in contributing](resources/contributing.md#reporting-security-issues-and-bugs) explains how to report vulnerabilities and follow responsible disclosure. This guidance is for anyone who discovers security issues so they can be reported safely.
+Our [security section in contributing](resources/website/contributing.md#reporting-security-issues-and-bugs) explains how to report vulnerabilities and follow responsible disclosure. This guidance is for anyone who discovers security issues so they can be reported safely.
 
 ## Thanks
 
-Our [thanks](resources/thanks.md) document highlights contributors and supporters who helped bring the site and company mission to life.
+Our [thanks](resources/website/thanks.md) document highlights contributors and supporters who helped bring the site and company mission to life.

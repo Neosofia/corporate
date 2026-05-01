@@ -17,6 +17,6 @@ If you read our blog post regarding our definition of the three [levels of compl
 
 From the definition of the [elements of a QMS][qms], we'll run an organization through the following checklist(s) to determine what actions need to be taken in order to comply with the regulation that govern them.
 
- * [Level 1 Checklist](resources/level1.md)
- * [Level 2 Checklist](resources/level2.md)
- * [Level 3 Checklist](resources/level3.md)
+ * [Level 1 Checklist](resources/checklists/level1.md)
+ * [Level 2 Checklist](resources/checklists/level2.md)
+ * [Level 3 Checklist](resources/checklists/level3.md)

@@ -3,7 +3,7 @@
 We're creating to the world's first fully open source organization that also complies with some of the most stringent regulatory standards, and we need your help!
 
 > [!NOTE]
-> All contributions must adhere to our [code of conduct](/resources/code-of-conduct/)
+> All contributions must adhere to our [code of conduct](/resources/website/code-of-conduct/)
 
 ## Reporting Security Issues and Bugs
 

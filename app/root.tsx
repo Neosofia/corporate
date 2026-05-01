@@ -14,6 +14,7 @@ import "./index.css"
 import { Navbar } from "./components/Navbar";
 import { Footer } from './components/Footer';
 import { Breadcrumb } from "./components/Breadcrumb";
+import { ResourceQuickPicker } from "./components/ResourceQuickPicker";
 
 export const links: Route.LinksFunction = () => [
   {
@@ -80,6 +81,7 @@ export default function App() {
       <Navbar />
       <div className="px-4 md:px-6 pt-20 md:pt-24 mx-auto max-w-5xl min-h-screen overflow-x-auto">
         <Breadcrumb />
+        <ResourceQuickPicker />
         <Outlet />
       </div>
       <Footer />

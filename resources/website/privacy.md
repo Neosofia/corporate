@@ -44,7 +44,7 @@ Neosofia relies on third-party data processors to provide certain services. Belo
 [zoom]: https://www.zoom.com/
 [zoom-serv]: https://www.zoom.com/en/products/voip-phone/
 [zoom-priv]: https://www.zoom.com/en/trust/privacy/privacy-statement/
-[nsgh]: https://github.com/Neosofia/corporate/commits/mainresources/privacy.md
+[nsgh]: https://github.com/Neosofia/corporate/commits/main/resources/website/privacy.md
 
 
 | Vendor       | Service                                   | Privacy Link                     |

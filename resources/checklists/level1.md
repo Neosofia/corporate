@@ -3,7 +3,7 @@
 [eas-ex]: qms/glossary.md#eas-examples
 [inf]: qms/glossary.md#formal-vs-informal-procedures
 [sop-sbr]: qms/procedures/IT-245-SystemBackupandRecovery.md
-[pp]: resources/privacy.md
+[pp]: /resources/website/privacy/
 [lic]: https://github.com/Neosofia/corporate/blob/main/LICENSE
 
 # Level 1 Checklist
