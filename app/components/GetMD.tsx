@@ -113,8 +113,15 @@ export async function LoadMD(
         const { execSync } = await import('node:child_process');
         const path = await import('node:path');
         const filename = path.join(process.cwd(), markdownPath);
+        let raw: string;
 
-        const raw = await readFile(filename, 'utf8');
+        try {
+            raw = await readFile(filename, 'utf8');
+        } catch (error) {
+            const fallbackFilename = path.join(process.cwd(), 'app', markdownPath);
+            raw = await readFile(fallbackFilename, 'utf8');
+        }
+
         const { data: frontmatter, content } = parseFrontmatter(raw);
         const toc = extractTOC(content);
 
@@ -191,7 +198,13 @@ export async function LoadMD(
 
     const prefix = url.origin;
     const filename = prefix + `/${markdownPath}`;
-    const res = await fetch(filename);
+    let res = await fetch(filename);
+    if (!res.ok) {
+        res = await fetch(prefix + `/app/${markdownPath}`);
+        if (!res.ok) {
+            throw new Error(`File not found: ${filename}`);
+        }
+    }
     const raw = await res.text();
     const { data: frontmatter, content } = parseFrontmatter(raw);
     const toc = extractTOC(content);

@@ -1,13 +1,22 @@
 # Contributing
 
-We're creating to the world's first fully open source organization that also complies with some of the most stringent regulatory standards, and we need your help! 
+We're creating to the world's first fully open source organization that also complies with some of the most stringent regulatory standards, and we need your help!
 
-> [!NOTE] 
-> All contributions must adhere with our [code of conduct](/CODE_OF_CONDUCT.md)
+> [!NOTE]
+> All contributions must adhere to our [code of conduct](code-of-conduct.md)
 
 ## Reporting Security Issues and Bugs
 
-Please see our [security policy](/SECURITY.md) for how to report vulnerabilities securely.
+If you discover a security vulnerability, please do NOT open an issue. Email <security@neosofia.tech> instead.
+
+For non-security issues or bugs, please open an issue [here](https://github.com/Neosofia/corporate/issues).
+
+For both types of issue, please include:
+1. A detailed description of the issue
+1. Steps to reproduce the issue
+1. Any relevant logs or screenshots
+
+For security-related issues, we will communicate resolution status updates via email.
 
 ## Content Recommendations
 
@@ -16,7 +25,6 @@ If you would like us to cover a particular topic, please head over to our [issue
 ## Sponsorship
 
 For sponsorships to help support the development and maintenance of this project please visit our GitHub [sponsorship page](TBD).
-
 
 ## Code Contributions
 
@@ -41,4 +49,3 @@ Our experienced team provides professional consulting services for businesses an
 - Assist with integration and deployment of our compliance suite
 
 For rates and availability, please contact <sales@neosofia.tech>
-

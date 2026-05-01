@@ -91,27 +91,27 @@ export default function Tools() {
           <div className="mt-8 grid gap-6 sm:grid-cols-2">
             <section>
               <h2 className="text-lg font-semibold text-white">Private Cloud</h2>
-              <p className="mt-2 text-slate-300 leading-7">If you want to operate your own compliant data center or private cloud environment, our infrastructure scripts help you deploy a virtualization stack with compliant network segmentation, access controls, and platform isolation. <TextLink to="https://github.com/Neosofia/infrastructure">Private Cloud</TextLink>.</p>
+              <p className="mt-2 text-slate-300 leading-7">If you want to operate your own compliant data center or private cloud environment, our infrastructure scripts in the <TextLink to="https://github.com/Neosofia/infrastructure">Private Cloud</TextLink> repo help you deploy a virtualization stack with compliant network segmentation, access controls, and platform isolation.</p>
             </section>
             <section>
               <h2 className="text-lg font-semibold text-white">Public Cloud</h2>
-              <p className="mt-2 text-slate-300 leading-7">Infrastructure-as-code scripts support compliant AWS, GCP, and Azure environments with VPCs, subnets, security groups, and logical controls designed for regulated workloads. <TextLink to="https://github.com/Neosofia/infrastructure">Public Cloud</TextLink>.</p>
+              <p className="mt-2 text-slate-300 leading-7">Infrastructure-as-code scripts in our <TextLink to="https://github.com/Neosofia/infrastructure">Public Cloud</TextLink> repo support compliant AWS, GCP, and Azure environments with VPCs, subnets, security groups, and logical controls designed for regulated workloads.</p>
             </section>
             <section>
               <h2 className="text-lg font-semibold text-white">Core Platform Services</h2>
-              <p className="mt-2 text-slate-300 leading-7">Reusable authentication, authorization, and platform services provide the secure building blocks that let multiple teams ship compliant applications faster. <TextLink to="https://github.com/Neosofia/authentication">Authentication</TextLink>.</p>
+              <p className="mt-2 text-slate-300 leading-7">Reusable authentication, authorization, and platform services in the <TextLink to="https://github.com/Neosofia/authentication">Authentication</TextLink> repo provide secure building blocks that let multiple teams ship compliant applications faster.</p>
             </section>
             <section>
               <h2 className="text-lg font-semibold text-white">Developer SDKs</h2>
-              <p className="mt-2 text-slate-300 leading-7">SDKs and client libraries make it easier for developers to integrate compliance features like access management, auditing, and structured logging into their applications. <TextLink to="https://github.com/Neosofia/sdk">SDK</TextLink>.</p>
+              <p className="mt-2 text-slate-300 leading-7">SDKs and client libraries in the <TextLink to="https://github.com/Neosofia/sdk">SDK</TextLink> repo make it easier for developers to integrate compliance features like access management, auditing, and structured logging into their applications.</p>
             </section>
             <section>
               <h2 className="text-lg font-semibold text-white">Clinical Data Platform</h2>
-              <p className="mt-2 text-slate-300 leading-7">A reference implementation of a compliant clinical data platform, built with our tools and services, that can serve as a starting point or sandbox for your own solution. <TextLink to="https://github.com/Neosofia/cdp">Clinical Data Platform</TextLink>.</p>
+              <p className="mt-2 text-slate-300 leading-7">A reference implementation of a compliant clinical data platform, built with our tools and services in the <TextLink to="https://github.com/Neosofia/cdp">Clinical Data Platform</TextLink> repo, can serve as a starting point or sandbox for your own solution.</p>
             </section>
             <section>
               <h2 className="text-lg font-semibold text-white">Compliance and Procedure Guides</h2>
-              <p className="mt-2 text-slate-300 leading-7">A library of policies and procedures, plus guides for implementation and audit readiness, so you can turn controls into documented, repeatable practice. <TextLink to="https://github.com/Neosofia/docs">Neosofia Docs</TextLink> and <TextLink to="https://neosofia.tech/resources/">Neosofia QMS, templates, and checklists</TextLink>.</p>
+              <p className="mt-2 text-slate-300 leading-7">A library of policies and procedures, plus guides for implementation and audit readiness in the <TextLink to="https://github.com/Neosofia/docs">Neosofia Docs</TextLink> repo and <TextLink to="https://neosofia.tech/resources/">Neosofia QMS, templates, and checklists</TextLink>, helps you turn controls into documented, repeatable practice.</p>
             </section>
           </div>
         </div>

@@ -44,6 +44,7 @@ export const Footer = () => {
 
           <FooterColumn title="Legal">
             <FooterLink href="/resources/privacy/">Privacy Policy</FooterLink>
+            <FooterLink href="/resources/code-of-conduct/">Code of Conduct</FooterLink>
           </FooterColumn>
 
           <FooterColumn title="Open Source">
