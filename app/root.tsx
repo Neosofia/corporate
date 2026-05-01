@@ -15,6 +15,7 @@ import { Navbar } from "./components/Navbar";
 import { Footer } from './components/Footer';
 import { Breadcrumb } from "./components/Breadcrumb";
 import { ResourceQuickPicker } from "./components/ResourceQuickPicker";
+import { SOPQuickPicker } from "./components/SOPQuickPicker";
 
 export const links: Route.LinksFunction = () => [
   {
@@ -83,8 +84,7 @@ export default function App() {
         <div className="sticky top-16 md:top-[4.5rem] z-30 bg-slate-900 -mx-4 md:-mx-6 px-4 md:px-6">
           <Breadcrumb />
         </div>
-        <ResourceQuickPicker />
-        <Outlet />
+        <ResourceQuickPicker />          <SOPQuickPicker />        <Outlet />
       </div>
       <Footer />
     </main>

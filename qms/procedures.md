@@ -1,5 +1,3 @@
-[sbr]: qms/procedures/IT-245-SystemBackupandRecovery.md
+# Standard Operating Procedures (SOPS)
 
-# Procedures
-
-* [System Backup and Recovery][sbr]
+A collection of all of Neosofia's standard operating procedures (SOPs).

@@ -258,11 +258,18 @@ const PostMetaBar = ({ meta }: { meta: PostMeta }) => {
 
 export function normalizeAssetPath(src: string): string {
     if (!src) return src;
-    src = src.replace(/\.md$/g, '/');
-    src = src.replace(/\/website\//g, '/');
+    src = src.replace(/\.md(?=(\/|#|\?|$))/g, '/');
     src = src.replace(/^\/?public\//, '/');
     src = src.replace(/\/\/+/, '/');
-    if (!src.startsWith('http') && !src.startsWith('/')) src = '/' + src;
+
+    if (!src.startsWith('http') && !src.startsWith('/')) {
+        const rootSections = ['blog', 'qms', 'resources', 'tools', 'contact'];
+        const root = src.split('/')[0];
+        if (rootSections.includes(root)) {
+            src = '/' + src;
+        }
+    }
+
     return src;
 }
 
@@ -314,7 +321,24 @@ export const RenderMD = (props: { content: string; meta?: PostMeta }) => {
             return <a href={href} className={className} {...props}>{children}</a>;
         }
 
-        const normalizedHref = normalizeAssetPath(href.replace(/\.md$/, '/'));
+        if (/^(https?:|mailto:|tel:)/.test(href)) {
+            return (
+                <a
+                    href={href}
+                    target={href.startsWith('http') ? '_blank' : undefined}
+                    rel={href.startsWith('http') ? 'noreferrer' : undefined}
+                    className={combinedClassName}
+                    {...props}
+                >
+                    {children}
+                    {href.startsWith('http') && (
+                        <ArrowTopRightOnSquareIcon className="h-3 w-3 shrink-0 opacity-70" aria-hidden="true" />
+                    )}
+                </a>
+            );
+        }
+
+        const normalizedHref = normalizeAssetPath(href.replace(/\.md$/g, '/'));
 
         // TBD: Figure out why we need to reload the document when navigating between dynamic routes
         return (

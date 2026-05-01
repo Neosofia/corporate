@@ -1,6 +1,6 @@
 [eas-ex]: qms/glossary.md#eas-examples
 
-## Level 3 Checklist
+# Level 3 Checklist
 
 Level three organizations are where the compliance volume is cranked up to 11. The best way to summarize a level three organizations is to make a general statement that every action needed to achieve something takes no fewer than three people. Here are some examples:
 

@@ -125,8 +125,8 @@ Smash Task got their FedRAMP certification eventually. It only took 2 years, cos
 
 It's fun telling these very close to real life stories, but what's the lesson in this one? Compliance is like an onion -- it has many layers. You have to focus on the inner layers first and master them before moving out to the next layer. These blog posts exist to help make mastering those first couple of layers easier for small businesses to YOLO themselves without having to hire an army of compliance and security experts. We're doing that by highlighting the common failure points with funny stories, but we also need to condense those guidelines into a simple checklist without all the narration.
 
-[bi]:   blog/readme.md
-[res]: resources/readme.md
+[bi]:   /blog/
+[res]: /resources/
 ## What's Next
 
 Our introduction to compliance series of posts ends here and now branches into a choose-your-own-adventure style book where you decide where to go next on our [blog][bi] or [resource][res] index pages.
