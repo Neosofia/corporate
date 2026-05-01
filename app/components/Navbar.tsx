@@ -1,7 +1,9 @@
+import * as React from "react";
 import { Link } from "react-router";
 import { Bars3Icon } from "@heroicons/react/24/outline";
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/16/solid";
 
+import { cn } from "@/lib/utils";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -144,31 +146,49 @@ export const Navbar = () => (
   </nav>
 );
 
-function NavLink({ item }: { item: NavItem }) {
-  const classes = "block rounded-xl px-3 py-2 text-sm text-slate-300 transition hover:bg-slate-800 hover:text-white";
+type NavLinkProps = {
+  item: NavItem
+} & React.AnchorHTMLAttributes<HTMLAnchorElement>
 
-  if (item.disabled) {
+const NavLink = React.forwardRef<HTMLAnchorElement, NavLinkProps>(
+  ({ item, className, ...props }, ref) => {
+    const classes = cn(
+      "block rounded-xl px-3 py-2 text-sm text-slate-300 transition hover:bg-slate-800 hover:text-white",
+      className
+    )
+
+    if (item.disabled) {
+      return (
+        <span className="block rounded-xl px-3 py-2 text-sm text-slate-600 cursor-not-allowed select-none">
+          {item.name}
+        </span>
+      )
+    }
+
+    if (item.external) {
+      return (
+        <a
+          ref={ref}
+          href={item.href}
+          target="_blank"
+          rel="noreferrer noopener"
+          className={`${classes} inline-flex items-center gap-1.5`}
+          {...props}
+        >
+          {item.name}
+          <ArrowTopRightOnSquareIcon className="h-3 w-3 shrink-0 opacity-50" aria-hidden="true" />
+        </a>
+      )
+    }
+
     return (
-      <span className="block rounded-xl px-3 py-2 text-sm text-slate-600 cursor-not-allowed select-none">
+      <Link ref={ref} to={item.href} className={classes} {...props}>
         {item.name}
-      </span>
-    );
+      </Link>
+    )
   }
+)
 
-  if (item.external) {
-    return (
-      <a href={item.href} target="_blank" rel="noreferrer noopener" className={`${classes} inline-flex items-center gap-1.5`}>
-        {item.name}
-        <ArrowTopRightOnSquareIcon className="h-3 w-3 shrink-0 opacity-50" aria-hidden="true" />
-      </a>
-    );
-  }
-
-  return (
-    <Link to={item.href} className={classes}>
-      {item.name}
-    </Link>
-  );
-}
+NavLink.displayName = "NavLink"
 
 
