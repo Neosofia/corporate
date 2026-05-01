@@ -2,6 +2,7 @@ import { defineConfig } from 'vite';
 import { reactRouter } from "@react-router/dev/vite";
 import tailwindcss from "@tailwindcss/vite";
 import { DynamicPublicDirectory } from "vite-multiple-assets";
+import path from "path";
 
 export default defineConfig({
   plugins: [
@@ -26,6 +27,11 @@ export default defineConfig({
       },
     ]),
   ],
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./app"),
+    },
+  },
   base: "/",
   server: {
     host: '0.0.0.0',

@@ -1,7 +1,7 @@
 import { CodeBracketIcon } from '@heroicons/react/24/solid'
 import { Link } from 'react-router'
 
-import { ExternalLinkIcon } from './ExternalLinkIcon'
+import { ArrowTopRightOnSquareIcon } from '@heroicons/react/16/solid'
 
 const FooterColumn = ({ title, children }: { title: string; children: React.ReactNode }) => (
   <div>
@@ -14,7 +14,7 @@ const FooterLink = ({ href, children, external }: { href: string; children: Reac
   external ? (
     <li><a className="inline-flex items-center gap-1 text-xs text-slate-400 hover:text-white transition" href={href} target="_blank" rel="noopener noreferrer">
       {children}
-      <ExternalLinkIcon />
+      <ArrowTopRightOnSquareIcon className="h-3 w-3 shrink-0 opacity-50" aria-hidden="true" />
     </a></li>
   ) : (
     <li><Link className="text-xs text-slate-400 hover:text-white transition" to={href}>{children}</Link></li>

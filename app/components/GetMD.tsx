@@ -7,6 +7,7 @@ import rehypeRaw from 'rehype-raw'
 import rehypeSlug from 'rehype-slug';
 
 import { InformationCircleIcon } from '@heroicons/react/24/outline'
+import { cn } from '@/lib/utils'
 
 export async function LoadMD(
     params: { id?: string, "*"?: string },
@@ -97,7 +98,7 @@ export const RenderMD = (props: any) => {
 
             return (
                 <div className="">
-                    <InformationCircleIcon className={'w-5 h-5 m-1 ml-0 float-left align-top ' + style} />
+                    <InformationCircleIcon className={cn('w-5 h-5 m-1 ml-0 float-left align-top', style)} />
                     <p className="" {...props}>{children}</p>
                 </div>
             );

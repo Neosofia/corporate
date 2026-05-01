@@ -5,14 +5,13 @@ export default [
   route("contact", "./routes/contact.tsx"),
 
   ...prefix("blog", [
-    index(       "./routes/blog/index.tsx"),
-    route(":id", "./routes/blog/show.tsx"),
+    index(       "./routes/markdown.tsx", { id: "blog-index" }),
+    route("*",   "./routes/markdown.tsx", { id: "blog-show"  }),
   ]),
-  
+
   ...prefix("qms", [
-    index(       "./routes/qms/index.tsx"),
-    route(":id", "./routes/qms/show.tsx"),
-    route("procedures/:id",   "./routes/qms/show.tsx", { id: "procedures" }),
+    index(       "./routes/markdown.tsx", { id: "qms-index" }),
+    route("*",   "./routes/markdown.tsx", { id: "qms-show"  }),
   ]),
 
   ...prefix("tools", [
@@ -20,7 +19,8 @@ export default [
   ]),
 
   ...prefix("resources", [
-    route("*",   "./routes/resources/index.tsx"),
+    index(       "./routes/markdown.tsx", { id: "resources-index" }),
+    route("*",   "./routes/markdown.tsx", { id: "resources-show"  }),
   ]),
 
 ] satisfies RouteConfig;

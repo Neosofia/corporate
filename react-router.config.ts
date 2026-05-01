@@ -2,17 +2,25 @@ import type { Config } from "@react-router/dev/config";
 import fs from 'fs';
 import path from 'path';
 
-function getMarkdownFiles(dir: string): string[] {
-  const files = fs.readdirSync(path.join(__dirname,dir));
-  return files
-    .filter(file => path.extname(file) === '.md')
-    .map(file => `/${dir}/` + path.basename(file, '.md'));
-}
+function walkMarkdownDir(dir: string): string[] {
+  const abs = path.join(__dirname, dir);
+  if (!fs.existsSync(abs)) return [];
 
-const qmsFiles = getMarkdownFiles( 'qms' );
-const blogFiles = getMarkdownFiles( 'blog' );
-const sopFiles = getMarkdownFiles( 'qms/procedures' );
-const resourceFiles = getMarkdownFiles( 'resources' );
+  const entries = fs.readdirSync(abs, { withFileTypes: true });
+  const routes: string[] = [];
+
+  for (const entry of entries) {
+    if (entry.isDirectory()) {
+      routes.push(...walkMarkdownDir(`${dir}/${entry.name}`));
+    } else if (entry.isFile() && path.extname(entry.name) === '.md') {
+      const slug = path.basename(entry.name, '.md');
+      const relDir = dir.replace(/^\//, '');
+      routes.push(`/${relDir}/${slug}`);
+    }
+  }
+
+  return routes;
+}
 
 export default {
   ssr: false,
@@ -23,12 +31,10 @@ export default {
       "/tools",
       "/blog",
       "/qms",
-      "/qms/procedures",
       "/resources",
-      ...qmsFiles,
-      ...blogFiles,
-      ...sopFiles,
-      ...resourceFiles,
+      ...walkMarkdownDir('blog'),
+      ...walkMarkdownDir('qms'),
+      ...walkMarkdownDir('resources'),
     ];
   },
 } satisfies Config;
