@@ -39,6 +39,7 @@ export const Footer = () => {
 
           <FooterColumn title="Neosofia">
             <FooterLink href="/resources/brand/">Brand Standards</FooterLink>
+            <FooterLink href="/resources/thanks/">Thanks</FooterLink>
           </FooterColumn>
 
           <FooterColumn title="Legal">

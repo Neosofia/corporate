@@ -1,12 +1,13 @@
 import { Link } from "react-router";
 
+import React from 'react';
 import ReactMarkdown from 'react-markdown';
 
 import remarkGfm from 'remark-gfm'
 import rehypeRaw from 'rehype-raw'
 import rehypeSlug from 'rehype-slug';
 
-import { InformationCircleIcon, CalendarDaysIcon, UserIcon, TagIcon } from '@heroicons/react/24/outline'
+import { InformationCircleIcon, CalendarDaysIcon, UserIcon, TagIcon, LightBulbIcon, ExclamationTriangleIcon, ExclamationCircleIcon, FireIcon } from '@heroicons/react/24/outline'
 import { cn } from '@/lib/utils'
 import { Badge } from '@/components/ui/badge'
 
@@ -282,6 +283,15 @@ export function gitFirstCommit(filePath: string, cwd: string): GitFirstCommitRes
     }
 }
 
+type AlertType = 'note' | 'tip' | 'important' | 'warning' | 'caution';
+const alertConfig: Record<AlertType, { icon: React.ElementType; border: string; bg: string; title: string; titleColor: string }> = {
+    note:      { icon: InformationCircleIcon,   border: 'border-sky-500/60',    bg: 'bg-sky-950/30',     title: 'Note',      titleColor: 'text-sky-300' },
+    tip:       { icon: LightBulbIcon,           border: 'border-green-500/60',  bg: 'bg-green-950/30',   title: 'Tip',       titleColor: 'text-green-300' },
+    important: { icon: ExclamationCircleIcon,   border: 'border-purple-500/60', bg: 'bg-purple-950/30',  title: 'Important', titleColor: 'text-purple-300' },
+    warning:   { icon: ExclamationTriangleIcon, border: 'border-amber-500/60',  bg: 'bg-amber-950/30',   title: 'Warning',   titleColor: 'text-amber-300' },
+    caution:   { icon: FireIcon,                border: 'border-red-500/60',    bg: 'bg-red-950/30',     title: 'Caution',   titleColor: 'text-red-300' },
+};
+
 export const RenderMD = (props: { content: string; meta?: PostMeta }) => {
     const linkComponent = ({ href = '', ...props }) => {
         if (href.startsWith('http')) {
@@ -302,29 +312,45 @@ export const RenderMD = (props: { content: string; meta?: PostMeta }) => {
         return <img src={normalizeAssetPath(src)} {...props} />
     };
 
-    const quoteComponent = ({ children, ...props }: { children?: any }) => {
-        if (typeof children === 'string' && children.includes('[!')) {
-            let style;
-            switch (true) {
-                case children.includes('[!CAUTION]'):
-                    style = "text-red-700";
-                    break;
-                default:
-                    style = "text-slate-100";
+    const blockquoteComponent = ({ children, ...rest }: { children?: React.ReactNode; [key: string]: unknown }) => {
+        const kids = React.Children.toArray(children).filter(k => !(typeof k === 'string' && k.trim() === ''));
+        let type: AlertType | undefined;
+        let contentKids: React.ReactNode[] = kids;
+
+        const firstP = kids[0];
+        if (React.isValidElement(firstP)) {
+            const pKids = React.Children.toArray((firstP.props as { children?: React.ReactNode }).children);
+            const firstText = pKids[0];
+            if (typeof firstText === 'string') {
+                const m = firstText.match(/^\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\]/i);
+                if (m) {
+                    type = m[1].toLowerCase() as AlertType;
+                    const rest2 = firstText.slice(m[0].length).trimStart();
+                    const remainingPKids = rest2 ? [rest2, ...pKids.slice(1)] : pKids.slice(1);
+                    const remainingP = remainingPKids.length > 0
+                        ? React.cloneElement(firstP as React.ReactElement<{ children: React.ReactNode }>, {}, ...remainingPKids)
+                        : null;
+                    contentKids = [remainingP, ...kids.slice(1)].filter(Boolean);
+                }
             }
-
-            children = children.replace(/\[![^\]]+\]/g, '');
-
-            return (
-                <div className="">
-                    <InformationCircleIcon className={cn('w-5 h-5 m-1 ml-0 float-left align-top', style)} />
-                    <p className="" {...props}>{children}</p>
-                </div>
-            );
         }
 
+        const config = type ? alertConfig[type] : undefined;
+        if (!config) {
+            return <blockquote className="border-l-4 border-slate-600 pl-4 text-slate-400 italic my-4" {...rest}>{children}</blockquote>;
+        }
+
+        const Icon = config.icon;
         return (
-            <p {...props}>{children}</p>
+            <div className={cn('rounded-lg border-l-4 px-4 py-3 my-6', config.border, config.bg)}>
+                <div className={cn('flex items-center gap-2 mb-2 font-semibold text-sm', config.titleColor)}>
+                    <Icon className="w-4 h-4 shrink-0" />
+                    {config.title}
+                </div>
+                <div className="text-slate-300 text-sm [&>p]:mb-2 [&>p:last-child]:mb-0">
+                    {contentKids}
+                </div>
+            </div>
         );
     };
 
@@ -339,7 +365,7 @@ export const RenderMD = (props: { content: string; meta?: PostMeta }) => {
         <ReactMarkdown
             rehypePlugins={[rehypeSlug, rehypeRaw]}
             remarkPlugins={[remarkGfm]}
-            components={{ a: linkComponent, p: quoteComponent, img: imgComponent, h1: h1Component as any }}
+            components={{ a: linkComponent, blockquote: blockquoteComponent as any, img: imgComponent, h1: h1Component as any }}
         >
             {props.content}
         </ReactMarkdown >
