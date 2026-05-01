@@ -1,3 +1,8 @@
+---
+draft: true
+tags: [qms]
+---
+
 # What is a Quality Management System (QMS)
 
 ## TL;DR

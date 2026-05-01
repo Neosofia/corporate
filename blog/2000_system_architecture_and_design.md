@@ -1,3 +1,7 @@
+---
+tags: [architecture, design, infrastructure]
+---
+
 <!--- Internal Links --->
 [eas]:  qms/glossary.md#enterprise-application-software-eas 
 [land]: public/shared/images/system-landscape-v1.svg

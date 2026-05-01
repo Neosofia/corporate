@@ -6,6 +6,14 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function extractMarkdownTitle(matches: ({ data?: unknown } | undefined)[], defaultTitle: string): string {
-  const md = matches.find((m) => typeof m?.data === 'string')?.data as string | undefined;
-  return md ? md.match(/# (.*)/)?.[1] ?? defaultTitle : defaultTitle;
+  const match = matches.find((m) => {
+    if (!m?.data) return false;
+    if (typeof m.data === 'string') return true;
+    return typeof (m.data as { content?: unknown }).content === 'string';
+  });
+  if (!match?.data) return defaultTitle;
+  const md = typeof match.data === 'string'
+    ? match.data
+    : (match.data as { content: string }).content;
+  return md.match(/^# (.*)/m)?.[1] ?? defaultTitle;
 }

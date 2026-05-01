@@ -1,3 +1,7 @@
+---
+tags: [compliance, policy, glossary]
+---
+
 <!--- Internal References -->
 [pol]:   qms/policies.md#data-integrity-and-privacy-dip
 [compg]: qms/glossary.md#compliance-terms

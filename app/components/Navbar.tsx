@@ -65,10 +65,9 @@ const navigation: NavCategory[] = [
     ],
   },
   {
-    label: "Contact",
+    label: "Neosofia",
     items: [
-      { name: "Contact us", href: "/contact" },
-      { name: "Consulting", href: "mailto:consulting@neosofia.tech", external: true },
+      { name: "Contact us", href: "/contact" }
     ],
   },
 ];

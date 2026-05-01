@@ -1,3 +1,7 @@
+---
+tags: [compliance, mvc, maturity-model]
+---
+
 <!--- Internal Links -->
 [cl]:   qms/glossary.md#compliance-levels
 [kiss]: qms/glossary.md#keep-it-simple-stupid-kiss

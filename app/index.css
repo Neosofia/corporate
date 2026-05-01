@@ -136,7 +136,17 @@
     h1, h2, h3, h4, h5, h6 {
       scroll-margin-top: calc(var(--spacing) * 16);
       margin: calc(var(--spacing) * 7) 0;
+      color: var(--color-slate-100);
+      font-weight: 600;
+      line-height: 1.2;
     }
+
+    h1 { font-size: var(--text-3xl); margin-top: 0; }
+    h2 { font-size: var(--text-xl); }
+    h3 { font-size: var(--text-lg); }
+    h4, h5, h6 { font-size: var(--text-base); }
+
+    p, li { color: var(--color-slate-300); }
 
     a {
       scroll-margin-top: calc(var(--spacing) * 16);
@@ -162,6 +172,11 @@
 
   .animate-blink {
     animation: blink 0.8s step-end infinite;
+  }
+
+  .scrollbar-none {
+    scrollbar-width: none;
+    &::-webkit-scrollbar { display: none; }
   }
 }
 

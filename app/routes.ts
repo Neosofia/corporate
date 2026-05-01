@@ -5,7 +5,7 @@ export default [
   route("contact", "./routes/contact.tsx"),
 
   ...prefix("blog", [
-    index(       "./routes/markdown.tsx", { id: "blog-index" }),
+    index(       "./routes/blog-index.tsx", { id: "blog-index" }),
     route("*",   "./routes/markdown.tsx", { id: "blog-show"  }),
   ]),
 

@@ -1,5 +1,6 @@
 import { useLocation } from 'react-router';
-import { RenderMD, LoadMD } from "../components/GetMD";
+import { RenderMD, LoadMD, type LoadMDResult } from "../components/GetMD";
+import { BlogLayout } from "../components/BlogLayout";
 import { extractMarkdownTitle } from "@/lib/utils";
 import type { Route } from "../+types/root";
 
@@ -22,13 +23,27 @@ export function meta({ matches, location }: Route.MetaArgs) {
 
 export default function MarkdownPage({ loaderData }: Route.ComponentProps) {
   const { pathname } = useLocation();
-  const section = pathname.split('/').filter(Boolean)[0] ?? 'content';
+  const parts = pathname.split('/').filter(Boolean);
+  const section = parts[0] ?? 'content';
+  const isBlogPost = section === 'blog' && parts.length > 1;
+  const data = loaderData as LoadMDResult | undefined;
+
+  if (!data) return null;
+
+  const article = (
+    <div className="prose-base">
+      <RenderMD content={data.content} meta={isBlogPost ? data.meta : undefined} />
+    </div>
+  );
 
   return (
     <section id={section} className="">
-      <div className="prose-base md:prose-lg">
-        <RenderMD content={loaderData} />
-      </div>
+      {isBlogPost ? (
+        <BlogLayout toc={data.toc} meta={data.meta}>
+          {article}
+        </BlogLayout>
+      ) : article}
     </section>
   );
 }
+
