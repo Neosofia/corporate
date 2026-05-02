@@ -259,7 +259,7 @@ const PostMetaBar = ({ meta }: { meta: PostMeta }) => {
 export function normalizeAssetPath(src: string): string {
     if (!src) return src;
     src = src.replace(/\.md(?=(\/|#|\?|$))/g, '/');
-    src = src.replace(/^\/?public\//, '/');
+    src = src.replace(/^\/?public\//, '/public/');
     src = src.replace(/\/\/+/, '/');
 
     if (!src.startsWith('http') && !src.startsWith('/')) {
