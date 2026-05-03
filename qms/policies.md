@@ -78,7 +78,7 @@ Neosofia *must* adopt the following level one [DIP][dip] policies:
 [macfve]: public/shared/images/evidence/MacDesktopFileVault.png
 [lukse]: public/shared/images/evidence/PVE0001LUKS.png
 
-[pveluksi]: https://github.com/Neosofia/infrastructure/blob/main/os/proxmox/9/pveSetup.sh
+[pveluksi]: https://github.com/Neosofia/infrastructure/blob/main/hypervisor/proxmox/9/pveSetup.sh
 
 <!--- Neosofia Links --->
 [sopsbr]: qms/procedures/IT-245-SystemBackupandRecovery.md
