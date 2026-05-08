@@ -7,6 +7,7 @@ const groups = [
       { label: 'Level 1 Checklist', path: '/resources/checklists/level1/' },
       { label: 'Level 2 Checklist', path: '/resources/checklists/level2/' },
       { label: 'Level 3 Checklist', path: '/resources/checklists/level3/' },
+      { label: 'SDLC Checklist', path: '/resources/checklists/sdlc/' },
     ],
   },
   {
