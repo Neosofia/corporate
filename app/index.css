@@ -91,9 +91,10 @@
     }
     
     li.task-list-item > input[type="checkbox"] {
-      margin-top: calc(var(--spacing) * 1);
+      margin-top: calc(var(--spacing) * 1.5);
       /* Reset checkbox defaults so dark mode displays gracefully */
       accent-color: var(--color-sky-500);
+      flex-shrink: 0;
     }
 
     li {
