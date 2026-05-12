@@ -77,6 +77,25 @@
       padding: 0 0 0 calc(var(--spacing) * 4);
     }
 
+    /* Checklist overrides to remove bullets and align nicely */
+    ul.contains-task-list {
+      list-style: none;
+      padding-left: 0;
+    }
+    
+    li.task-list-item {
+      list-style: none;
+      display: flex;
+      align-items: flex-start;
+      gap: calc(var(--spacing) * 2);
+    }
+    
+    li.task-list-item > input[type="checkbox"] {
+      margin-top: calc(var(--spacing) * 1);
+      /* Reset checkbox defaults so dark mode displays gracefully */
+      accent-color: var(--color-sky-500);
+    }
+
     li {
       margin: calc(var(--spacing) * 1);
     }
