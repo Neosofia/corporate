@@ -24,11 +24,8 @@ const formSchema = z.object({
   message: z.string().min(1, "Message is required."),
 });
 
-const EMAIL_API_URL: string = (() => {
-  const url = import.meta.env.VITE_EMAIL_API_URL;
-  if (!url) throw new Error("VITE_EMAIL_API_URL is required at build time");
-  return url;
-})();
+const EMAIL_API_URL = import.meta.env.VITE_EMAIL_API_URL ?? "";
+const EMAIL_API_CONFIGURED = Boolean(EMAIL_API_URL);
 
 export function meta() {
   return [
@@ -46,6 +43,10 @@ export default function Contact() {
     onSubmit: async ({ value }) => {
       setSubmitStatus("idle");
       try {
+        if (!EMAIL_API_CONFIGURED) {
+          throw new Error("Contact form is not usable currently.");
+        }
+
         const subjectLabel = subjectOptions.find((o) => o.value === value.subject)?.label ?? value.subject;
         const response = await fetch(`${EMAIL_API_URL}/api/emails`, {
           method: "POST",
@@ -142,6 +143,14 @@ export default function Contact() {
               }}
             </form.Field>
 
+            {!EMAIL_API_CONFIGURED ? (
+              <Alert className="rounded-3xl border-amber-500/30 bg-amber-500/10 text-amber-200">
+                <AlertDescription>
+                  Contact form is not usable currently.
+                </AlertDescription>
+              </Alert>
+            ) : null}
+
             {submitStatus === "error" ? (
               <Alert className="rounded-3xl border-rose-500/30 bg-rose-500/10 text-rose-200">
                 <AlertDescription>Unable to send your message right now. Please try again later.</AlertDescription>
@@ -161,7 +170,7 @@ export default function Contact() {
                     type="submit"
                     size="lg"
                     className="rounded-full bg-sky-500 hover:bg-sky-400"
-                    disabled={!canSubmit}
+                    disabled={!canSubmit || !EMAIL_API_CONFIGURED}
                   >
                     {isSubmitting ? "Sending…" : "Send message"}
                   </Button>
