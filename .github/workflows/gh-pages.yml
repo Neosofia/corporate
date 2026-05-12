@@ -28,7 +28,7 @@ jobs:
     
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           lfs: 'true'
           fetch-depth: 0
@@ -37,7 +37,7 @@ jobs:
         run: git lfs pull
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
 
       - name: Install dependencies
         run: npm install -g pnpm && pnpm i
