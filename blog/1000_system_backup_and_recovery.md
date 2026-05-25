@@ -11,7 +11,7 @@
 [glos-eas]:  qms/glossary.md#enterprise-application-software-eas
 [glos-tbd]:  qms/glossary.md#to-be-determined-tbd
 
-[csrd]: public/shared/images/client-server-request-process.svg
+[csrd]: ../public/shared/images/client-server-request-process.svg
 
 
 <!---  External Links --->

@@ -4,11 +4,11 @@ tags: [architecture, design, infrastructure]
 
 <!--- Internal Links --->
 [eas]:  qms/glossary.md#enterprise-application-software-eas 
-[land]: public/shared/images/system-landscape-v1.svg
-[dd]:   public/shared/images/deployment-diagram-v1.svg
-[ugly]: public/shared/images/ugly-sweater-swiss.png
-[tool]: public/shared/images/using-policy-tools.svg
-[gift]: public/shared/images/atomic-gift-exchange.png
+[land]: ../public/shared/images/system-landscape-v1.svg
+[dd]:   ../public/shared/images/deployment-diagram-v1.svg
+[ugly]: ../public/shared/images/ugly-sweater-swiss.png
+[tool]: ../public/shared/images/using-policy-tools.svg
+[gift]: ../public/shared/images/atomic-gift-exchange.png
 
 [sop-sbr]: qms/procedures/IT-245-SystemBackupandRecovery.md
 

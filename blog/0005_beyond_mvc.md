@@ -16,7 +16,7 @@ tags: [compliance, mvc, maturity-model]
 [rbac]: qms/glossary.md#role-based-access-control-rbac
 [sa]:   qms/roles.md#system-administrator-sa
 [next]: blog/2000_system_architecture_and_design.md
-[tony]: public/shared/images/tony-hackaroni.png
+[tony]: ../public/shared/images/tony-hackaroni.png
 
 <!--- External Links -->
 

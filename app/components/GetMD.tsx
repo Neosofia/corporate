@@ -259,6 +259,8 @@ const PostMetaBar = ({ meta }: { meta: PostMeta }) => {
 export function normalizeAssetPath(src: string): string {
     if (!src) return src;
     src = src.replace(/\.md(?=(\/|#|\?|$))/g, '/');
+    // blog/*.md uses ../public/... so built-in Markdown preview resolves locally
+    src = src.replace(/^(?:\.\.\/)+public\//, '/public/');
     src = src.replace(/^\/?public\//, '/public/');
     src = src.replace(/\/\/+/, '/');
 

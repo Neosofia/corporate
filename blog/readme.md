@@ -3,12 +3,13 @@
 [arch]: #architecting-designing-implementing-and-operating-technology-services
 [qms]: #quality-management-systems-qms
 [sop]: #standard-operating-procedures-sops
+[special]: #special-posts-9000
 
 [qmss]: qms/glossary.md#quality-management-system-qms
 
 # Blog Posts
 
-Welcome to our blog index. The sections below organize compliance topics into areas of interest. If you're new to compliance, check out our [introduction][intro] to compliance series. For IT system administrators and software developers, the [architecture and design][arch] section is for you. If you're interested in QA/QC topics, check out the [QMS][qms] and [SOP][sop] sections.
+Welcome to our blog index. The sections below organize compliance topics into areas of interest. If you're new to compliance, check out our [introduction][intro] to compliance series. For IT system administrators and software developers, the [architecture and design][arch] section is for you. If you're interested in QA/QC topics, check out the [QMS][qms] and [SOP][sop] sections. One-off and showcase posts live in the [special][special] **9000** range.
 
 ## Introduction to Compliance
 
@@ -80,4 +81,10 @@ This section is for architects, IT system administrators, and software engineers
 - SDLC - OWASP, linting, CI/CD, testing, design
 - Logging, Monitoring, and Alerting
 - Data Loss Prevention
+
+## Special posts (9000)
+
+Posts numbered **9000** and above are a catch-all for one-off showcases, demos, and announcements that do not belong to a numbered series above.
+
+- [I built a Clinical Data Platform in 72hrs](blog/9000_building_a_platform.md)
 

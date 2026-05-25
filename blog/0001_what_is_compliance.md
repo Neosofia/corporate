@@ -6,7 +6,7 @@ tags: [compliance, policy, glossary]
 [pol]:   qms/policies.md#data-integrity-and-privacy-dip
 [compg]: qms/glossary.md#compliance-terms
 [g]:     qms/glossary.md
-[flint]: public/shared/images/flintstones-car.png
+[flint]: ../public/shared/images/flintstones-car.png
 
 <!--- External References -->
 [ther]: https://en.wikipedia.org/wiki/Theranos#Exposure_and_downfall
