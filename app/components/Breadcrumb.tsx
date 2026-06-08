@@ -12,6 +12,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb';
+import { markdownCrumbHref } from '@/lib/utils';
 
 export const Breadcrumb = () => {
   const location = useLocation();
@@ -56,18 +57,18 @@ export const Breadcrumb = () => {
         </BreadcrumbItem>
 
         {pathnames.map((value, index) => {
-          const to = `/${pathnames.slice(0, index + 1).join('/')}`;
+          const to = markdownCrumbHref(pathnames, index);
           const isLast = index === pathnames.length - 1;
 
           return (
-            <Fragment key={to}>
+            <Fragment key={`${index}-${value}`}>
               <BreadcrumbSeparator />
               <BreadcrumbItem>
                 {isLast ? (
                   <BreadcrumbPage>{toLabel(value)}</BreadcrumbPage>
                 ) : (
                   <BreadcrumbLink asChild>
-                    <Link to={to}>{toLabel(value)}</Link>
+                    <a href={to}>{toLabel(value)}</a>
                   </BreadcrumbLink>
                 )}
               </BreadcrumbItem>

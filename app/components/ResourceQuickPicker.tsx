@@ -11,6 +11,12 @@ const groups = [
     ],
   },
   {
+    label: 'Guides',
+    items: [
+      { label: 'Documentation gold standards', path: '/resources/guides/documentation/' },
+    ],
+  },
+  {
     label: 'Other',
     items: [{ label: 'All resources', path: '/resources/' }],
   },

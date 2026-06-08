@@ -10,6 +10,11 @@ Use the checklist links below to start your compliance journey:
 * [Level 1 Checklist](checklists/level1.md)
 * [Level 2 Checklist](checklists/level2.md)
 * [Level 3 Checklist](checklists/level3.md)
+* [SDLC Best Practices Checklist](checklists/sdlc.md)
+
+## Platform guides
+
+* [Documentation gold standards](guides/documentation.md) -- APFE&EIIP artifact format (specs, ADRs, README, OPERATIONS, SECURITY, OpenAPI, changelog, PIP, migrations, and more)
 
 ## Our Policies and Procedures
 
