@@ -71,8 +71,8 @@ What this product does and how it fits the broader platform -- the front door fo
 
 Exemplar: [authentication/README.md](https://github.com/Neosofia/authentication/blob/main/README.md).
 
-- **Product overview** -- One or two paragraphs on the problem the service solves and its role in the mesh. Lead with intent and outcomes.
-- **Resource pointers** -- Links to sibling docs. One line per link: audience and purpose.
+- **Product overview** -- Two paragraphs in plain prose. The first states the problem this service solves and what it owns. The second explains how it fits the mesh: who calls it, when in the flow, and which neighboring services own the work beside it. A new reader should know where this box sits on the platform.
+- **Resource pointers** -- Links to sibling docs; each line names the audience and why they open it.
 - **Glossary (optional)** -- Shared vocabulary where terms differ by layer or integration boundary.
 
 ### Operations (`OPERATIONS.md`)
