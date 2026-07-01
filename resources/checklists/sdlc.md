@@ -28,12 +28,17 @@ A practical checklist for shipping secure, observable, maintainable services. Th
 - [ ] Keep published contracts and runtime validation in sync
 - [ ] Expose liveness and readiness endpoints appropriate for orchestration and uptime checks
 
-### Logging & Observability
+### Logging, Observability & Operational Awareness
 - [ ] Emit structured logs to stdout or stderr as event streams
 - [ ] Include consistent metadata in every log or event: timestamp, service, environment, severity, event type, and correlation, request, or trace identifiers where available
+- [ ] Propagate trace or request identifiers across service boundaries (for example W3C `traceparent`) so a single user action maps to one trace in centralized observability
 - [ ] Never log secrets or regulated or sensitive user data
 - [ ] Capture service-level metrics and traces for latency, throughput, error rate, saturation, and dependency health
 - [ ] Warn at startup when production-critical settings are using weak, local-only, or degraded modes
+- [ ] Do not silently swallow errors on user-facing paths; return empty success shapes only when degradation is explicitly documented (optional enrichment with a safe fallback)
+- [ ] On unknown user-facing failures, show a generic or contextual message plus a **short helpdesk correlation code** derived from the active trace ID (for example the last eight hex characters) so support can find logs without a long interview
+- [ ] Design operator and helpdesk workflows so one correlation code maps to trace or log search in a single step (document the lookup in `OPERATIONS.md` or equivalent)
+- [ ] Where centralized observability exists, provide **one-click deep links** (for example a Grafana dashboard URL with a trace ID variable) so helpdesk does not assemble LogQL or search queries by hand
 
 ### Security & Resilience
 - [ ] Enforce security controls appropriate to the surface area: TLS, security headers, CSRF or CORS policy, trusted proxy configuration, and least-privilege access
@@ -75,9 +80,11 @@ A service should behave like the same application in every environment, with con
 
 Every boundary is a trust boundary. Strict validation, bounded payloads, generic errors, and synchronized API contracts keep public behavior predictable and reduce injection, schema drift, and interoperability bugs.
 
-### Logging & Observability
+### Logging, Observability & Operational Awareness
 
 Logs, metrics, and traces are operational interfaces, not afterthoughts. Treating logs as structured event streams and keeping sensitive data out of them makes systems easier to operate without creating a second data leak surface.
+
+**Operational awareness** means debugging a reported incident should be low effort: propagate trace context end-to-end, avoid silent failure modes in user-facing flows, and give helpdesk a correlation code that maps directly to centralized logs — not a separate investigation project.
 
 ### Security & Resilience
 
