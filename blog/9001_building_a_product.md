@@ -84,28 +84,24 @@ Now you can bring your own blazer!
 
 ## Appendix -- open source repositories
 
-| Repository | What it's for |
-| --- | --- |
-| [authentication](https://github.com/Neosofia/authentication) | Platform identity authority -- external IdP sign-in (WorkOS AuthKit today), platform JWT minting, service registry, and machine credentials for service-to-service calls. |
-| [user](https://github.com/Neosofia/user) | Authoritative Tier-2 role registry and user profiles; login-time provisioning from Authentication; Cedar-enforced admin and self-service APIs. |
-| [capabilities](https://github.com/Neosofia/capabilities) | UI control plane -- evaluates Cedar-backed `{ key: boolean }` entitlements for menus and features without hard-coding product vocabulary in generic infrastructure. |
-| [chat](https://github.com/Neosofia/chat) | Authoritative conversation store across web, app, and SMS channels; care-assistant completions on patient turns; PHI-complete message persistence. |
-| [care-episode](https://github.com/Neosofia/care-episode) | Procedure-scoped post-discharge episodes, recovery summaries, demo clinical records, patient chat proxy, and clinical risk evaluation after each patient turn. |
-| [notification](https://github.com/Neosofia/notification) | Focused message relay -- contact-form and operational email via Resend today; room to grow into SMS and paging without every product owning deliverability. |
-| [cdp](https://github.com/Neosofia/cdp) | Reference clinical data platform -- Spawn UI, specs, ADRs, constitution, Docker Compose stacks, policy bundle, and local seed/bootstrap helpers. |
-| [schemas](https://github.com/Neosofia/schemas) | Immutable versioned JSON Schema for structured logs, OpenAPI contract validation, and other cross-service vocabulary CI can pin and fail on. |
-| [sdk](https://github.com/Neosofia/sdk) | Shared Python middleware and logging libraries consumed by every service (three packages -- see below). |
-| [templates](https://github.com/Neosofia/templates) | Copier scaffolds for new repos -- production-ready Python service boilerplate and a shared React/shadcn UI registry. |
-| [infrastructure](https://github.com/Neosofia/infrastructure) | Repeatable deploy and recovery -- Proxmox/LXC scripts, OpenTofu modules, public- and private-cloud runbooks. |
-| [platform-workflows](https://github.com/Neosofia/platform-workflows) | Reusable GitHub Actions for build, test, security scan, and publish so every service repo shares the same supply-chain bar. |
-| [workspace](https://github.com/Neosofia/workspace) | Multi-repo editor workspace (`cdp.code-workspace`) plus shared agent and engineering conventions in `AGENTS.md`. |
-| [corporate](https://github.com/Neosofia/corporate) | Neosofia company website -- marketing pages, blog, public policies, and compliance resources. |
-| [docs](https://github.com/Neosofia/docs) | QMS document generator and tooling for version-locked policy and SOP output. |
+- [authentication](https://github.com/Neosofia/authentication) — Platform identity authority -- external IdP sign-in (WorkOS AuthKit today), platform JWT minting, service registry, and machine credentials for service-to-service calls.
+- [user](https://github.com/Neosofia/user) — Authoritative Tier-2 role registry and user profiles; login-time provisioning from Authentication; Cedar-enforced admin and self-service APIs.
+- [capabilities](https://github.com/Neosofia/capabilities) — UI control plane -- evaluates Cedar-backed `{ key: boolean }` entitlements for menus and features without hard-coding product vocabulary in generic infrastructure.
+- [chat](https://github.com/Neosofia/chat) — Authoritative conversation store across web, app, and SMS channels; care-assistant completions on patient turns; PHI-complete message persistence.
+- [care-episode](https://github.com/Neosofia/care-episode) — Procedure-scoped post-discharge episodes, recovery summaries, demo clinical records, patient chat proxy, and clinical risk evaluation after each patient turn.
+- [notification](https://github.com/Neosofia/notification) — Focused message relay -- contact-form and operational email via Resend today; room to grow into SMS and paging without every product owning deliverability.
+- [cdp](https://github.com/Neosofia/cdp) — Reference clinical data platform -- Spawn UI, specs, ADRs, constitution, Docker Compose stacks, policy bundle, and local seed/bootstrap helpers.
+- [schemas](https://github.com/Neosofia/schemas) — Immutable versioned JSON Schema for structured logs, OpenAPI contract validation, and other cross-service vocabulary CI can pin and fail on.
+- [sdk](https://github.com/Neosofia/sdk) — Shared Python middleware and logging libraries consumed by every service (three packages -- see below).
+- [templates](https://github.com/Neosofia/templates) — Copier scaffolds for new repos -- production-ready Python service boilerplate and a shared React/shadcn UI registry.
+- [infrastructure](https://github.com/Neosofia/infrastructure) — Repeatable deploy and recovery -- Proxmox/LXC scripts, OpenTofu modules, public- and private-cloud runbooks.
+- [platform-workflows](https://github.com/Neosofia/platform-workflows) — Reusable GitHub Actions for build, test, security scan, and publish so every service repo shares the same supply-chain bar.
+- [workspace](https://github.com/Neosofia/workspace) — Multi-repo editor workspace (`cdp.code-workspace`) plus shared agent and engineering conventions in `AGENTS.md`.
+- [corporate](https://github.com/Neosofia/corporate) — Neosofia company website -- marketing pages, blog, public policies, and compliance resources.
+- [docs](https://github.com/Neosofia/docs) — QMS document generator and tooling for version-locked policy and SOP output.
 
 The [SDK](https://github.com/Neosofia/sdk) repo publishes three independently versioned Python packages:
 
-| Package | What it's for |
-| --- | --- |
-| [`authentication-in-the-middle`](https://github.com/Neosofia/sdk/tree/main/python/authentication-middleware) | JWT validation (JWKS or static keys), tier-1 actor classification, and Flask decorators so every API authenticates callers the same way. |
-| [`authorization-in-the-middle`](https://github.com/Neosofia/sdk/tree/main/python/authorization-middleware) | Cedar authorization at the request boundary -- REST-to-policy inference, OpenAPI-backed write validation, and the [README](https://github.com/Neosofia/sdk/blob/main/python/authorization-middleware/README.md) that maps routes to principal/action/resource. |
-| [`logenvelope`](https://github.com/Neosofia/sdk/tree/main/python/logenvelope) | Structured JSON logging that conforms to the platform log schema -- consistent event types, no PHI in log lines, SIEM-ready output. |
+- [`authentication-in-the-middle`](https://github.com/Neosofia/sdk/tree/main/python/authentication-middleware) — JWT validation (JWKS or static keys), tier-1 actor classification, and Flask decorators so every API authenticates callers the same way.
+- [`authorization-in-the-middle`](https://github.com/Neosofia/sdk/tree/main/python/authorization-middleware) — Cedar authorization at the request boundary -- REST-to-policy inference, OpenAPI-backed write validation, and the [README](https://github.com/Neosofia/sdk/blob/main/python/authorization-middleware/README.md) that maps routes to principal/action/resource.
+- [`logenvelope`](https://github.com/Neosofia/sdk/tree/main/python/logenvelope) — Structured JSON logging that conforms to the platform log schema -- consistent event types, no PHI in log lines, SIEM-ready output.
